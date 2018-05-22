@@ -47,7 +47,7 @@ class Toggle extends React.PureComponent<Props, State> {
 }
 
 
-function Ex2() {
+function KentDoddsEx2() {
   const f = (on: any) => console.log('toggle', on);
   return (
     <Toggle onToggle={f} >
@@ -58,4 +58,4 @@ function Ex2() {
   );
 }
 
-export default Ex2;
+export default KentDoddsEx2;

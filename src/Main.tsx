@@ -6,6 +6,7 @@ import AnimateExample1 from 'animate/AnimateExample1';
 import TestPromises from 'async/TestPromises';
 import TestPasswordRegExp from 'regexp/TestPasswordRegExp';
 import LoadingScreenExample from 'hoc/LoadingScreenExample';
+import KentDodds from 'kentDodds';
 
 type Props = {
 };
@@ -31,12 +32,14 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={`/async`}>async</Link>
           <Link style={style.link} to={`/regexp`}>regexp</Link>
           <Link style={style.link} to={`/hoc`}>hoc</Link>
+          <Link style={style.link} to={`/kent-dodds`}>kent-dodds</Link>
         </div>
         <Switch>
           <Route path="/animate" component={AnimateExample1} />
           <Route path="/async" component={TestPromises} />
           <Route path="/regexp" component={TestPasswordRegExp} />
           <Route path="/hoc" component={LoadingScreenExample} />
+          <Route path="/kent-dodds" component={KentDodds} />
         </Switch>
       </div>
     );
