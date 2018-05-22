@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AnimateExample1 from 'animate/AnimateExample1';
 
 import TestPromises from 'async/TestPromises';
+import TestPasswordRegExp from 'regexp/TestPasswordRegExp';
 
 type Props = {
 };
@@ -27,10 +28,12 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={`/`}>Home</Link>
           <Link style={style.link} to={`/AnimateExample1`}>animate</Link>
           <Link style={style.link} to={`/Async/TestPromises`}>async</Link>
+          <Link style={style.link} to={`/TestPasswordRegExp`}>TestPasswordRegExp</Link>
         </div>
         <Switch>
           <Route path="/AnimateExample1" component={AnimateExample1} />
           <Route path="/Async/TestPromises" component={TestPromises} />
+          <Route path="/TestPasswordRegExp" component={TestPasswordRegExp} />
         </Switch>
       </div>
     );

@@ -19,19 +19,18 @@ class TestPasswordRegExp extends React.PureComponent<Props, State> {
     return result;
   };
   onClick = () => {
-    this.setState({ isValid: this.isPasswordValid(this.state.value) });
   }
   onChange = (event: any) => {
     const value = event.target.value;
-    this.setState(() => ({ value, }));
+    this.setState({ value, isValid: this.isPasswordValid(value) });
   }
   render() {
     return (
       <div>
         <input onChange={this.onChange} value={this.state.value} />
-        <button onClick={this.onClick}>
+        <div>
           Validation is {String(this.state.isValid)}
-        </button>
+        </div>
       </div>
     );
   }
