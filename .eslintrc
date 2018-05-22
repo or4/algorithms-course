@@ -1,0 +1,29 @@
+{
+  "extends": "eslint-config-alloy/typescript-react",
+  "rules": {
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "indent": ["error", 2, {
+      "SwitchCase": 1,
+      "flatTernaryExpressions": true
+    }],
+    "typescript/class-name-casing": "error",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-indent-props": [true, 2],
+    "no-useless-constructor": 0,
+    "no-empty-function": 0
+  }
+}
