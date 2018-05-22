@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import AnimateExample1 from 'animate/AnimateExample1';
 
-import Test2 from 'Test2';
+import TestPromises from 'async/TestPromises';
 
 type Props = {
 };
@@ -26,11 +26,11 @@ class Main extends React.PureComponent<Props, State> {
         <div>
           <Link style={style.link} to={`/`}>Home</Link>
           <Link style={style.link} to={`/AnimateExample1`}>animate</Link>
-          <Link style={style.link} to={`/test2`}>animate</Link>
+          <Link style={style.link} to={`/Async/TestPromises`}>async</Link>
         </div>
         <Switch>
           <Route path="/AnimateExample1" component={AnimateExample1} />
-          <Route path="/test2" component={Test2} />
+          <Route path="/Async/TestPromises" component={TestPromises} />
         </Switch>
       </div>
     );
