@@ -262,39 +262,39 @@ export const result = 'done';
 // An environment record records the identifier bindings
 // that are created within the scope of this lexical environment.
 
-var x = 10;
+// var x = 10;
 
-function foo() {
-  var y = 20;
-}
+// function foo() {
+//   var y = 20;
+// }
 
-// environment of the global context
-globalEnvironment = {
+// // environment of the global context
+// globalEnvironment = {
 
-  environmentRecord: {
+//   environmentRecord: {
 
-    // built-ins:
-    Object: function,
-    Array: function,
-    // etc ...
+//     // built-ins:
+//     Object: function,
+//     Array: function,
+//     // etc ...
 
-    // our bindings:
-    x: 10
+//     // our bindings:
+//     x: 10
 
-  },
+//   },
 
-  outer: null // no parent environment
+//   outer: null // no parent environment
 
-};
+// };
 
-// environment of the "foo" function
+// // environment of the "foo" function
 
-fooEnvironment = {
-  environmentRecord: {
-    y: 20
-  },
-  outer: globalEnvironment
-};
+// fooEnvironment = {
+//   environmentRecord: {
+//     y: 20
+//   },
+//   outer: globalEnvironment
+// };
 
 /**
  * Environment record types
@@ -311,16 +311,16 @@ fooEnvironment = {
   */
 
 // all: "a", "b" and "c", bindings are bindings of a declarative record
-function foo(a) {
-  var b = 10;
-  function c() {}
-}
+// function foo(a) {
+//   var b = 10;
+//   function c() {}
+// }
 
-try {
-  ...
-} catch (e) { // "e" is a binding of a declarative record
-  ...
-}
+// try {
+//   ...
+// } catch (e) { // "e" is a binding of a declarative record
+//   ...
+// }
 
 // In general case the bindings of declarative records are assumed
 // to be stored directly at low level of the implementation

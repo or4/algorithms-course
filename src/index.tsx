@@ -1,21 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
+import Main from './Main';
+import './index.css';
 
-// import Ex2 from './excerices/Ex2';
-// import Test1 from './test/Test1';
-// import LoadingScreenExample from './hoc/LoadingScreenExample';
-// import Test1Format from './fp/Test1Format';
-// import { result } from './fp/Transducer';
-// import { result } from './fp/ramda/CurryN';
-// import { result } from './fp/ramda/Compose';
-// import { result } from './animate/Test1';
-// import { result } from './js/scope/this1';
-import { result } from './js/scope/scope';
+import { Provider } from 'react-redux';
+
+import store, { history } from './store';
 
 const App = () => (
-  <div>
-    {result}
-  </div>
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Route path="/" component={Main} />
+    </ConnectedRouter>
+  </Provider>
 );
 
 const rootElement = document.getElementById('root');
