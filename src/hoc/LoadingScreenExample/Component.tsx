@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { withLoadingScreen } from './Hoc';
+import { withLoadingScreen } from './withLoadingScreen';
+import { withItalic } from './withItalic';
+import { withCenter } from './withCenter';
 
 type Props = {
 };
@@ -15,4 +17,4 @@ class Component extends React.PureComponent<Props, State> {
     );
   }
 }
-export default withLoadingScreen(Component);
+export default withCenter(withItalic(withLoadingScreen(Component)));

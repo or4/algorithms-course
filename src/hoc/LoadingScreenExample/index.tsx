@@ -6,7 +6,7 @@ type Props = {
 type State = {
   loading: boolean;
 };
-class Wrapper extends React.PureComponent<Props, State> {
+class LoadingScreenExample extends React.PureComponent<Props, State> {
   state={
     loading: true,
   }
@@ -21,4 +21,4 @@ class Wrapper extends React.PureComponent<Props, State> {
     );
   }
 }
-export default Wrapper;
+export default LoadingScreenExample;
