@@ -27,16 +27,16 @@ class Main extends React.PureComponent<Props, State> {
       <div>
         <div>
           <Link style={style.link} to={`/`}>Home</Link>
-          <Link style={style.link} to={`/AnimateExample1`}>animate</Link>
-          <Link style={style.link} to={`/Async/TestPromises`}>async</Link>
-          <Link style={style.link} to={`/TestPasswordRegExp`}>TestPasswordRegExp</Link>
-          <Link style={style.link} to={`/LoadingScreenExample`}>LoadingScreenExample</Link>
+          <Link style={style.link} to={`/animate`}>animate</Link>
+          <Link style={style.link} to={`/async`}>async</Link>
+          <Link style={style.link} to={`/regexp`}>regexp</Link>
+          <Link style={style.link} to={`/hoc`}>hoc</Link>
         </div>
         <Switch>
-          <Route path="/AnimateExample1" component={AnimateExample1} />
-          <Route path="/Async/TestPromises" component={TestPromises} />
-          <Route path="/TestPasswordRegExp" component={TestPasswordRegExp} />
-          <Route path="/LoadingScreenExample" component={LoadingScreenExample} />
+          <Route path="/animate" component={AnimateExample1} />
+          <Route path="/async" component={TestPromises} />
+          <Route path="/regexp" component={TestPasswordRegExp} />
+          <Route path="/hoc" component={LoadingScreenExample} />
         </Switch>
       </div>
     );

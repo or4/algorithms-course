@@ -7,7 +7,7 @@ type State = {
 };
 
 export const withItalic = (WrappedComponent: any) => {
-  return class BackgroundScreen extends React.PureComponent<Props, State> {
+  return class ItalicScreen extends React.PureComponent<Props, State> {
     render() {
       return (
         <div style={{ fontStyle: 'italic' }}>
