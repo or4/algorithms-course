@@ -1,6 +1,7 @@
 import React from 'react';
 import Component from './Component';
 import { withCenter } from './withCenter';
+import { withSize } from './withSize';
 
 type Props = {
 };
@@ -17,7 +18,8 @@ class LoadingScreenExample extends React.PureComponent<Props, State> {
     }, (1000));
   }
   render() {
-    const CentredComponent = withCenter(Component);
+    let height;
+    const CentredComponent = withSize(withCenter(Component), height, '480px');
     return <CentredComponent loading={this.state.loading} />;
   }
 }
