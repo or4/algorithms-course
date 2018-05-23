@@ -30,3 +30,10 @@ body {
 a {
   text-decoration: none;
 }
+
+button {
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 10px 5px 10px;
+}

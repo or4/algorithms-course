@@ -28,7 +28,7 @@ class TestPasswordRegExp extends React.PureComponent<Props, State> {
     return (
       <div>
         <input onChange={this.onChange} value={this.state.value} />
-        <div>
+        <div style={{ display: 'inline-block', marginLeft: '20px' }}>
           Validation is {String(this.state.isValid)}
         </div>
       </div>

@@ -34,13 +34,15 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={`/hoc`}>hoc</Link>
           <Link style={style.link} to={`/kent-dodds`}>kent-dodds</Link>
         </div>
-        <Switch>
-          <Route path="/animate" component={AnimateExample1} />
-          <Route path="/async" component={TestPromises} />
-          <Route path="/regexp" component={TestPasswordRegExp} />
-          <Route path="/hoc" component={LoadingScreenExample} />
-          <Route path="/kent-dodds" component={KentDodds} />
-        </Switch>
+        <div style={{ padding: '10px 0 0 40px' }}>
+          <Switch>
+            <Route path="/animate" component={AnimateExample1} />
+            <Route path="/async" component={TestPromises} />
+            <Route path="/regexp" component={TestPasswordRegExp} />
+            <Route path="/hoc" component={LoadingScreenExample} />
+            <Route path="/kent-dodds" component={KentDodds} />
+          </Switch>
+        </div>
       </div>
     );
   }

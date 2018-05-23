@@ -8,10 +8,10 @@ type State = {
 };
 
 function ToggleOn({ on, children, someprops }:any) {
-  return on ? <div> {someprops} {children} </div> : null;
+  return on ? <div style={{ marginBottom: '10px' }}> {children}, {someprops} </div> : null;
 }
 function ToggleOff({ off, children }:any) {
-  return off ? <div> {children} </div> : null;
+  return off ? <div style={{ marginBottom: '10px' }}> {children} </div> : null;
 }
 function ToggleButton({ on, toggle, ...props } :any) {
   return (
