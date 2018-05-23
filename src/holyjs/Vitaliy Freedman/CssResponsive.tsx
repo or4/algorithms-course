@@ -30,6 +30,7 @@ class CssResponsive extends React.PureComponent<Props, State> {
 
     return (
       <div style={style.container}>
+        <h3>CSS responsive without media queries</h3>
         <div style={style.box}>test-1</div><div style={style.box}>test-2</div><div style={style.box}>test-3</div><div style={style.box}>test-4</div>
       </div>
     );

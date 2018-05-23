@@ -36,7 +36,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={`/kent-dodds`}>kent-dodds</Link>
           <Link style={style.link} to={`/holyjs`}>holyjs</Link>
         </div>
-        <div style={{ padding: '10px 0 0 40px' }}>
+        <div style={{ padding: '10px 0 0 20px' }}>
           <Switch>
             <Route path="/animate" component={AnimateExample1} />
             <Route path="/async" component={TestPromises} />
