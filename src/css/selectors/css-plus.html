@@ -1,0 +1,53 @@
+<!DOCTYPE htm>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Селекторы</title>
+  <style>
+    img {
+      display: none;
+    }
+    #switch + img {
+      display: block;
+      height: 64px;
+      width: 64px;
+    }
+    .container + img {
+      display: block;
+      height: 64px;
+      width: 64px;
+    }
+  </style>
+ </head>
+ <body>
+  <form>
+    <label for="switch">Показать картинки</label>
+    <input type="checkbox" id="switch">
+    <img src="images/1.png" alt="" />
+    <img src="images/1.png" alt="" />
+    <div>
+      <div>
+        <div>
+          <img src="images/1.png" alt="" />
+          <img src="images/1.png" alt="" />
+          <img src="images/1.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="images/gt.png" alt="" />
+      <img src="images/gt.png" alt="" />
+      <img src="images/gt.png" alt="" />
+      <img src="images/gt.png" alt="" />
+
+      <div>
+        <img src="images/gt.png" alt="" />
+        <img src="images/gt.png" alt="" />
+        <img src="images/gt.png" alt="" />
+        <img src="images/gt.png" alt="" />
+      </div>
+    </div>
+  </form>
+ </body>
+</html>
