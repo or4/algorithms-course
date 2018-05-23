@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    // Время до первой отрисовки контента
+    // Pain Timing API
+    for (const ev of performance.getEntriesByType('paint')) {
+      if (ev.name == 'first-contentful-paint') {
+        send('ttfcp', ev.startTime);
+        console.log('ttfcp', ev.startTime);
+        break;
+      }
+    }
+  </script>
+</head>
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 100%;
+    }
+
+  </style>
+  <div class="container">
+
+  </div>
+
+</body>
+</html>
