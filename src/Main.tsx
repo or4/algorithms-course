@@ -8,6 +8,7 @@ import TestPasswordRegExp from 'regexp/TestPasswordRegExp';
 import LoadingScreenExample from 'hoc/LoadingScreenExample';
 import KentDodds from 'kentDodds';
 import HolyJs from 'holyjs';
+import Refs from 'refs';
 
 type Props = {
 };
@@ -35,6 +36,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={`/hoc`}>hoc</Link>
           <Link style={style.link} to={`/kent-dodds`}>kent-dodds</Link>
           <Link style={style.link} to={`/holyjs`}>holyjs</Link>
+          <Link style={style.link} to={`/refs`}>refs</Link>
         </div>
         <div style={{ padding: '10px 0 0 20px' }}>
           <Switch>
@@ -44,6 +46,7 @@ class Main extends React.PureComponent<Props, State> {
             <Route path="/hoc" component={LoadingScreenExample} />
             <Route path="/kent-dodds" component={KentDodds} />
             <Route path="/holyjs" component={HolyJs} />
+            <Route path="/refs" component={Refs} />
           </Switch>
         </div>
       </div>
