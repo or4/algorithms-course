@@ -34,7 +34,9 @@
     "redux-observable": "^0.18.0",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
-    "rxjs": "^6.0.0"
+    "rxios": "^1.1.2",
+    "rxjs": "^6.2.1",
+    "rxjs-compat": "^6.2.1"
   },
   "scripts": {
     "start": "react-scripts-ts start",
