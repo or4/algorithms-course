@@ -1,8 +1,9 @@
 import React from 'react';
 
-// in best and worst cases for 100 items 5050 cycles
-// 5050 / 100 = 50.5
-// ~ 0.5 * n^2
+// sum of an arithmetic progression (a1 + aN)/2 * n
+// complexity n^2 /2 + n /2, O(n^2), Ω(n^2) => Θ(n^2)
+// (1 + 100)/2 * 100 = 101/2 * 100 = 50,5 * 100 = 5050
+
 const arr = [] as number[];
 for (let i = 0; i < 100; i++) {
   arr.push(Number(-i));
