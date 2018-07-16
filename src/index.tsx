@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
-import Main from './Main';
+import Main from 'Main';
 import './index.css';
 
 import { Provider } from 'react-redux';
 
-import store, { history } from './store';
+import store, { history } from 'store';
 
 const App = () => (
   <Provider store={store}>

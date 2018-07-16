@@ -1,4 +1,4 @@
-import { parseDate } from '../../utils/date';
+import { parseDate } from '../date';
 
 const getSortedTasks = (tasks) => {
   const sortedTasks = tasks.sort((previousTask, currentTask) => {

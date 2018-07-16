@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose, Action, Middleware, MiddlewareAP
 import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createHashHistory';
 import createSagaMiddleware from 'redux-saga';
-import { rootReducer, AppState, appInitialState } from './reducers';
+import { rootReducer, AppState, appInitialState } from 'reducers';
 
 
 export const history = createHistory();

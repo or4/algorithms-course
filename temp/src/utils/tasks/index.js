@@ -1,5 +1,5 @@
 import reduce from 'lodash/reduce';
-import { getNowFormatted, isValid } from '../../utils/date';
+import { getNowFormatted, isValid } from '../date';
 
 export const getDefaultTask = () => ({
   id: new Date().valueOf(),
