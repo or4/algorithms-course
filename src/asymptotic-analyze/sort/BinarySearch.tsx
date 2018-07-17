@@ -1,33 +1,41 @@
 import React from 'react';
 
 const arr = [] as number[];
-for (let i = 4; i < 9; i++) {
+for (let i = 0; i < 16; i++) {
   arr.push(Number(i));
 }
 console.log('arr', arr);
 
-// very complex implementation of binary search
-const binarySearch = (arr: number[], n: number, value: number): boolean => {
-  if (n === 0) {
-    return value === arr[n];
-  }
+// not working
+// const binarySearch = (arr: number[], n: number, value: number): boolean => {
+//   console.log('n', n, 'value', value);
+//   if (n === 0) {
+//     console.log('ex 1');
+//     return value === arr[n];
+//   }
 
-  if (value < arr[(n + 1) / 2 - 1]) {
-    return binarySearch(arr, ((n + 1) / 2 - 1) - 1, value);
-  }
-  else if (value > arr[(n + 1) / 2 + 1]) {
-    return binarySearch(arr, ((n + 1) / 2 - 1) + 1, value);
-  } else if (value === arr[(n + 1) / 2]) {
-    return true;
-  } else if (value === arr[(n + 1) / 2 + 1]) {
-    return true;
-  } else if (value === arr[(n + 1) / 2] - 1) {
-    return true;
-  }
-  else {
-    return false;
-  }
-};
+//   console.log('(n + 1) / 2', (n + 1) / 2);
+
+//   if (value < arr[(n + 1) / 2]) {
+//     console.log('st 1');
+//     return binarySearch(arr, (n + 1) / 2 - 1, value);
+//   } else if (value > arr[(n + 1) / 2 + 1]) {
+//     console.log('st 2');
+//     return binarySearch(arr, (n + 1) / 2 + 1, value);
+//   } else if (value === arr[(n + 1) / 2]) {
+//     console.log('ex 2');
+//     return true;
+//   } else if (value === arr[(n + 1) / 2 + 1]) {
+//     console.log('ex 3');
+//     return true;
+//   } else if (value === arr[(n + 1) / 2] - 1) {
+//     console.log('ex 4');
+//     return true;
+//   } else {
+//     console.log('ex 6');
+//     return false;
+//   }
+// };
 
 type Props = {
 };
@@ -37,27 +45,22 @@ type State = {
 export class BinarySearch extends React.PureComponent<Props, State> {
   render() {
     const length = arr.length % 2 === 0 ? arr.length - 1 : arr.length - 1 + 1;
+    let content = [] as any[];
+    // for (let i = -5; i < 40; i++) {
+    //   content.push(<div key={i}>{`${i}: ${binarySearch(arr, length, i)}`}</div>);
+    // }
+
+    // content.push(<div key={12}>{`${12}: ${binarySearch(arr, length, 12)}`}</div>);
     return (
       <div>
-        <h3>Array</h3>
+        <h3>Array, length: {length}</h3>
         <div>
           {arr.map(item => <div key={item}>{`${item}`}</div>)}
         </div>
 
         <h3>Search</h3>
-        {<div>{`${0}: ${binarySearch(arr, length, 0)}`}</div>}
-        {<div>{`${1}: ${binarySearch(arr, length, 1)}`}</div>}
-        {<div>{`${2}: ${binarySearch(arr, length, 2)}`}</div>}
-        {<div>{`${3}: ${binarySearch(arr, length, 3)}`}</div>}
-        {<div>{`${4}: ${binarySearch(arr, length, 4)}`}</div>}
-        {<div>{`${5}: ${binarySearch(arr, length, 5)}`}</div>}
-        {<div>{`${6}: ${binarySearch(arr, length, 6)}`}</div>}
-        {<div>{`${7}: ${binarySearch(arr, length, 7)}`}</div>}
-        {<div>{`${8}: ${binarySearch(arr, length, 8)}`}</div>}
-        {<div>{`${9}: ${binarySearch(arr, length, 9)}`}</div>}
-        {<div>{`${10}: ${binarySearch(arr, length, 10)}`}</div>}
-        {<div>{`${11}: ${binarySearch(arr, length, 11)}`}</div>}
-        {<div>{`${12}: ${binarySearch(arr, length, 12)}`}</div>}
+
+        {content}
 
       </div>
     );
