@@ -1,16 +1,13 @@
 import React from 'react';
 
-// sum of an arithmetic progression (a1 + aN)/2 * n
-// complexity n^2 /2 + n /2, O(n^2), Ω(n^2) => Θ(n^2)
-// (1 + 100)/2 * 100 = 101/2 * 100 = 50,5 * 100 = 5050
-
 const arr = [] as number[];
-for (let i = 0; i < 8; i++) {
-  arr.push(Number(-i));
+while (arr.length < 8) {
+  const value = Math.random() * 10 >> 0;
+  if (arr.indexOf(value) === -1 && value > 0) {
+    arr.push(value);
+  }
 }
 
-// const arr = [4, 3, 2, 1, 0, -1, -2 - 3, -4, -5];
-// const arr = [11, 2, 33, 4, 125, 3, 4, 5, 1];
 const selectionSort = (arr: number[]) => {
   let totalCounter;
   totalCounter = 0;
@@ -43,6 +40,13 @@ export class SelectionSort extends React.PureComponent<Props, State> {
     console.log('sortedArray', sortedArray);
     return (
       <div>
+        <h3>Array</h3>
+        {arr.map((item, index) => (
+          <div key={index}>
+            {item}
+          </div>
+        ))}
+        <h3>Sorted</h3>
         {sortedArray.map((item, index) => (
           <div key={index}>
             {item}

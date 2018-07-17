@@ -11,6 +11,7 @@ import HolyJs from 'holyjs';
 import Refs from 'refs';
 import { SelectionSort } from 'asymptotic-analyze/sort/SelectionSort';
 import { BinarySearch } from 'asymptotic-analyze/sort/BinarySearch';
+import { Algorithms } from 'algorithms';
 
 type Props = {
 };
@@ -32,6 +33,7 @@ class Main extends React.PureComponent<Props, State> {
       <div>
         <div>
           <Link style={style.link} to={`/`}>Home</Link>
+          <Link style={style.link} to={`/algorithms`}>algorithms</Link>
           <Link style={style.link} to={`/animate`}>animate</Link>
           <Link style={style.link} to={`/async`}>async</Link>
           <Link style={style.link} to={`/asymptotic`}>asymptotic</Link>
@@ -44,6 +46,7 @@ class Main extends React.PureComponent<Props, State> {
         </div>
         <div style={{ padding: '10px 0 0 20px' }}>
           <Switch>
+            <Route path="/algorithms" component={Algorithms} />
             <Route path="/animate" component={AnimateExample1} />
             <Route path="/async" component={TestPromises} />
             <Route path="/asymptotic" component={SelectionSort} />
