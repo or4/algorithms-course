@@ -9,7 +9,8 @@ import LoadingScreenExample from 'hoc/LoadingScreenExample';
 import KentDodds from 'kentDodds';
 import HolyJs from 'holyjs';
 import Refs from 'refs';
-import { SelectionSort } from './asymptotic-analyze/sort/SelectionSort';
+import { SelectionSort } from 'asymptotic-analyze/sort/SelectionSort';
+import { BinarySearch } from 'asymptotic-analyze/sort/BinarySearch';
 
 type Props = {
 };
@@ -34,6 +35,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={`/animate`}>animate</Link>
           <Link style={style.link} to={`/async`}>async</Link>
           <Link style={style.link} to={`/asymptotic`}>asymptotic</Link>
+          <Link style={style.link} to={`/binarySearch`}>binarySearch</Link>
           <Link style={style.link} to={`/regexp`}>regexp</Link>
           <Link style={style.link} to={`/hoc`}>hoc</Link>
           <Link style={style.link} to={`/kent-dodds`}>kent-dodds</Link>
@@ -45,6 +47,7 @@ class Main extends React.PureComponent<Props, State> {
             <Route path="/animate" component={AnimateExample1} />
             <Route path="/async" component={TestPromises} />
             <Route path="/asymptotic" component={SelectionSort} />
+            <Route path="/binarySearch" component={BinarySearch} />
             <Route path="/regexp" component={TestPasswordRegExp} />
             <Route path="/hoc" component={LoadingScreenExample} />
             <Route path="/kent-dodds" component={KentDodds} />
