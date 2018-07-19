@@ -1,4 +1,4 @@
-import { normalizeNum, addRightNulls } from './utils';
+import { normalizeNum, addRightNulls, removeNulls } from './utils';
 import { add } from './addition';
 import { substract } from './subtraction';
 
@@ -70,5 +70,6 @@ export const multiply = (num1: string, num2: string): string => {
   const result = add(add(resultP1, resultP2), resultP3);
 
   console.log(`multiply RESULT num1=${num1}, num2=${num2}, result=${result}`);
-  return result;
+
+  return removeNulls(result);
 };

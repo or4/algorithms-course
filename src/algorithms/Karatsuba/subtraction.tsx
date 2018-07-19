@@ -10,7 +10,7 @@ const substractSimple = (num1: string, num2: string, num3: string): string => {
 const existsDigits = (num1: string[], posFrom: number) => {
   let counter = posFrom;
   while (counter < num1.length) {
-    console.log('existsDigits num1[counter]', num1[counter]);
+    // console.log('existsDigits num1[counter]', num1[counter]);
     if (num1[counter]) { return counter }
     counter++;
   }
@@ -18,6 +18,11 @@ const existsDigits = (num1: string[], posFrom: number) => {
 };
 
 export const substract = (num1: string, num2: string): string => {
+  console.log('.');
+  console.log('.');
+  console.log('.');
+  console.log('.');
+  console.log(`substract num1=${num1} num2=${num2}`);
   const output = [];
   const maxLength = getMaxLength(num1, num2);
 
@@ -47,6 +52,7 @@ export const substract = (num1: string, num2: string): string => {
   for (let i = 0; i < maxLength; i++) {
 
     const res = substractSimple(num1Reversed[i], num2Reversed[i], prev);
+    console.log(`res=${res}, num1Reversed = ${num1Reversed[i]}, num2Reversed = ${num2Reversed[i]}`);
     if (Number(res) >= 0) {
       output.unshift(res[0]);
     } else {
@@ -65,7 +71,7 @@ export const substract = (num1: string, num2: string): string => {
         }
 
       } else {
-        console.log('doenst exists');
+        console.log('!!!doenst exists');
       }
     }
 
@@ -82,9 +88,14 @@ export const substract = (num1: string, num2: string): string => {
   if (prev) {
     output.unshift(prev);
   }
+
+  let res;
   if (reversed) {
-    return '-' + output.join('');
+    res = '-' + output.join('');
+  } else {
+    res = output.join('');
   }
-  return output.join('');
+  console.log(`substract RESULT=${res} num1=${num1} num2=${num2}`);
+  return res;
 };
 
