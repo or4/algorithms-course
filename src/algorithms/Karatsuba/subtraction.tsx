@@ -1,5 +1,5 @@
 import { reverse } from 'lodash';
-import { normalizeNum, getMaxLength, isFirstBiggerSecondNumber } from './utils';
+import { fillNulls, getMaxLength, isFirstBiggerSecondNumber } from './utils';
 
 const substractSimple = (num1: string, num2: string, num3: string): string => {
   if (!num1) return num2;
@@ -39,8 +39,8 @@ export const substract = (num1: string, num2: string): string => {
     reversed = true;
   }
 
-  const num1Normalized = normalizeNum(maxNum, maxLength).split('');
-  const num2Normalized = normalizeNum(minNum, maxLength).split('');
+  const num1Normalized = fillNulls(maxNum, maxLength).split('');
+  const num2Normalized = fillNulls(minNum, maxLength).split('');
   console.log(`num1Normalized = ${num1Normalized}, num2Normalized = ${num2Normalized}`);
 
   const num1Reversed = reverse(num1Normalized);

@@ -1,4 +1,4 @@
-import { normalizeNum, addRightNulls, removeNulls } from './utils';
+import { fillNulls, addRightNulls, removeNulls } from './utils';
 import { add } from './addition';
 import { substract } from './subtraction';
 
@@ -37,8 +37,8 @@ export const multiply = (num1: string, num2: string): string => {
 
   const mid = Math.floor(maxLength / 2);
   console.log('maxLength, mid', maxLength, mid);
-  const num1Corrected = normalizeNum(num1, maxLength);
-  const num2Corrected = normalizeNum(num2, maxLength);
+  const num1Corrected = fillNulls(num1, maxLength);
+  const num2Corrected = fillNulls(num2, maxLength);
   isDevConsole && console.log('num1Corrected, num2Corrected', num1Corrected, num2Corrected);
   const a = num1Corrected.slice(0, mid);
   const b = num1Corrected.slice(mid);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { isNumber } from 'utils/helpers';
 import { multiply } from './multiplication';
+import { add } from './addition';
 // import { removeNulls } from './utils';
 // import { substract } from './subtraction';
 
@@ -33,8 +34,8 @@ const testResult = (isDev ? '1554' : '1068039902835864');
 
 export class Karatsuba extends React.PureComponent<Props, State> {
   // state = isDev ? { num1: '12345', num2: '31' } : { num1: '123123123', num2: '8674568' }
-  // state= { num1: '1234567890123456789', num2: '111', flag: true }
-  state= { num1: '12345678', num2: '11', flag: true, calc1: '111', calc2: '11' }
+  // state= { num1: '12345678901234567891234567890123456789', num2: '12345678901234567891234567890123456789', flag: true }
+  state= { num1: '12345678901234567891234567890123456789', num2: '12345678901234567891234567890123456789', flag: true, calc1: '111', calc2: '11' }
   onNum1Change = ({ target }: any) => {
     const { value } = target;
     if (isNumber(value)) {
@@ -60,6 +61,11 @@ export class Karatsuba extends React.PureComponent<Props, State> {
     }
   }
   render() {
+
+    console.log(`removeNulls, test: ${Number(add('12', '34'))} from 12 + 34`);
+    console.log(`removeNulls, test: ${Number(add('2', '34'))} from 2 + 34`);
+    console.log(`removeNulls, test: ${Number(add('102', '34'))} from 102 + 34`);
+    console.log(`removeNulls, test: ${Number(add('89', '22'))} from 89 + 22`);
 
     // console.log(`minus, test: ${Number(substract('132', '111'))} real: ${Number(132 - 111)}`);
     // console.log('.');
@@ -111,9 +117,9 @@ export class Karatsuba extends React.PureComponent<Props, State> {
     // console.log(`removeNulls, test: ${Number(removeNulls('1000'))} from 1000`);
     // console.log(`removeNulls, test: ${removeNulls('00112')} from 00112`);
 
-    // if (this.state.flag) {
-    //   return null;
-    // }
+    if (this.state.flag) {
+      return null;
+    }
 
     const { num1, num2, calc1, calc2 } = this.state;
     const result = multiply(num1, num2);

@@ -1,28 +1,30 @@
-import { normalizeNum } from './utils';
+import { reverse } from 'lodash';
+import { fillNulls, getMaxLength } from './utils';
 
 const addSimple = (num1: string, num2: string, num3: string): string => {
-  if (!num1) return num2;
-  if (!num2) return num1;
-
-  return String(Number(num1) + Number(num2) + Number(num3 || 0));
+  return String(Number(num1 || 0) + Number(num2 || 0) + Number(num3 || 0));
 };
 
 export const add = (num1: string, num2: string): string => {
   const output = [];
-  const maxLength = num1.length > num2.length ? num1.length : num2.length;
+  const maxLength = getMaxLength(num1, num2);
 
-  const num1Corrected = normalizeNum(num1, maxLength);
-  const num2Corrected = normalizeNum(num2, maxLength);
-  // console.log(`num1Corrected = ${num1Corrected}, num2Corrected = ${num2Corrected}`);
+  const num1Filled = fillNulls(num1, maxLength);
+  const num2Filled = fillNulls(num2, maxLength);
 
-  let prev = '';
-  for (let i = maxLength - 1; i >= 0; i--) {
-    const res = addSimple(num1Corrected[i], num2Corrected[i], prev);
-    output.unshift(res[res.length - 1]);
-    prev = res[res.length - 2];
+  const num1Reversed = reverse(num1Filled.split(''));
+  const num2Reversed = reverse(num2Filled.split(''));
+
+  let prev = ''; // for addition digit when overflow
+  for (let i = 0; i < maxLength; i++) {
+    const res = addSimple(num1Reversed[i], num2Reversed[i], prev);
+    const resReversed = reverse(res.split(''));
+    output.unshift(resReversed[0]);
+    prev = resReversed[1];
   }
   if (prev) {
     output.unshift(prev);
   }
+  // const reversedAgain = reverse(output);
   return output.join('');
 };

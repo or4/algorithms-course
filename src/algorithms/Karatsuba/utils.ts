@@ -1,5 +1,5 @@
 
-export const normalizeNum = (num: string, len: number) => {
+export const fillNulls = (num: string, len: number) => {
   let numCorrected = num;
   while (numCorrected.length !== len) {
     numCorrected = '0' + numCorrected;
