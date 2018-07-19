@@ -6,12 +6,12 @@
   <body>
     <script>
        function allTiming() {
-          console.log('all time');
+          // console.log('all time');
           var resourceList = window.performance.getEntries();
           for (var i = 0; i < resourceList.length; i++) {
-            console.log(resourceList[i],(resourceList[i].responseEnd - resourceList[i].startTime));
+            // console.log(resourceList[i],(resourceList[i].responseEnd - resourceList[i].startTime));
           }
-          console.log(resourceList.length);
+          // console.log(resourceList.length);
        }
 
        setTimeout(() => { allTiming(); }, 4000);
@@ -45,11 +45,11 @@
     <script>
       function ttfmp() {
         requestAnimationFrame(() => {
-          console.log('ttfmp_rAF_1', performance.now());
+          // console.log('ttfmp_rAF_1', performance.now());
           requestAnimationFrame(() => {
-            console.log('ttfmp_rAF_2',  performance.now());
+            // console.log('ttfmp_rAF_2',  performance.now());
             requestAnimationFrame(() => {
-              console.log('ttfmp_rAF_3',  performance.now());
+              // console.log('ttfmp_rAF_3',  performance.now());
             });
           });
         })

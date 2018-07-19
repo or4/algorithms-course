@@ -17,7 +17,7 @@ const actionToPlainObject: Middleware =
   (api: MiddlewareAPI<void>) =>
     (next: Dispatch<void>) =>
       <A extends Action>(action: A) => {
-        console.log(action);
+        // console.log(action);
         return next(Object.assign({}, action));
       };
 

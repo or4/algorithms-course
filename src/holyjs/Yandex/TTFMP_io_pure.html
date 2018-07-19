@@ -6,12 +6,12 @@
   <body>
     <script>
        function allTiming() {
-          console.log('all time');
+          // console.log('all time');
           var resourceList = window.performance.getEntries();
           for (var i = 0; i < resourceList.length; i++) {
-            console.log(resourceList[i],(resourceList[i].responseEnd - resourceList[i].startTime));
+            // console.log(resourceList[i],(resourceList[i].responseEnd - resourceList[i].startTime));
           }
-          console.log(resourceList.length);
+          // console.log(resourceList.length);
        }
 
        setTimeout(() => { allTiming(); }, 4000);
@@ -43,7 +43,7 @@
 
       const domNode = document.querySelector('#main-content');
       const io = new IntersectionObserver((entries, observer) => {
-        console.log('ttfmp_io', performance.now());
+        // console.log('ttfmp_io', performance.now());
         observer.unobserve(domNode);
       })
       io.observe(domNode);
@@ -51,19 +51,19 @@
 
       const domNode2 = document.querySelector('#sub-content');
       const io2 = new IntersectionObserver((entries, observer) => {
-        console.log('ttfmp_io_sub', performance.now());
-        console.log('ttfmp_io_sub', entries);
+        // console.log('ttfmp_io_sub', performance.now());
+        // console.log('ttfmp_io_sub', entries);
         observer.unobserve(domNode2);
       })
       io2.observe(domNode2);
 
       function ttfmp() {
         requestAnimationFrame(() => {
-          console.log('ttfmp_rAF_1', performance.now());
+          // console.log('ttfmp_rAF_1', performance.now());
           requestAnimationFrame(() => {
-            console.log('ttfmp_rAF_2',  performance.now());
+            // console.log('ttfmp_rAF_2',  performance.now());
             requestAnimationFrame(() => {
-              console.log('ttfmp_rAF_3',  performance.now());
+              // console.log('ttfmp_rAF_3',  performance.now());
             });
           });
         })

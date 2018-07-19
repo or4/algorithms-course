@@ -4,7 +4,7 @@ const arr = [] as number[];
 for (let i = 0; i < 16; i++) {
   arr.push(Number(i));
 }
-console.log('arr', arr);
+// console.log('arr', arr);
 
 // not working
 // const binarySearch = (arr: number[], n: number, value: number): boolean => {

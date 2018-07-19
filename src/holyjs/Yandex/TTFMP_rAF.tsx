@@ -9,11 +9,11 @@ type State = {
 
 
 requestAnimationFrame(() => {
-  console.log('ttfmp_rAF_1', performance.now());
+  // console.log('ttfmp_rAF_1', performance.now());
   requestAnimationFrame(() => {
-    console.log('ttfmp_rAF_2', performance.now());
+    // console.log('ttfmp_rAF_2', performance.now());
     requestAnimationFrame(() => {
-      console.log('ttfmp_rAF_3', performance.now());
+      // console.log('ttfmp_rAF_3', performance.now());
     });
   });
 });
@@ -25,7 +25,7 @@ requestAnimationFrame(() => {
  */
 class TTFCP extends React.PureComponent<Props, State> {
   componentDidMount() {
-    console.log('componentDidMount', performance.now());
+    // console.log('componentDidMount', performance.now());
     this.ttfmp();
     setTimeout(() => { this.painTiming() }, 4000);
   }
@@ -38,24 +38,24 @@ class TTFCP extends React.PureComponent<Props, State> {
   }
   ttfmp() {
     requestAnimationFrame(() => {
-      console.log('cmd ttfmp_rAF_1', performance.now());
+      // console.log('cmd ttfmp_rAF_1', performance.now());
       requestAnimationFrame(() => {
-        console.log('cmd ttfmp_rAF_2', performance.now());
+        // console.log('cmd ttfmp_rAF_2', performance.now());
         requestAnimationFrame(() => {
-          console.log('cmd ttfmp_rAF_3', performance.now());
+          // console.log('cmd ttfmp_rAF_3', performance.now());
         });
       });
     });
   }
 
   painTiming = () => {
-    console.log('painTiming');
+    // console.log('painTiming');
     let resourceList = window.performance.getEntries();
     for (let i = 0; i < resourceList.length; i++) {
-      resourceList[i].entryType === 'paint' &&
-        console.log(resourceList[i], (resourceList[i].responseEnd - resourceList[i].startTime));
+      // resourceList[i].entryType === 'paint' &&
+      // console.log(resourceList[i], (resourceList[i].responseEnd - resourceList[i].startTime));
     }
-    console.log('allTiming.length', resourceList.length);
+    // console.log('allTiming.length', resourceList.length);
   }
 
   /**
