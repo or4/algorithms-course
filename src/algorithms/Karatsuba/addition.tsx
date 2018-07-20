@@ -1,16 +1,29 @@
 import { reverse } from 'lodash';
-import { fillNulls, getMaxLength } from './utils';
+import { fillNulls, getMaxLength, existsDigits } from './utils';
 
 const addSimple = (num1: string, num2: string, num3: string): string => {
   return String(Number(num1 || 0) + Number(num2 || 0) + Number(num3 || 0));
+};
+
+export const correctArgs = (num: string) => {
+  if (num.length && num[0] === '-') {
+    const ex = existsDigits(num.split(''), 1);
+    if (ex === -1) {
+      return '0';
+    }
+  }
+  return num;
 };
 
 export const add = (num1: string, num2: string): string => {
   const output = [];
   const maxLength = getMaxLength(num1, num2);
 
-  const num1Filled = fillNulls(num1, maxLength);
-  const num2Filled = fillNulls(num2, maxLength);
+  const num1Corrected = correctArgs(num1);
+  const num2Corrected = correctArgs(num2);
+
+  const num1Filled = fillNulls(num1Corrected, maxLength);
+  const num2Filled = fillNulls(num2Corrected, maxLength);
 
   const num1Reversed = reverse(num1Filled.split(''));
   const num2Reversed = reverse(num2Filled.split(''));
@@ -25,6 +38,5 @@ export const add = (num1: string, num2: string): string => {
   if (prev) {
     output.unshift(prev);
   }
-  // const reversedAgain = reverse(output);
   return output.join('');
 };

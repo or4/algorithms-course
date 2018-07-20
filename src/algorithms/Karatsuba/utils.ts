@@ -38,7 +38,6 @@ export const isFirstBiggerSecondNumber = (num1: string, num2: string): boolean =
 };
 
 export const removeNulls = (num: string) => {
-  console.log('removeNulls num', num);
   let index = 0;
   while (index < num.length) {
     if (num[index] !== '0') {
@@ -46,6 +45,14 @@ export const removeNulls = (num: string) => {
     }
     index++;
   }
-  console.log('removeNulls index', index);
   return num.substring(index);
+};
+
+export const existsDigits = (num1: string[], posFrom: number) => {
+  let counter = posFrom;
+  while (counter < num1.length) {
+    if (Number(num1[counter])) { return counter }
+    counter++;
+  }
+  return -1;
 };
