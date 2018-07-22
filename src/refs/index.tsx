@@ -1,13 +1,12 @@
 import React from 'react';
 import Child from './Child';
-// import { theme } from 'ui/theme';
 
 type Props = {
 };
 type State = {
 };
 
-class Parent extends React.PureComponent<Props, State> {
+export class RefsWithChild extends React.PureComponent<Props, State> {
   refInput: any = React.createRef();
 
   selectChildInput = () => {
@@ -20,8 +19,8 @@ class Parent extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <div>
-          <button onClick={this.selectChildInput}>Focus</button>
+        <div style={{ display: 'flex', alignItems: 'center', }}>
+          <button style={{ height: '21px' }} type="button" onClick={this.selectChildInput}>Focus</button>
           &nbsp;
           <Child ref={this.refInput} />
         </div>
@@ -29,4 +28,3 @@ class Parent extends React.PureComponent<Props, State> {
     );
   }
 }
-export default Parent;

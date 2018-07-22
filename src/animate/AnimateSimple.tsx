@@ -5,12 +5,12 @@ type Props = {
 type State = {
   started: boolean;
 };
-class AnimateExample1 extends React.PureComponent<Props, State> {
+export class AnimateSimple extends React.PureComponent<Props, State> {
   state = {
     started: false
   };
   componentDidMount() {
-    const c = document.getElementById('AnimateExample1');
+    const c = document.getElementById('AnimateSimple');
     let currentAnimationTime = 0;
     const center = 175;
     const effort = 100;
@@ -33,10 +33,9 @@ class AnimateExample1 extends React.PureComponent<Props, State> {
     return (
       <div>
         <svg width="2000" height="1200">
-          <circle id="AnimateExample1" cx="150" cy="75" r="10" />
+          <circle id="AnimateSimple" cx="150" cy="75" r="10" />
         </svg>
       </div>
     );
   }
 }
-export default AnimateExample1;

@@ -14,7 +14,7 @@ type Props = StateProps & DispatchProps;
 type State = {
 };
 
-class Simple extends React.Component<Props, State> {
+export class RxjsSimple extends React.Component<Props, State> {
   state = {
   };
 
@@ -50,5 +50,3 @@ class Simple extends React.Component<Props, State> {
     return (<div>Test</div>);
   }
 }
-
-export default Simple;

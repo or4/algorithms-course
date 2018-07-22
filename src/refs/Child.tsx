@@ -24,9 +24,7 @@ class Child extends React.PureComponent<Props, State> {
 
   render() {
     return (
-      <input
-        ref={this.refInput}
-      />
+      <input type="text" ref={this.refInput} />
     );
   }
 }

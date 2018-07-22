@@ -1,22 +1,29 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import AnimateExample1 from 'animate/AnimateExample1';
 
-import TestPromises from 'async/TestPromises';
-import TestPasswordRegExp from 'regexp/TestPasswordRegExp';
+import { Algorithms } from 'algorithms';
+import { AnimateSimple } from 'animate/AnimateSimple';
+import { PasswordRegExp } from 'regexp/PasswordRegExp';
 import LoadingScreenExample from 'hoc/LoadingScreenExample';
 import KentDodds from 'kentDodds';
 import HolyJs from 'holyjs';
-import Refs from 'refs';
-import { SelectionSort } from 'asymptotic-analyze/sort/SelectionSort';
-import { BinarySearch } from 'asymptotic-analyze/sort/BinarySearch';
-import { Algorithms } from 'algorithms';
+import { RefsWithChild } from 'refs';
 
 type Props = {
 };
 type State = {
 };
+const routes = [
+  { route: '/', link: 'Home' },
+  { route: '/algorithms', link: 'algorithms' },
+  { route: '/animate', link: 'animate' },
+  { route: '/hoc', link: 'hoc' },
+  { route: '/holyjs', link: 'holyjs' },
+  { route: '/kent-dodds', link: 'kent-dodds' },
+  { route: '/refs', link: 'refs' },
+  { route: '/regexp', link: 'regexp' },
+];
 class Main extends React.PureComponent<Props, State> {
   getStyle = () => {
     const link = {
@@ -32,30 +39,18 @@ class Main extends React.PureComponent<Props, State> {
     return (
       <div>
         <div>
-          <Link style={style.link} to={`/`}>Home</Link>
-          <Link style={style.link} to={`/algorithms`}>algorithms</Link>
-          <Link style={style.link} to={`/animate`}>animate</Link>
-          <Link style={style.link} to={`/async`}>async</Link>
-          <Link style={style.link} to={`/asymptotic`}>asymptotic</Link>
-          <Link style={style.link} to={`/binarySearch`}>binarySearch</Link>
-          <Link style={style.link} to={`/regexp`}>regexp</Link>
-          <Link style={style.link} to={`/hoc`}>hoc</Link>
-          <Link style={style.link} to={`/kent-dodds`}>kent-dodds</Link>
-          <Link style={style.link} to={`/holyjs`}>holyjs</Link>
-          <Link style={style.link} to={`/refs`}>refs</Link>
+          {routes.map((item, index) =>
+            <Link key={index} style={style.link} to={item.route}>{item.link}</Link>)}
         </div>
         <div style={{ padding: '10px 0 0 20px' }}>
           <Switch>
             <Route path="/algorithms" component={Algorithms} />
-            <Route path="/animate" component={AnimateExample1} />
-            <Route path="/async" component={TestPromises} />
-            <Route path="/asymptotic" component={SelectionSort} />
-            <Route path="/binarySearch" component={BinarySearch} />
-            <Route path="/regexp" component={TestPasswordRegExp} />
+            <Route path="/animate" component={AnimateSimple} />
             <Route path="/hoc" component={LoadingScreenExample} />
-            <Route path="/kent-dodds" component={KentDodds} />
             <Route path="/holyjs" component={HolyJs} />
-            <Route path="/refs" component={Refs} />
+            <Route path="/kent-dodds" component={KentDodds} />
+            <Route path="/refs" component={RefsWithChild} />
+            <Route path="/regexp" component={PasswordRegExp} />
           </Switch>
         </div>
       </div>

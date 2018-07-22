@@ -6,13 +6,12 @@ type State = {
   isValid: boolean;
   value: string;
 };
-class TestPasswordRegExp extends React.PureComponent<Props, State> {
+export class PasswordRegExp extends React.PureComponent<Props, State> {
   state = {
     isValid: false,
     value: ''
   };
   isPasswordValid = (password: string): boolean => {
-    // const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,120}$/;
     const re = /^(?=.*[A-Z])(?=.*[a-z]).{8,120}$/;
     const result = re.test(password);
     console.log('result', result);
@@ -35,4 +34,3 @@ class TestPasswordRegExp extends React.PureComponent<Props, State> {
     );
   }
 }
-export default TestPasswordRegExp;
