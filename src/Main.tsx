@@ -14,16 +14,17 @@ type Props = {
 };
 type State = {
 };
-const routes = [
-  { route: '/', link: 'Home' },
-  { route: '/algorithms', link: 'algorithms' },
-  { route: '/animate', link: 'animate' },
-  { route: '/hoc', link: 'hoc' },
-  { route: '/holyjs', link: 'holyjs' },
-  { route: '/kent-dodds', link: 'kent-dodds' },
-  { route: '/refs', link: 'refs' },
-  { route: '/regexp', link: 'regexp' },
-];
+const routes = {
+  home: '/',
+  algorithms: '/algorithms',
+  animate: '/animate',
+  hoc: '/hoc',
+  holyjs: '/holyjs',
+  kentDodds: '/kent-dodds',
+  refs: '/refs',
+  regexp: '/regexp',
+};
+
 class Main extends React.PureComponent<Props, State> {
   getStyle = () => {
     const link = {
@@ -39,18 +40,24 @@ class Main extends React.PureComponent<Props, State> {
     return (
       <div>
         <div>
-          {routes.map((item, index) =>
-            <Link key={index} style={style.link} to={item.route}>{item.link}</Link>)}
+          <Link style={style.link} to={routes.home}>Home</Link>
+          <Link style={style.link} to={routes.algorithms}>algorithms</Link>
+          <Link style={style.link} to={routes.animate}>animate</Link>
+          <Link style={style.link} to={routes.hoc}>hoc</Link>
+          <Link style={style.link} to={routes.holyjs}>holyjs</Link>
+          <Link style={style.link} to={routes.kentDodds}>kent-dodds</Link>
+          <Link style={style.link} to={routes.regexp}>regexp</Link>
+          <Link style={style.link} to={routes.refs}>refs</Link>
         </div>
         <div style={{ padding: '10px 0 0 20px' }}>
           <Switch>
-            <Route path="/algorithms" component={Algorithms} />
-            <Route path="/animate" component={AnimateSimple} />
-            <Route path="/hoc" component={LoadingScreenExample} />
-            <Route path="/holyjs" component={HolyJs} />
-            <Route path="/kent-dodds" component={KentDodds} />
-            <Route path="/refs" component={RefsWithChild} />
-            <Route path="/regexp" component={PasswordRegExp} />
+            <Route path={routes.algorithms} component={Algorithms} />
+            <Route path={routes.animate} component={AnimateSimple} />
+            <Route path={routes.hoc} component={LoadingScreenExample} />
+            <Route path={routes.holyjs} component={HolyJs} />
+            <Route path={routes.kentDodds} component={KentDodds} />
+            <Route path={routes.regexp} component={RefsWithChild} />
+            <Route path={routes.refs} component={PasswordRegExp} />
           </Switch>
         </div>
       </div>
