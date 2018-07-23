@@ -1,32 +1,30 @@
 import React from 'react';
 import { NumberInput } from 'ui/NumberInput';
+import { countSplitted } from './countLeftSide';
 
 type Props = {
 };
 type State = {
-  num1: string;
-  num2: string;
+  list: string;
 };
 
-export class Karatsuba extends React.PureComponent<Props, State> {
+export class Inversions extends React.PureComponent<Props, State> {
   state = {
-    num1: '235',
-    num2: '146',
+    // list: '2 1 4 3 5 6 8 7',
+    list: '1 4 5 2 3 9',
+    // list: '1 3 2 4 5 6',
   }
-  onNum1Change = (num1: string) => {
-    this.setState({ num1, });
-  }
-  onNum2Change = (num2: string) => {
-    this.setState({ num2, });
+  onListChange = (list: string) => {
+    this.setState({ list, });
   }
   render() {
-    const { num1, num2, } = this.state;
+    const { list, } = this.state;
 
     return (
       <div>
         <h3>Input numbers</h3>
-        <NumberInput caption={'Number1'} onChange={this.onNum1Change} value={num1} />
-        <NumberInput caption={'Number2'} onChange={this.onNum2Change} value={num2} />
+        <NumberInput caption={'List (separator - space)'} onChange={this.onListChange} value={list} />
+        <h3>Result: {countSplitted(list.split(' '))}</h3>
       </div>
     );
   }
