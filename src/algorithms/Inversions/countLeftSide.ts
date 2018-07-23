@@ -13,26 +13,48 @@ export const countLeftSide = (arr: string[]): number => {
   //return arr.join(',');
 };
 
+const getCount = (arr: string[], from: number, value: string) => {
+  let acc = 0;
+  for (let i = from; i < arr.length; i++) {
+    if (Number(arr[i]) < Number(value)) {
+      acc++;
+    } else {
+      return acc;
+    }
+  }
+  return acc;
+};
+
 export const countSplitted = (arr: string[]): number => {
   let i = 0; let arrLow = arr.slice(0, arr.length / 2);
   let j = 0; let arrHigh = arr.slice(arr.length / 2, arr.length);
   let totalCount = 0;
   for (let k = 0; k < arr.length; k++) {
-    console.log('.');
-    console.log(`i=${i}, j=${j}, k=${k}`);
-    const itemI = arrLow[i];
-    const itemJ = arrHigh[j];
-    console.log(`i=${i}, j=${j}, item=${itemI}, item=${itemJ}`);
 
     if (i >= arrLow.length) { return totalCount }
 
+    console.log('.');
+    const itemI = arrLow[i];
+    const itemJ = arrHigh[j];
+
     if (Number(itemI) > Number(itemJ)) {
+      totalCount = totalCount + getCount(arrHigh, j, itemI);
       console.log(`i=${i}, j=${j}, inc totalCount=${totalCount}`);
-      totalCount++;
-      j++;
-    } else {
       i++;
+    } else if (Number(itemI) < Number(itemJ)) {
+      i++;
+      continue;
     }
+
+
+
+    // if (Number(itemI) > Number(itemJ)) {
+    //   console.log(`i=${i}, j=${j}, inc totalCount=${totalCount}`);
+    //   totalCount = totalCount + 1;
+    //   j++;
+    // } else {
+    //   i++;
+    // }
   }
 
   return totalCount;

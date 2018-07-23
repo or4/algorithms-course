@@ -1,10 +1,11 @@
 import React from 'react';
 
-// const arr = [1, 11, 42, 6, 9, 10, 3, 4, 5, 7, 8, 82] as number[];
-const arr = [11, 5, 42, 6, 3, 4, 34, 1] as number[];
+const arr = [1, 11, 42, 6, 9, 10, 3, 4, 5, 7, 8, 82] as number[];
+// const arr = [ 2, 7, 3, 4] as number[];
+// const arr = [11, 5, 42, 6, 3, 4, 34, 1] as number[];
 
 const isDev = false;
-
+let totalX = 0;
 const merge = (arr1: number[], arr2: number[]): number[] => {
   console.log('merge, arr1', arr1, 'arr2', arr2);
   let i = 0;
@@ -14,7 +15,12 @@ const merge = (arr1: number[], arr2: number[]): number[] => {
   while (i < arr1.length || j < arr2.length) {
     isDev && console.log('merge, i', i, 'j', j);
 
-    if (arr1[i] > arr2[j] || i === arr2.length) {
+    if (arr1[i] > arr2[j]) {
+      sorted.push(arr2[j]);
+      isDev && console.log('merge, push from arr2, j', j, 'arr2[j]', arr2[j]);
+      j++;
+      totalX++;
+    } else if (i === arr2.length) {
       sorted.push(arr2[j]);
       isDev && console.log('merge, push from arr2, j', j, 'arr2[j]', arr2[j]);
       j++;
@@ -99,6 +105,7 @@ export class MergeSort extends React.PureComponent<Props, State> {
             {item}
           </div>
         ))}
+        <h3>Total {totalX}</h3>
       </div>
     );
   }
