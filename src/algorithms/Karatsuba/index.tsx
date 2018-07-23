@@ -1,19 +1,6 @@
 import React from 'react';
-import { isNumber } from 'utils/helpers';
+import { NumberInput } from 'ui/NumberInput';
 import { multiply } from './multiplication';
-
-const style = {
-  row: {
-    height: '30px',
-  },
-  input: {
-    fontSize: '12px',
-    height: '20px',
-    lineHeight: '20px',
-    marginLeft: '10px',
-    width: '750px',
-  }
-};
 
 type Props = {
 };
@@ -32,30 +19,20 @@ export class Karatsuba extends React.PureComponent<Props, State> {
     calc1: '11',
     calc2: '11'
   }
-  onNum1Change = ({ target }: any) => {
-    const { value } = target;
-    if (isNumber(value)) {
-      this.setState({ num1: value });
-    }
+  onNum1Change = (num1: string) => {
+    this.setState({ num1, });
   }
-  onNum2Change = ({ target }: any) => {
-    const { value } = target;
-    if (isNumber(value)) {
-      this.setState({ num2: value });
-    }
+  onNum2Change = (num2: string) => {
+    this.setState({ num2, });
   }
-  onCalc1Change = ({ target }: any) => {
-    const { value } = target;
-    if (isNumber(value)) {
-      this.setState({ calc1: value });
-    }
+
+  onCalc1Change = (calc1: string) => {
+    this.setState({ calc1, });
   }
-  onCalc2Change = ({ target }: any) => {
-    const { value } = target;
-    if (isNumber(value)) {
-      this.setState({ calc2: value });
-    }
+  onCalc2Change = (calc2: string) => {
+    this.setState({ calc2, });
   }
+
   render() {
     const { num1, num2, calc1, calc2 } = this.state;
     const result = multiply(num1, num2);
@@ -63,24 +40,13 @@ export class Karatsuba extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>Input numbers</h3>
-        <div style={style.row}>
-          Number1
-          <input style={style.input} type="text" value={num1} onChange={this.onNum1Change} />
-        </div>
-        <div style={style.row}>
-          Number2
-          <input style={style.input} type="text" value={num2} onChange={this.onNum2Change} />
-        </div>
+        <NumberInput caption={'Number1'} onChange={this.onNum1Change} value={num1} />
+        <NumberInput caption={'Number2'} onChange={this.onNum2Change} value={num2} />
         <h3>Result is {result}</h3>
+
         <h3>Calculator</h3>
-        <div style={style.row}>
-          Number1
-          <input style={style.input} type="text" value={calc1} onChange={this.onCalc1Change} />
-        </div>
-        <div style={style.row}>
-          Number2
-          <input style={style.input} type="text" value={calc2} onChange={this.onCalc2Change} />
-        </div>
+        <NumberInput caption={'Number1'} onChange={this.onCalc1Change} value={calc1} />
+        <NumberInput caption={'Number2'} onChange={this.onCalc2Change} value={calc2} />
         <h3>Calc result is {String(Number(calc1) * Number(calc2))}</h3>
       </div>
     );
