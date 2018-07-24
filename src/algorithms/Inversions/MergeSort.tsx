@@ -1,12 +1,8 @@
 import React from 'react';
-import { countSplittedArr } from './Inversions/countLeftSide';
-import { data } from './Inversions/data';
-
-const arr = data.split('\n');
+import { countSplittedArr } from './countLeftSide';
 
 // const arr = [1, 11, 42, 6] as number[];
-// const arr = [1, 11, 42, 6, 9, 10, 3, 4, 5, 7, 8, 82] as number[];
-// const arr = [1, 11, 42, 6, 9, 10, 3, 4, 5, 7, 8, 82] as number[];
+const arr = [1, 11, 42, 6, 9, 10, 3, 4, 5, 7, 8, 82] as number[];
 // const arr = [2, 3, 1, 6, 4, 5, 7] as number[];
 // const arr = [1, 11, 42, 9, 7, 8, 82] as number[];
 // const arr = [1, 3, 2, 4, 5, 6] as number[];
@@ -21,19 +17,19 @@ let inversionsC = 0;
 let inversionsD = 0;
 
 
-const merge = (arr1: string[], arr2: string[]): string[] => {
-  // console.log('MERGE START, arr1', arr1, 'arr2', arr2);
+const merge = (arr1: number[], arr2: number[]): number[] => {
+  console.log('MERGE START, arr1', arr1, 'arr2', arr2);
   let i = 0;
   let j = 0;
-  const sorted = [] as string[];
+  const sorted = [] as number[];
 
   while (i < arr1.length || j < arr2.length) {
-    if (Number(arr1[i]) > Number(arr2[j])) {
+    if (arr1[i] > arr2[j]) {
       if (typeof arr2[j] !== 'undefined') {
         sorted.push(arr2[j]);
         inversionsA++;
       }
-      // isDev && console.log('merge, push from arr2, j', j, 'arr2[j]', arr2[j]);
+      isDev && console.log('merge, push from arr2, j', j, 'arr2[j]', arr2[j]);
       j++;
 
     } else if (i === arr2.length) {
@@ -41,7 +37,7 @@ const merge = (arr1: string[], arr2: string[]): string[] => {
         sorted.push(arr2[j]);
         inversionsB++;
       }
-      // isDev && console.log('merge, push from arr2, j', j, 'arr2[j]', arr2[j]);
+      isDev && console.log('merge, push from arr2, j', j, 'arr2[j]', arr2[j]);
       j++;
 
     } else {
@@ -49,19 +45,19 @@ const merge = (arr1: string[], arr2: string[]): string[] => {
         sorted.push(arr1[i]);
         inversionsC++;
       }
-      // isDev && console.log('merge, push from arr1, i', i, 'arr1[i]', arr1[i]);
+      isDev && console.log('merge, push from arr1, i', i, 'arr1[i]', arr1[i]);
       i++;
     }
 
     // if (i > 4 || j > 4) break;
   }
 
-  // console.log('MERGE RESULT, sorted', sorted);
+  console.log('MERGE RESULT, sorted', sorted);
   return sorted;
 };
 
-const mergeSort = (arrLoc: string[]): string[] => {
-  // console.log('mergeSort, arrLoc', arrLoc);
+const mergeSort = (arrLoc: number[]): number[] => {
+  console.log('mergeSort, arrLoc', arrLoc);
   if (arrLoc.length === 1) {
     isDev && console.log('mergeSort, len=1, arrLoc', arrLoc);
     return arrLoc;
@@ -94,12 +90,11 @@ type State = {
 export class MergeSort extends React.PureComponent<Props, State> {
   render() {
     const sortedArray = mergeSort(arr);
-    // console.log('sortedArray', sortedArray);
-    // console.log('inversionsA', inversionsA);
-    // console.log('inversionsB', inversionsB);
-    // console.log('inversionsC', inversionsC);
-    // console.log('inversionsD', inversionsD);
-    // console.log();
+    console.log('sortedArray', sortedArray);
+    console.log('inversionsA', inversionsA);
+    console.log('inversionsB', inversionsB);
+    console.log('inversionsC', inversionsC);
+    console.log('inversionsD', inversionsD);
     return (
       <div>
         <h3>Array</h3>
@@ -114,3 +109,4 @@ export class MergeSort extends React.PureComponent<Props, State> {
     );
   }
 }
+
