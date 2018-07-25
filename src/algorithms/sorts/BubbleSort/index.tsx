@@ -1,8 +1,8 @@
 import React from 'react';
 import { bubbleSort } from './bubbleSort';
-import { getRandomArray } from 'utils/helpers';
+import { getRandomNumberArray } from 'utils/helpers';
 
-const arr = getRandomArray(7);
+const arr = getRandomNumberArray(7);
 
 type Props = {
 };

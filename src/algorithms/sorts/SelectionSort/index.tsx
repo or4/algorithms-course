@@ -1,8 +1,8 @@
 import React from 'react';
 import { selectionSort } from './selectionSort';
-import { getRandomArray } from 'utils/helpers';
+import { getRandomNumberArray } from 'utils/helpers';
 
-const arr = getRandomArray();
+const arr = getRandomNumberArray();
 
 type Props = {
 };

@@ -9,7 +9,7 @@ export const isNumber = (number: string, digits: number = 10): boolean => {
   return re.test(number);
 };
 
-export const getRandomArray = (amountItems: number = 7) => {
+export const getRandomNumberArray = (amountItems: number = 7): number[] => {
   const arr = [];
   while (arr.length < amountItems) {
     const value = Math.random() * 10 >> 0;
@@ -20,6 +20,14 @@ export const getRandomArray = (amountItems: number = 7) => {
   return arr;
 };
 
-export const covertToStringArr = (arr: number[]) => {
-  return arr.map(item => String(item));
+export const getRandomStringArray = (amountItems: number = 7): string[] => {
+  const arr = [];
+  while (arr.length < amountItems) {
+    const value = Math.random() * 10 >> 0;
+    const valueString = String(value);
+    if (arr.indexOf(valueString) === -1 && value > 0) {
+      arr.push(valueString);
+    }
+  }
+  return arr;
 };
