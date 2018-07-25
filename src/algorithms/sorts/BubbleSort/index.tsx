@@ -1,17 +1,17 @@
 import React from 'react';
-import { selectionSort } from './selectionSort';
+import { bubbleSort } from './bubbleSort';
 import { getRandomArray } from 'utils/helpers';
 
-const arr = getRandomArray();
+const arr = getRandomArray(7);
 
 type Props = {
 };
 type State = {
 };
 
-export class SelectionSort extends React.PureComponent<Props, State> {
+export class BubbleSort extends React.PureComponent<Props, State> {
   render() {
-    const sortedArray = selectionSort(arr);
+    const sortedArray = bubbleSort(arr);
 
     return (
       <div>
