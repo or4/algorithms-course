@@ -42,22 +42,36 @@ const swap = (arr: string[], item1: string, item2: string) => {
   return arr;
 };
 
+const overflowStopper = {
+  count: 0,
+  max: 20,
+};
+
 export const quickSort = (pivotType: PivotType, arr: string[]): string[] => {
   // const sorted = [...arr];
   // let counterSwap = 0;
   // let counterCycles = 0;
-  console.log('start');
+  if (overflowStopper.count >= overflowStopper.max) {
+    console.log('EXIT BY OVERFLOW STOPPER');
+    return arr;
+  }
+  overflowStopper.count++;
 
-  if (arr.length <= 1) {
+  console.log('start arr', arr);
+
+
+  if (arr.length < 2) {
     return arr;
   }
 
 
   const pivot = getPivot(pivotType, arr);
+  console.log('pivot', pivot);
   let i = 0;
   let j = arr.length - 1;
 
-  while (arr[i] !== pivot && arr[j] !== pivot) {
+  console.log(`pre cycle i=${i}, j=${j}, arr[i]=${arr[i]}, arr[j]=${arr[j]} arr`, arr);
+  while (arr[i] !== pivot || arr[j] !== pivot) {
     console.log('cycle start arr', arr);
     while (arr[i] < pivot) {
       i++;
@@ -81,11 +95,21 @@ export const quickSort = (pivotType: PivotType, arr: string[]): string[] => {
   }
   console.log('cycle all swapped arr', arr);
 
-  const arrLeft = arr.slice(0, arr.indexOf(pivot));
-  const arrRigth = arr.slice(arr.indexOf(pivot));
+  if (arr.length <= 2) {
+    return arr;
+  }
 
+  // const arrLeft = arr.slice(0, arr.indexOf(pivot) - 1);
+  const arrRight = arr.slice(arr.indexOf(pivot) + 1);
+  console.log('arrRight', arrRight);
 
-  const res = ([] as string[]).concat(quickSort(pivotType, arrLeft), quickSort(pivotType, arrRigth));
+  const res1 = [pivot];
+  const res2 = quickSort(pivotType, arrRight);
+  console.log('res1', res1);
+  console.log('res2', res2);
+  const res = ([] as string[]).concat(res1, res2);
+
+  // const res = ([] as string[]).concat(/* quickSort(pivotType, arrLeft), */[pivot], );
 
   console.log('done', res);
 

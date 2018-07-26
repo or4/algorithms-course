@@ -23,7 +23,7 @@ export const getRandomNumberArray = (amountItems: number = 7): number[] => {
 export const getRandomStringArray = (amountItems: number = 7): string[] => {
   const arr = [];
   while (arr.length < amountItems) {
-    const value = Math.random() * 10 >> 0;
+    const value = Math.random() * 1000000 >> 0;
     const valueString = String(value);
     if (arr.indexOf(valueString) === -1 && value > 0) {
       arr.push(valueString);
