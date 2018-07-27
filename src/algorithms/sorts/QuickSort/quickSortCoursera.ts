@@ -14,7 +14,7 @@ const partition = (arr: string[]) => {
   }
 
   let i = 1;
-  let j = 2;
+  let j = 1;
   if (arr[i] > arr[j]) {
     swap(arr, arr[i], arr[j]);
   }
