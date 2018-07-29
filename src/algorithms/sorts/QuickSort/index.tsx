@@ -19,7 +19,21 @@ type State = {
 };
 
 export class QuickSort extends React.PureComponent<Props, State> {
+  getStyle() {
+    const checkTrue = {
+      color: 'green'
+    };
+    const checkFalse = {
+      color: 'red'
+    };
+    return {
+      checkTrue,
+      checkFalse,
+    };
+  }
+  //const style = this.getStyle();
   render() {
+    const style = this.getStyle();
     const sortedArray1 = quickSortFirstWrapper([...arr]);
     // quickSortFirstWrapper(arr);
     // quick_sort(arr);
@@ -30,6 +44,12 @@ export class QuickSort extends React.PureComponent<Props, State> {
       {sortedArray2.join(' ')}
     </div>
     */
+    let check = true;
+    for (let i = 1; i < sortedArray1.length; i++) {
+      if (sortedArray1[i - 1] > sortedArray1[i]) {
+        check = false;
+      }
+    }
 
     return (
       <div>
@@ -38,6 +58,9 @@ export class QuickSort extends React.PureComponent<Props, State> {
         <h3>Sorted</h3>
         <div>
           {sortedArray1.join(' ')}
+        </div>
+        <div>
+          <h3 style={check ? style.checkTrue : style.checkFalse}>Check is {String(check)}</h3>
         </div>
       </div>
     );
