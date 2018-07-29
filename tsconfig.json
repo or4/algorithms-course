@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "allowUnreachableCode": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
     "forceConsistentCasingInFileNames": true,

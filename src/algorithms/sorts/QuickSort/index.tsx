@@ -6,9 +6,9 @@ import { quickSortFirstWrapper } from './quickSortCoursera';
 // import { getRandomStringArray } from 'utils/helpers';
 // const arr = getRandomStringArray(210);
 
-// import { data } from './data';
-// const arr = data;
-const arr = ['3', '8', '2', '5', '1', '4', '7', '6'];
+import { data } from './data';
+const arr = data.filter((item, index) => index <= 20);
+// const arr = ['3', '8', '2', '5', '1', '4', '7', '6'];
 // const arr = ['5', '4', '1', '6', '3', '2', '9'];
 // const arr = ['2', '4', '3', '5'];
 // const arr = ['2', '4', '3'];
@@ -20,7 +20,7 @@ type State = {
 
 export class QuickSort extends React.PureComponent<Props, State> {
   render() {
-    const sortedArray1 = quickSortFirstWrapper(arr);
+    const sortedArray1 = quickSortFirstWrapper([...arr]);
     // quickSortFirstWrapper(arr);
     // quick_sort(arr);
     /*
