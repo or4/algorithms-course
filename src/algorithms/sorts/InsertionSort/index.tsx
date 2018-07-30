@@ -1,6 +1,5 @@
 import React from 'react';
-import { quickSort } from './quickSortCoursera';
-// import { quick_sort } from './quickSortOther';
+import { insertionSort } from './insertionSort';
 
 import { data } from './data';
 const arr = data.filter((item, index) => index <= 10);
@@ -15,7 +14,7 @@ type Props = {
 type State = {
 };
 
-export class QuickSort extends React.PureComponent<Props, State> {
+export class InsertionSort extends React.PureComponent<Props, State> {
   getStyle() {
     const base = {
       display: 'inline-block',
@@ -42,7 +41,7 @@ export class QuickSort extends React.PureComponent<Props, State> {
 
   render() {
     const style = this.getStyle();
-    const sortedArray = quickSort([...arr]);
+    const sortedArray = insertionSort([...arr]);
     const valid = this.isValid(sortedArray);
 
     return (
