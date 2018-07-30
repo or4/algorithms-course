@@ -1,4 +1,5 @@
 import { swap } from './utils';
+import { getMediana } from './getMediana';
 
 const statistic = {
   countSwaps: 0,
@@ -7,7 +8,8 @@ const statistic = {
 
 const getPivot = (arr: string[], start: number, end: number) => {
   // return arr[start];
-  return arr[end - 1];
+  // return arr[end - 1];
+  return getMediana(arr, start, end - 1);
 };
 
 const partition = (arr: string[], start: number, end: number) => {
@@ -43,6 +45,7 @@ export const sort = (arr: string[], start: number, end: number): string[] => {
     return arr;
   }
   statistic.countComprasions += end - start - 1;
+  console.log('end - start - 1', end - start - 1, arr[start], arr[end - 1]);
 
   const pivot = partition(arr, start, end);
   const pivotIndex = arr.indexOf(pivot);

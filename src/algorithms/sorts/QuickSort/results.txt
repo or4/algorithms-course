@@ -1,3 +1,4 @@
 Count Comprasions
 first - 162085
 last - 164123
+mediana - 159894
