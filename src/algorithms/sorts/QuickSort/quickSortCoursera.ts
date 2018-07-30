@@ -9,7 +9,9 @@ const statistic = {
 const getPivot = (arr: string[], start: number, end: number) => {
   // return arr[start];
   // return arr[end - 1];
-  return getMediana(arr, start, end - 1);
+  const mediana = getMediana(arr, start, end - 1);
+  // console.log(`start=${start}, startItem=${arr[start]}, end=${end - 1}, endItem=${arr[end - 1]} mediana=${mediana}, arr=`, arr);
+  return mediana;
 };
 
 const partition = (arr: string[], start: number, end: number) => {
@@ -44,8 +46,11 @@ export const sort = (arr: string[], start: number, end: number): string[] => {
   if ((end - start) <= 1) {
     return arr;
   }
+  // console.log('.');
+  // console.log('.');
+  // console.log('.');
   statistic.countComprasions += end - start - 1;
-  console.log('end - start - 1', end - start - 1, arr[start], arr[end - 1]);
+  // console.log(`left=${arr[start]}, right=${arr[end - 1]}, count=${end - start - 1}`);
 
   const pivot = partition(arr, start, end);
   const pivotIndex = arr.indexOf(pivot);

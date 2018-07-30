@@ -1,9 +1,10 @@
 export const getMediana = (arr: string[], start: number, end: number) => {
   const leftValue = arr[start];
-  const middleValue = arr[Math.floor((end - start) / 2)];
+  const middleValue = arr[Math.floor((end - start) / 2) + start];
   const rightValue = arr[end];
   const threeValues = [leftValue, middleValue, rightValue].sort((a: string, b: string) => Number(a) - Number(b));
-  // console.log('threeValues', threeValues);
+  // console.log('middleValue', middleValue);
+  // console.log('threeValues', String(threeValues));
   return threeValues[1];
 };
 
