@@ -1,5 +1,5 @@
 import React from 'react';
-import { selectionSort } from './selectionSort';
+import { selectionSort } from './selectionSortFp';
 import { getRandomNumberArray } from 'utils/helpers';
 
 const arr = getRandomNumberArray();

@@ -73,9 +73,12 @@ export class QuickSort extends React.PureComponent<Props, State> {
   }
 
   isValid(sortedArray: string[]) {
-    let check = true;
-    for (let i = 1; i < sortedArray.length; i++) { if (Number(sortedArray[i - 1]) > Number(sortedArray[i])) { check = false } }
-    return check;
+    for (let i = 1; i < sortedArray.length; i++) {
+      if (Number(sortedArray[i - 1]) > Number(sortedArray[i])) {
+        return false;
+      }
+    }
+    return true;
   }
   cmpWithPrev(arr: string[], index: number) {
     return Number(arr[index - 1]) <= Number(arr[index]);
