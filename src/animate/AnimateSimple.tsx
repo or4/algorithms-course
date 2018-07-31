@@ -9,6 +9,7 @@ export class AnimateSimple extends React.PureComponent<Props, State> {
   state = {
     started: false
   };
+
   componentDidMount() {
     const c = document.getElementById('AnimateSimple');
     let currentAnimationTime = 0;
@@ -28,10 +29,11 @@ export class AnimateSimple extends React.PureComponent<Props, State> {
       requestAnimationFrame(animate);
     }
   }
-  // style="min-width: 2000px; min-height: 1200px;"
+
   render() {
     return (
       <div>
+        <h3>Simple rAF</h3>
         <svg width="2000" height="1200">
           <circle id="AnimateSimple" cx="150" cy="75" r="10" />
         </svg>
