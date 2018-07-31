@@ -1,3 +1,0 @@
-const TOGGLE_FILTER = 'TOGGLE_FILTER';
-
-export default TOGGLE_FILTER;

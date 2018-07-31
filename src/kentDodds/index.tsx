@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import KentDoddsEx1 from './Ex1';
-import KentDoddsEx2 from './Ex2';
+import { KentDoddsEx1 } from './Ex1';
+import { KentDoddsEx2 } from './Ex2';
 
 type Props = {
 };
 type State = {
 };
-class KentDodds extends React.PureComponent<Props, State> {
+export class KentDodds extends React.PureComponent<Props, State> {
   getStyle = () => {
     const link = {
       display: 'inline-block',
@@ -35,4 +35,3 @@ class KentDodds extends React.PureComponent<Props, State> {
     );
   }
 }
-export default KentDodds;

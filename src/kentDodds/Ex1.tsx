@@ -6,7 +6,7 @@ type State = {
   count: number;
   callbackCalled: number;
 };
-class KentDoddsEx1 extends React.PureComponent<Props, State> {
+export class KentDoddsEx1 extends React.PureComponent<Props, State> {
   state = {
     count: 0,
     callbackCalled: 0,
@@ -36,4 +36,3 @@ class KentDoddsEx1 extends React.PureComponent<Props, State> {
     );
   }
 }
-export default KentDoddsEx1;

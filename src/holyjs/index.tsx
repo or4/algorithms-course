@@ -11,7 +11,7 @@ type Props = {
 type State = {
 };
 
-class HolyJs extends React.PureComponent<Props, State> {
+export class HolyJs extends React.PureComponent<Props, State> {
   getStyle = () => {
     const link = {
       display: 'inline-block',
@@ -43,4 +43,3 @@ class HolyJs extends React.PureComponent<Props, State> {
     );
   }
 }
-export default HolyJs;

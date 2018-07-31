@@ -1,3 +1,0 @@
-const HIDE_SNACKBAR = 'HIDE_SNACKBAR';
-
-export default HIDE_SNACKBAR;

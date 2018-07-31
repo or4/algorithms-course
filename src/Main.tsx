@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 import { Algorithms } from 'algorithms';
 import { AnimateSimple } from 'animate/AnimateSimple';
+import { HolyJs } from 'holyjs';
+import { KentDodds } from 'kentDodds';
+import { LoadingScreenExample } from 'hoc/LoadingScreenExample';
 import { PasswordRegExp } from 'regexp/PasswordRegExp';
-import LoadingScreenExample from 'hoc/LoadingScreenExample';
-import KentDodds from 'kentDodds';
-import HolyJs from 'holyjs';
 import { RefsWithChild } from 'refs';
+import { SimpleJss } from './SimpleJss';
 
 type Props = {
 };
@@ -23,6 +24,7 @@ const routes = {
   kentDodds: '/kent-dodds',
   refs: '/refs',
   regexp: '/regexp',
+  jss: '/jss',
 };
 
 class Main extends React.PureComponent<Props, State> {
@@ -46,8 +48,9 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={routes.hoc}>hoc</Link>
           <Link style={style.link} to={routes.holyjs}>holyjs</Link>
           <Link style={style.link} to={routes.kentDodds}>kent-dodds</Link>
-          <Link style={style.link} to={routes.regexp}>regexp</Link>
           <Link style={style.link} to={routes.refs}>refs</Link>
+          <Link style={style.link} to={routes.regexp}>regexp</Link>
+          <Link style={style.link} to={routes.jss}>jss</Link>
         </div>
         <div style={{ padding: '10px 0 0 20px' }}>
           <Switch>
@@ -56,8 +59,9 @@ class Main extends React.PureComponent<Props, State> {
             <Route path={routes.hoc} component={LoadingScreenExample} />
             <Route path={routes.holyjs} component={HolyJs} />
             <Route path={routes.kentDodds} component={KentDodds} />
-            <Route path={routes.regexp} component={RefsWithChild} />
             <Route path={routes.refs} component={PasswordRegExp} />
+            <Route path={routes.regexp} component={RefsWithChild} />
+            <Route path={routes.jss} component={SimpleJss} />
           </Switch>
         </div>
       </div>
