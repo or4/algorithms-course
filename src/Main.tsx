@@ -10,7 +10,8 @@ import { KentDodds } from 'kentDodds';
 import { LoadingScreenExample } from 'hoc/LoadingScreenExample';
 import { PasswordRegExp } from 'regexp/PasswordRegExp';
 import { RefsWithChild } from 'refs';
-import { RxJs } from 'rx';
+import { RxJs } from './rx';
+import { NN } from './nn';
 
 type Props = {
 };
@@ -27,6 +28,7 @@ const routes = {
   refs: '/refs',
   regexp: '/regexp',
   rxjs: '/rxjs',
+  nn: '/nn',
 };
 
 class Main extends React.PureComponent<Props, State> {
@@ -51,6 +53,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={routes.holyjs}>holyjs</Link>
           <Link style={style.link} to={routes.jss}>jss</Link>
           <Link style={style.link} to={routes.kentDodds}>kent-dodds</Link>
+          <Link style={style.link} to={routes.nn}>NN</Link>
           <Link style={style.link} to={routes.refs}>refs</Link>
           <Link style={style.link} to={routes.regexp}>regexp</Link>
           <Link style={style.link} to={routes.rxjs}>rxjs</Link>
@@ -63,6 +66,7 @@ class Main extends React.PureComponent<Props, State> {
             <Route path={routes.holyjs} component={HolyJs} />
             <Route path={routes.jss} component={SimpleJss} />
             <Route path={routes.kentDodds} component={KentDodds} />
+            <Route path={routes.nn} component={NN} />
             <Route path={routes.refs} component={PasswordRegExp} />
             <Route path={routes.regexp} component={RefsWithChild} />
             <Route path={routes.rxjs} component={RxJs} />
