@@ -22,16 +22,15 @@ const educateCase = (layers: Neuron[][], education: number[], learningRate: numb
 };
 
 export const educateNetwork = (layers: Neuron[][], education: number[][], learningRate: number) => {
-  for (let result, stopper = 0; stopper < 100000 || result === education.length; stopper++) {
+  let stopper = 0;
+  for (let result; stopper < 1000 && result !== education.length; stopper++) {
     result = 0; // drop counter
     // see each case (4 cases)
     for (let j = 0; j < education.length; j = j + 1) {
       // when counter eq education length, then all cases right
       result += educateCase(layers, education[j], learningRate);
-      console.log('education, result', result);
     }
   }
 
-  // console.log('stopper', stopper);
-  // console.log('result', result);
+  console.log('stopper', stopper);
 };

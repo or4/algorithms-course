@@ -23,7 +23,7 @@ export class NN extends React.PureComponent<Props, State> {
           <Link style={rawStyle.link} to={`/nn/and`}>Bitwise And</Link>
         </div>
         <Switch>
-          <Route path="/nn/simple" component={BitwiseAnd} />
+          <Route path="/nn/and" component={BitwiseAnd} />
         </Switch>
       </div>
     );

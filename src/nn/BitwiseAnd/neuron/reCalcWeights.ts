@@ -1,6 +1,6 @@
 import { Neuron } from './Neuron';
 
-let debug = 0;
+let debug = false;
 
 const sigmoidXdx = (sigmoid: number) => {
   let p1 = Number((1 - sigmoid).toFixed(10));

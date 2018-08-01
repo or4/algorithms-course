@@ -1,7 +1,7 @@
 import { Neuron, NeuronEx } from '../neuron/Neuron';
 import { LayersConfig } from '../types';
 
-let debug = true;
+let debug = false;
 
 const initFirstLayer = (layersConfig: LayersConfig, layers: Neuron[][]) => {
   const { indexLayerFirst, countFirstLayer } = layersConfig;

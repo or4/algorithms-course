@@ -1,5 +1,3 @@
-let debug = 0;
-
 export class Neuron {
   value: number
   neuronsEx: NeuronEx[]
