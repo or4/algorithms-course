@@ -32,7 +32,7 @@ export const run = (layers: Neuron[][], val1: boolean, val2: boolean) => {
 
   // calc last layer according with weights
   reCalcValues(layers[2][0]);
-  console.log('layers[2][0]', layers);
+
   const outcomes = getNeuronValue(layers[2][0]);
   return Boolean(outcomes);
 };

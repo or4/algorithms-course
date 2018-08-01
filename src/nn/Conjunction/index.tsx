@@ -26,7 +26,7 @@ type State = {
   result: boolean;
 };
 
-export class BitwiseAnd extends React.Component<Props, State> {
+export class Conjunction extends React.Component<Props, State> {
   state = {
     value1: false,
     value2: false,
