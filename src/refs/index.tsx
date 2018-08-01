@@ -1,5 +1,6 @@
 import React from 'react';
 import Child from './Child';
+import { Button } from 'ui/Button';
 
 type Props = {
 };
@@ -20,7 +21,7 @@ export class RefsWithChild extends React.PureComponent<Props, State> {
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', }}>
-          <button style={{ height: '21px' }} type="button" onClick={this.selectChildInput}>Focus</button>
+          <Button style={{ height: '21px' }} onClick={this.selectChildInput}>Focus</Button>
           &nbsp;
           <Child ref={this.refInput} />
         </div>

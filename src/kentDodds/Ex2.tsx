@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'ui/Button';
 
 type Props = {
   onToggle: (value: boolean) => void;
@@ -15,9 +16,9 @@ function ToggleOff({ off, children }:any) {
 }
 function ToggleButton({ on, toggle, ...props } :any) {
   return (
-    <button onClick={toggle} {...props} >
+    <Button onClick={toggle} {...props} >
       {`on ${on}`}
-    </button>
+    </Button>
   );
 }
 

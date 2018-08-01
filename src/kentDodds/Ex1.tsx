@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'ui/Button';
 
 type Props = {
 };
@@ -30,9 +31,9 @@ export class KentDoddsEx1 extends React.PureComponent<Props, State> {
   }
   render() {
     return (
-      <button onClick={this.onClick}>
+      <Button onClick={this.onClick}>
         Button Clicked {this.state.count}, Callback called {this.state.callbackCalled}
-      </button>
+      </Button>
     );
   }
 }

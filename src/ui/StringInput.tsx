@@ -1,6 +1,6 @@
 import React from 'react';
 
-const style = {
+export const style = {
   row: {
     height: '30px',
   },

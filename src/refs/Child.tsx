@@ -1,4 +1,5 @@
 import React from 'react';
+import { style } from 'ui/StringInput';
 // import { theme } from 'ui/theme';
 
 type Props = {
@@ -24,7 +25,7 @@ class Child extends React.PureComponent<Props, State> {
 
   render() {
     return (
-      <input type="text" ref={this.refInput} />
+      <input style={style.input} type="text" ref={this.refInput} />
     );
   }
 }
