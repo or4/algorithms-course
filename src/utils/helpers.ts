@@ -31,3 +31,6 @@ export const getRandomStringArray = (amountItems: number = 7): string[] => {
   }
   return arr;
 };
+
+
+export const isUndefined = (value: any) => typeof value === 'undefined';

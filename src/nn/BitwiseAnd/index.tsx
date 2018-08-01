@@ -1,5 +1,5 @@
 import React from 'react';
-import { NeuralNetwork } from './bitwiseAnd';
+import { NeuralNetwork } from './NeuralNetwork';
 
 let obj = new NeuralNetwork();
 obj.start();
