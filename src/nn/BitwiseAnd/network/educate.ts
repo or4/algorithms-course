@@ -2,30 +2,32 @@ import { Neuron } from '../neuron/Neuron';
 import { reCalcValues, getNeuronValue } from '../neuron/reCalcValues';
 import { reCalcWeights } from '../neuron/reCalcWeights';
 
-const educateOnce = (layers: Neuron[][], education: number[], learningRate: number) => {
+const educateCase = (layers: Neuron[][], education: number[], learningRate: number) => {
   // assign data to first layer
   layers[0][0].value = education[0];
   layers[0][1].value = education[1];
 
+  // recalculate values according with neurones in other layers
   reCalcValues(layers[2][0]);
   const neuronValue = getNeuronValue(layers[2][0]);
 
   const expected = education[education.length - 1];
-
   if (neuronValue === expected) {
     return 1;
   }
 
+  // if neuron value doesn't correspond expected then recalculate weights
   reCalcWeights(layers[2][0], expected, learningRate);
   return 0;
 };
 
 export const educateNetwork = (layers: Neuron[][], education: number[][], learningRate: number) => {
   for (let result, stopper = 0; stopper < 100000 || result === education.length; stopper++) {
-    result = 0;
+    result = 0; // drop counter
     // see each case (4 cases)
     for (let j = 0; j < education.length; j = j + 1) {
-      result = result + educateOnce(layers, education[j], learningRate);
+      // when counter eq education length, then all cases right
+      result += educateCase(layers, education[j], learningRate);
       console.log('education, result', result);
     }
   }

@@ -1,10 +1,13 @@
-import { Neuron } from '../neuron/Neuron';
-import { initLayers } from './initLayers';
-import { LayersConfig } from '../types';
-import { educateNetwork } from './educate';
-import { runTest } from './tests';
+/**
+ * It was made by video https://www.youtube.com/watch?v=HA-F6cZPvrg
+ */
 
-let debug = 0;
+import { initLayers } from './network/initLayers';
+import { educateNetwork } from './network/educate';
+import { runTest } from './network/tests';
+
+import { Neuron } from './neuron/Neuron';
+import { LayersConfig } from './types';
 
 export class NeuralNetwork {
   layers: Neuron[][]
