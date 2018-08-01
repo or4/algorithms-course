@@ -3,7 +3,7 @@ import { quickSort } from './quickSortCoursera';
 // import { quick_sort } from './quickSortOther';
 
 import { data } from './data';
-const arr = data.filter((item, index) => index <= 5000000);
+const arr = data.filter((item, index) => index <= 50);
 
 // medianaTests();
 // const arr = data;
