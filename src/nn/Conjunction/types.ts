@@ -8,3 +8,5 @@ export type LayersConfig = {
   countMiddleLayer: number;
   countLastLayer: number;
 };
+
+export type NeuralNetworkType = 'conjunction' | 'disjunction';

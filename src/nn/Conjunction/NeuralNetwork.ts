@@ -6,9 +6,10 @@ import { educateNetwork } from './network/educate';
 import { runTests, run } from './network/tests';
 
 import { Neuron } from './neuron/Neuron';
-import { LayersConfig } from './types';
+import { LayersConfig, NeuralNetworkType } from './types';
 
 export class NeuralNetwork {
+  type: NeuralNetworkType
   layers: Neuron[][]
 
   layersConfig: LayersConfig = {
@@ -23,21 +24,29 @@ export class NeuralNetwork {
 
   learningRate = 0.05;
 
-  education = [
+  educationConjunction = [
     [0, 1, 0],
     [1, 0, 0],
     [0, 0, 0],
     [1, 1, 1]
   ];
+  educationDisjunction = [
+    [0, 1, 1],
+    [1, 0, 1],
+    [0, 0, 0],
+    [1, 1, 1]
+  ];
 
-  constructor() {
+  constructor(type: NeuralNetworkType) {
+    this.type = type;
     this.layers = initLayers(this.layersConfig);
     this.educate();
     this.runTests();
   }
 
   educate() {
-    const { layers, education, learningRate } = this;
+    const { layers, learningRate, type } = this;
+    const education = type === 'conjunction' ? this.educationConjunction : this.educationDisjunction;
     educateNetwork(layers, education, learningRate);
   }
 
@@ -45,8 +54,10 @@ export class NeuralNetwork {
     const { layers } = this;
     return run(layers, val1, val2);
   }
+
   runTests() {
-    const { layers, education } = this;
+    const { layers, type } = this;
+    const education = type === 'conjunction' ? this.educationConjunction : this.educationDisjunction;
     runTests(layers, education);
   }
 }

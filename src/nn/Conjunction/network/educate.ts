@@ -1,6 +1,7 @@
 import { Neuron } from '../neuron/Neuron';
 import { reCalcValues, getNeuronValue } from '../neuron/reCalcValues';
 import { reCalcWeights } from '../neuron/reCalcWeights';
+import { NeuralNetworkType } from '../types';
 
 const educateCase = (layers: Neuron[][], education: number[], learningRate: number) => {
   // assign data to first layer

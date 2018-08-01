@@ -1,6 +1,20 @@
 import { Neuron, showNeuron } from '../neuron/Neuron';
 import { reCalcValues, getNeuronValue } from '../neuron/reCalcValues';
 
+export const run = (layers: Neuron[][], val1: boolean, val2: boolean) => {
+  // assign data of jth case to first layer
+  layers[0][0].value = Number(val1);
+  layers[0][1].value = Number(val2);
+
+  // calc last layer according with weights
+  reCalcValues(layers[2][0]);
+
+  // return rounded neuron value
+  const outcomes = getNeuronValue(layers[2][0]);
+  return Boolean(outcomes);
+};
+
+
 const showNetwork = (layers: Neuron[][]) => {
   showNeuron(layers[2][0]);
 };
@@ -24,15 +38,4 @@ export const runTests = (layers: Neuron[][], education: number[][]) => {
       console.log('FALSE FOR: ' + education[j][0] + ', ' + education[j][1] + ', ' + education[j][2] + ': ' + result + ', val = ' + val);
     }
   }
-};
-export const run = (layers: Neuron[][], val1: boolean, val2: boolean) => {
-  // assign data of jth case to first layer
-  layers[0][0].value = Number(val1);
-  layers[0][1].value = Number(val2);
-
-  // calc last layer according with weights
-  reCalcValues(layers[2][0]);
-
-  const outcomes = getNeuronValue(layers[2][0]);
-  return Boolean(outcomes);
 };

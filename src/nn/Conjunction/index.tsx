@@ -1,9 +1,14 @@
 import React from 'react';
 import { NeuralNetwork } from './NeuralNetwork';
+import { NeuralNetworkType } from './types';
+import { Select } from 'ui/Select';
 
 const rawStyle = {
   label: {
     display: 'block',
+    marginBottom: '8px',
+  },
+  select: {
     marginBottom: '8px',
   },
   button: {
@@ -24,6 +29,7 @@ type State = {
   value1: boolean;
   value2: boolean;
   result: boolean;
+  type: NeuralNetworkType;
 };
 
 export class Conjunction extends React.Component<Props, State> {
@@ -31,25 +37,38 @@ export class Conjunction extends React.Component<Props, State> {
     value1: false,
     value2: false,
     result: false,
+    type: 'conjunction' as NeuralNetworkType,
   };
-  nn = new NeuralNetwork();
+  nnConjunction = new NeuralNetwork('conjunction');
+  nnDisjunction = new NeuralNetwork('disjunction');
+
   onValue1Change = ({ target }: any) => {
     this.setState({ value1: target.checked }, this.run);
   }
   onValue2Change = ({ target }: any) => {
     this.setState({ value2: target.checked }, this.run);
   }
+  onTypeChange = ({ target }: any) => {
+    this.setState({ type: target.value }, this.run);
+  }
   run = () => {
-    const { value1, value2 } = this.state;
-    const result = this.nn.run(value1, value2);
+    const { type, value1, value2 } = this.state;
+    const result = type === 'conjunction' ? this.nnConjunction.run(value1, value2) : this.nnDisjunction.run(value1, value2);
     this.setState({ result });
   }
+
   render() {
     return (
       <div>
         <h3>
-          Bitwise And 2
+          Conjunction or Disjunction
         </h3>
+
+        <Select style={rawStyle.select} value={this.state.type} onChange={this.onTypeChange}>
+          <option value="conjunction">Conjunction</option>
+          <option value="disjunction">Disjunction</option>
+        </Select>
+
 
         <label style={rawStyle.label}>
           Value 1 is
