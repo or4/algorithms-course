@@ -1,5 +1,5 @@
 import React from 'react';
-import { NeuralNetwork } from './NeuralNetwork';
+import { NeuralNetwork } from './network/NeuralNetwork';
 
 let obj = new NeuralNetwork();
 obj.start();

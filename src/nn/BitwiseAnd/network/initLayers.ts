@@ -1,5 +1,5 @@
-import { Neuron, NeuronEx } from './Neuron';
-import { LayersConfig } from './types';
+import { Neuron, NeuronEx } from '../neuron/Neuron';
+import { LayersConfig } from '../types';
 
 let debug = true;
 

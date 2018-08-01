@@ -10,8 +10,8 @@ import { KentDodds } from 'kentDodds';
 import { LoadingScreenExample } from 'hoc/LoadingScreenExample';
 import { PasswordRegExp } from 'regexp/PasswordRegExp';
 import { RefsWithChild } from 'refs';
-import { RxJs } from './rx';
-import { NN } from './nn';
+import { RxJs } from 'rx';
+import { NN } from 'nn';
 
 type Props = {
 };
