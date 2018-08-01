@@ -2,6 +2,12 @@ import React from 'react';
 import { NeuralNetwork } from './NeuralNetwork';
 import { NeuralNetworkType } from './types';
 import { Select } from 'ui/Select';
+import { Checkbox } from 'ui/Checkbox';
+
+const nn: {[key in NeuralNetworkType]: NeuralNetwork} = {
+  conjunction: new NeuralNetwork('conjunction'),
+  disjunction: new NeuralNetwork('disjunction'),
+};
 
 const rawStyle = {
   label: {
@@ -39,21 +45,20 @@ export class Conjunction extends React.Component<Props, State> {
     result: false,
     type: 'conjunction' as NeuralNetworkType,
   };
-  nnConjunction = new NeuralNetwork('conjunction');
-  nnDisjunction = new NeuralNetwork('disjunction');
 
-  onValue1Change = ({ target }: any) => {
-    this.setState({ value1: target.checked }, this.run);
+  onValue1Change = (value1: boolean) => {
+    this.setState({ value1 }, this.run);
   }
-  onValue2Change = ({ target }: any) => {
-    this.setState({ value2: target.checked }, this.run);
+  onValue2Change = (value2: boolean) => {
+    this.setState({ value2 }, this.run);
   }
-  onTypeChange = ({ target }: any) => {
-    this.setState({ type: target.value }, this.run);
+  onTypeChange = (type: any) => {
+    this.setState({ type }, this.run);
   }
+
   run = () => {
     const { type, value1, value2 } = this.state;
-    const result = type === 'conjunction' ? this.nnConjunction.run(value1, value2) : this.nnDisjunction.run(value1, value2);
+    const result = nn[type].run(value1, value2);
     this.setState({ result });
   }
 
@@ -69,16 +74,9 @@ export class Conjunction extends React.Component<Props, State> {
           <option value="disjunction">Disjunction</option>
         </Select>
 
+        <Checkbox checked={this.state.value1} inputStyle={rawStyle.input} labelStyle={rawStyle.label} onChange={this.onValue1Change} text={'Value 1 is'} />
 
-        <label style={rawStyle.label}>
-          Value 1 is
-          <input style={rawStyle.input} type="checkbox" onChange={this.onValue1Change} checked={this.state.value1} />
-        </label>
-
-        <label style={rawStyle.label}>
-          Value 2 is
-          <input style={rawStyle.input} type="checkbox" onChange={this.onValue2Change} checked={this.state.value2} />
-        </label>
+        <Checkbox checked={this.state.value2} inputStyle={rawStyle.input} labelStyle={rawStyle.label} onChange={this.onValue2Change} text={'Value 2 is'} />
 
         <h3>Result is {String(this.state.result)}</h3>
       </div>

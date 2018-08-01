@@ -24,7 +24,7 @@ type Props = {
   className?: string;
   style?: any;
   text?: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 type State = {};
 
@@ -35,12 +35,11 @@ export class Button extends React.Component<Props, State> {
   }
 
   render() {
-    const { className, children, style, text, ...rest } = this.props;
+    const { className, children, text, ...rest } = this.props;
 
     return (
       <button
         className={[classes.button, className].join(' ')}
-        style={style}
         {...rest}
       >
         {text || children}

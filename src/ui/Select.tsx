@@ -10,10 +10,6 @@ const rawClasses = {
     fontSize: '14px',
     minHeight: '24px',
     width: '250px',
-
-    // '&:hover': {
-    //   background: 'rgba(0,0,0,0.15)',
-    // }
   }
 };
 
@@ -22,11 +18,10 @@ const { classes } = sheet;
 
 type Props = {
   className?: string;
-  style?: any;
-  text?: string;
-  onClick?: () => void;
-  value?: any;
   onChange?: any;
+  onClick?: () => void;
+  style?: any;
+  value?: any;
 };
 type State = {};
 
@@ -36,12 +31,17 @@ export class Select extends React.Component<Props, State> {
     style: {},
   }
 
+  onChange = ({ target } : any) => {
+    this.props.onChange && this.props.onChange(target.value);
+  }
+
   render() {
-    const { className, children, style, text, ...rest } = this.props;
+    const { className, children, onChange, style, ...rest } = this.props;
 
     return (
       <select
         className={[classes.select, className].join(' ')}
+        onChange={this.onChange}
         style={style}
         {...rest}
       >

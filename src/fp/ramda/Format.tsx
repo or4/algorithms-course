@@ -29,9 +29,7 @@ class Format extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <button>
-          {result}
-        </button>
+        {result}
       </div>
     );
   }
