@@ -4,10 +4,7 @@ import { NeuralNetworkType } from './types';
 import { Select } from 'ui/Select';
 import { Checkbox } from 'ui/Checkbox';
 
-const nn: {[key in NeuralNetworkType]: NeuralNetwork} = {
-  conjunction: new NeuralNetwork('conjunction'),
-  disjunction: new NeuralNetwork('disjunction'),
-};
+let nn: {[key in NeuralNetworkType]: NeuralNetwork};
 
 const rawStyle = {
   label: {
@@ -45,6 +42,15 @@ export class Conjunction extends React.Component<Props, State> {
     result: false,
     type: 'conjunction' as NeuralNetworkType,
   };
+  componentDidMount() {
+    if (nn) {
+      return;
+    }
+    nn = {
+      conjunction: new NeuralNetwork('conjunction'),
+      disjunction: new NeuralNetwork('disjunction'),
+    };
+  }
 
   onValue1Change = (value1: boolean) => {
     this.setState({ value1 }, this.run);

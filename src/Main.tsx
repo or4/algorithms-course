@@ -13,6 +13,7 @@ import { RefsWithChild } from 'refs';
 import { RxJs } from 'rx';
 import { NN } from 'nn';
 import { CssComponent } from 'css';
+import { Ast } from 'ast';
 
 type Props = {
 };
@@ -22,6 +23,7 @@ const routes = {
   home: '/',
   algorithms: '/algorithms',
   animate: '/animate',
+  ast: '/ast',
   hoc: '/hoc',
   holyjs: '/holyjs',
   jss: '/jss',
@@ -51,6 +53,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={routes.home}>Home</Link>
           <Link style={style.link} to={routes.algorithms}>algorithms</Link>
           <Link style={style.link} to={routes.animate}>animate</Link>
+          <Link style={style.link} to={routes.ast}>ast</Link>
           <Link style={style.link} to={routes.hoc}>hoc</Link>
           <Link style={style.link} to={routes.holyjs}>holyjs</Link>
           <Link style={style.link} to={routes.jss}>jss</Link>
@@ -65,6 +68,7 @@ class Main extends React.PureComponent<Props, State> {
           <Switch>
             <Route path={routes.algorithms} component={Algorithms} />
             <Route path={routes.animate} component={AnimateSimple} />
+            <Route path={routes.ast} component={Ast} />
             <Route path={routes.hoc} component={LoadingScreenExample} />
             <Route path={routes.holyjs} component={HolyJs} />
             <Route path={routes.jss} component={SimpleJss} />

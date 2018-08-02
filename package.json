@@ -8,6 +8,8 @@
     "color": "^3.0.0",
     "crypto-js": "^3.1.9-1",
     "css-modules": "^0.3.0",
+    "esprima": "~1.2.0",
+    "falafel": "^2.1.0",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "jss": "^9.8.1",
@@ -22,6 +24,7 @@
     "ramda": "^0.25.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-format-text": "^1.1.1",
     "react-motion": "^0.5.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
@@ -64,7 +67,6 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-alloy": "^1.4.2",
-    "eslint-config-standard": "^11.0.0",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-css-modules": "^2.7.5",
@@ -76,8 +78,6 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-typescript": "^0.12.0",
-    "tap-spec": "^4.0.0",
-    "tape": "^4.6.0",
     "typescript": "^2.8.3",
     "typescript-eslint-parser": "^15.0.0"
   }
