@@ -11,7 +11,7 @@ obj.foo();
 
 
 console.log('case 2');
-obj = function() { }
+obj = function() { } as any
 obj.foo = function () {
   console.log('foo', this);
 }
@@ -19,7 +19,7 @@ obj.foo(); // return obj, than function
 
 
 console.log('case 3');
-obj = function() { }
+obj = function() { } as any
 obj.foo = () => {
   console.log('foo', this);
 }
@@ -40,7 +40,7 @@ obj.foo();
 console.log('case 5');
 obj = {
   a: 1,
-  foo: function(fn) {
+  foo: function(fn: any) {
     fn(); // has no context
   }
 };
@@ -50,8 +50,8 @@ obj.foo(function() {
 
 
 console.log('case 6');
-var arr = [1, 2, 3, 4];
-Array.prototype.myCustomFunc = function() {
+var arr = [1, 2, 3, 4] as any;
+(Array.prototype as any).myCustomFunc = function() {
  console.log(this);
 };
 arr.myCustomFunc(); // return arr, because there are myCustomFunc.bind(arr ..)

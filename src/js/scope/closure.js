@@ -9,8 +9,8 @@
   * how can we implement the returning of the function
   * if this function uses free variables of the parent environment in which it’s created?
   */
-(function (x) {
-  return function (y) {
+(function (x: any) {
+  return function (y: any) {
     return x + y;
   };
 })(10)(20); // 30
@@ -24,10 +24,10 @@
 
 let x = 10;
 
-(function (funArg) {
+(function (funArg: any) {
 
   let x = 20; // eslint clever, advise that not used
-  funArg(); // 10, not 20 // of course not used, because it is called without context.
+  funArg(); // 10, not 20, of course not, because it is called without context.
 
 })(function () { // create and pass a funarg
   console.log(x);

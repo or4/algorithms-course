@@ -7,7 +7,7 @@
 
 
 console.log('case 1');
-function Foo(id, name) {
+function Foo(id: any, name: any) {
   this.id = id;
   this.name = name;
 }
@@ -21,17 +21,17 @@ b.print();
 
 
 console.log('case 2');
-function Foo2(id, name) {
+function Foo2(id: any, name: any) {
   this.id = id;
   this.name = name;
   console.log(this);
   return {}; // or any object
 }
-// Foo2.prototype.print = function() {
-//   console.log(this.id, this.name);
-// };
+Foo2.prototype.print = function() {
+  console.log(this.id, this.name);
+};
 a = new Foo2(1, 'A'); // return {}
-//a.print();
+a.print();
 console.log(a);
 
 // return {}; // Breaks
@@ -46,7 +46,7 @@ console.log(a);
 
 
 console.log('case 3');
-function Foo3(id, name) {
+function Foo3(id: any, name: any) {
   this.id = id;
   this.name = name;
   console.log(this);
@@ -59,7 +59,7 @@ console.log(a);
 console.log('case 4');
 let expenses = {
   data: [1, 2, 3, 4, 5],
-  total: function(earnings) {
+  total: function(earnings: any) {
     return this.data.reduce((prev, cur) => prev + cur) - (earnings || 0);
   }
 };

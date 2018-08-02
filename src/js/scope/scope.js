@@ -1,4 +1,6 @@
 /* eslint-disable */
+
+
 /**
  * https://stackoverflow.com/questions/40544709/why-variable-object-was-changed-to-lexical-environment-in-es5?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
  * ES5 changed variable object(VO) to lexical environment. What's the motivation of such change since VO is already very obvious as perception?
@@ -70,28 +72,28 @@
  *
  * Definition 3: Dynamic scope: a language implements dynamic scope, if a caller defines an activation environment of a callee.
  */
+/*
+# Perl example of static and dynamic scopes
 
-// # Perl example of static and dynamic scopes
+$x = 10;
 
-// $x = 10;
+sub print_x {
+  print $x;
+}
 
-// sub print_x {
-//   print $x;
-// }
+sub static {
+  my $x = 20; # doesn't affect
+  print_x(); # 10, not 20
+}
 
-// sub static {
-//   my $x = 20; # doesn't affect
-//   print_x(); # 10, not 20
-// }
+static();
 
-// static();
+sub dynamic {
+  local $x = 20; # affects!
+  print_x(); # 20, not 10!
+}
 
-// sub dynamic {
-//   local $x = 20; # affects!
-//   print_x(); # 20, not 10!
-// }
-
-// dynamic();
+dynamic(); */
 
 /**
  * Definition 4: This value: in JavaScript this value is dynamically scoped, unless used in an arrow function.
