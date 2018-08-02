@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { EsprimaExample } from './EsprimaExample';
+import { Falafel } from './Falafel';
+import { Esprima } from './Esprima';
 
 type Props = {
 };
@@ -20,10 +21,12 @@ export class Ast extends React.PureComponent<Props, State> {
     return (
       <div>
         <div>
+          <Link style={rawStyle.link} to={`/ast/falafel`}>Falafel Example</Link>
           <Link style={rawStyle.link} to={`/ast/esprima`}>Esprima Example</Link>
         </div>
         <Switch>
-          <Route path="/ast/esprima" component={EsprimaExample} />
+          <Route path="/ast/falafel" component={Falafel} />
+          <Route path="/ast/esprima" component={Esprima} />
         </Switch>
       </div>
     );

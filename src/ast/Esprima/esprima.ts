@@ -7,7 +7,7 @@ import esprima from 'esprima';
 import falafel from 'falafel';
 const type = esprima.Syntax;
 
-class Groundskeeper {
+class Esprima {
   options: any
 
   constructor(options?: any) {
@@ -24,19 +24,19 @@ class Groundskeeper {
   }
 
   clean(data: any) {
-    // const ast = esprima.parse(data, {
-    //   comment: true,
-    //   tolerant: true,
-    //   range: true
-    // });
-    // return ast;
-
-    const result = falafel(data, (node: any) => {
-      this.removeConsole(node);
-      this.removeDebugger(node);
+    const ast = esprima.parse(data, {
+      comment: true,
+      tolerant: true,
+      range: true
     });
+    return '';
 
-    return result.toString();
+    // const result = falafel(data, (node: any) => {
+    //   this.removeConsole(node);
+    //   this.removeDebugger(node);
+    // });
+
+    // return result.toString();
   }
 
   /**
@@ -93,57 +93,6 @@ class Groundskeeper {
   }
 
   /**
- * [removeNamespace description]
- * @method
- * @param   {[type]} node      [description]
- * @param   {[type]} namespace [description]
- * @returns {[type]}           [description]
- * @api private
- */
-  /* Groundskeeper.prototype.removeNamespace = function (node, namespace) {
-
-  if ([type.MemberExpression, type.Identifier].indexOf(node.type) !== -1 &&
-        namespace.indexOf(node.source()) !== -1) {
-
-    while ([type.CallExpression, type.AssignmentExpression, type.FunctionDeclaration,
-      type.VariableDeclaration].indexOf(node.type) === -1) {
-      node = node.parent;
-    }
-
-    // Remove the whole call expression group like `func().bFunc().cFunc()`.
-    // We can recognize such structure by checking `CallExpression` and
-    // `MemberExpression` occurrence (in this order),
-    // where there are not two `CallExpression`s in a row.
-    const TYPES = [type.CallExpression, type.MemberExpression];
-    const CALL_EXPR_TYPE_INDEX = TYPES.indexOf(type.CallExpression);
-
-    // `CallExpression` has to be recognized firstly to keep `alert()` in `alert(log())`
-    let last = CALL_EXPR_TYPE_INDEX;
-
-    while (node.parent) {
-      // recognize `node.parent` type
-      const index = TYPES.indexOf(node.parent.type);
-
-      // require that index has been recognized and it's not second `CallExpression` again
-      if (index === -1 || (index === CALL_EXPR_TYPE_INDEX && index === last)) break;
-
-      // go forward
-      node = node.parent;
-      last = index;
-    }
-
-    if (node.parent.type === type.ExpressionStatement) {
-      node = node.parent;
-    }
-
-    node.update(this.options.replace);
-
-  }
-
-}; */
-
-
-  /**
  * [removePragmas description]
  *
  * @api private
@@ -197,31 +146,5 @@ class Groundskeeper {
   }
 }
 
-export const groundskeeper = new Groundskeeper();
+export const esprimaInstance = new Esprima();
 
-
-/**
- * [write description]
- * @method
- * @param   {[type]} data [description]
- * @returns {[type]}      [description]
- * @public
- */
-// Groundskeeper.prototype.write = function (data) {
-//   if (data && data.length) {
-//     this.buffer += this.clean(data.toString());
-//     this.emit('data', this.buffer);
-//   }
-// };
-
-/**
- * [end description]
- * @method
- * @param   {[type]} data [description]
- * @returns {[type]}      [description]
- * @public
- */
-// Groundskeeper.prototype.end = function (data) {
-//   if (data && data.length) { this.write(data) }
-//   this.emit('end', this.buffer);
-// };

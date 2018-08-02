@@ -1,6 +1,6 @@
 import React from 'react';
 import { Textarea } from 'ui/Textarea';
-import { groundskeeper } from './groundskeeper';
+import { falafelInstance } from './falafel';
 import { Button } from 'ui/Button';
 
 const rawStyle = {
@@ -45,10 +45,10 @@ const defCode =
   return sorted;
 };`;
 
-export class EsprimaExample extends React.Component<Props, State> {
+export class Falafel extends React.Component<Props, State> {
   state = {
     code: defCode,
-    output: groundskeeper.clean(defCode),
+    output: falafelInstance.clean(defCode),
   };
 
   onCodeChange = (code: string) => {
@@ -57,7 +57,7 @@ export class EsprimaExample extends React.Component<Props, State> {
 
   onSubmit = () => {
     this.setState({
-      output: groundskeeper.clean(this.state.code)
+      output: falafelInstance.clean(this.state.code)
     });
   }
 

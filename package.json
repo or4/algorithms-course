@@ -8,7 +8,7 @@
     "color": "^3.0.0",
     "crypto-js": "^3.1.9-1",
     "css-modules": "^0.3.0",
-    "esprima": "~1.2.0",
+    "esprima": "^4.0.1",
     "falafel": "^2.1.0",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
