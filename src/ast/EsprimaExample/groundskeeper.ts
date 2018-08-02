@@ -8,11 +8,9 @@ import falafel from 'falafel';
 const type = esprima.Syntax;
 
 class Groundskeeper {
-  buffer: any
   options: any
 
   constructor(options?: any) {
-    this.buffer = '';
     this.options = options || {};
 
     // Accept string or array. Don't break backward compatibility.
@@ -197,20 +195,6 @@ class Groundskeeper {
       return source;
     }
   }
-
-  /**
- * Describe what this method does
- * @private
- * @param {String|Object|Array|Boolean|Number} paramName Describe this parameter
- * @returns Describe what it returns
- * @type String|Object|Array|Boolean|Number
- */
-
-  toString() {
-    return this.buffer;
-  }
-
-
 }
 
 export const groundskeeper = new Groundskeeper();
