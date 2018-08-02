@@ -12,6 +12,7 @@ import { PasswordRegExp } from 'regexp/PasswordRegExp';
 import { RefsWithChild } from 'refs';
 import { RxJs } from 'rx';
 import { NN } from 'nn';
+import { CssComponent } from 'css';
 
 type Props = {
 };
@@ -29,6 +30,7 @@ const routes = {
   regexp: '/regexp',
   rxjs: '/rxjs',
   nn: '/nn',
+  css: '/css',
 };
 
 class Main extends React.PureComponent<Props, State> {
@@ -57,6 +59,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={routes.refs}>refs</Link>
           <Link style={style.link} to={routes.regexp}>regexp</Link>
           <Link style={style.link} to={routes.rxjs}>rxjs</Link>
+          <Link style={style.link} to={routes.css}>css</Link>
         </div>
         <div style={{ padding: '10px 0 0 20px' }}>
           <Switch>
@@ -70,6 +73,7 @@ class Main extends React.PureComponent<Props, State> {
             <Route path={routes.refs} component={PasswordRegExp} />
             <Route path={routes.regexp} component={RefsWithChild} />
             <Route path={routes.rxjs} component={RxJs} />
+            <Route path={routes.css} component={CssComponent} />
           </Switch>
         </div>
       </div>
