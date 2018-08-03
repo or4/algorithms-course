@@ -2,19 +2,19 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import { Algorithms } from 'algorithms';
-import { Animate } from 'animate';
-import { Ast } from 'ast';
-import { Css } from 'css';
-import { Hoc } from 'hoc';
-import { HolyJs } from 'holyjs';
-import { Jss } from 'jss';
-import { KentDodds } from 'kentDodds';
-import { NN } from 'nn';
-import { Probability } from './probability';
-import { Refs } from 'refs';
-import { Regexp } from './regexp';
-import { RxJs } from 'rx';
+import { Algorithms } from 'app/algorithms';
+import { Animate } from 'app/animate';
+import { Ast } from 'app/ast';
+import { Css } from 'app/css';
+import { Hoc } from 'app/hoc';
+import { HolyJs } from 'app/holyjs';
+import { Jss } from 'app/jss';
+import { KentDodds } from 'app/kentDodds';
+import { NN } from 'app/nn';
+import { Probability } from 'app/probability';
+import { Refs } from 'app/refs';
+import { Regexp } from 'app/regexp';
+import { RxJs } from 'app/rx';
 
 type Props = {
 };
