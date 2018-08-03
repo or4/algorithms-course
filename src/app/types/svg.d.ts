@@ -24,3 +24,9 @@ declare module 'react-format-text' {
   export default content;
 }
 
+
+declare module 'react-addons-css-transition-group' {
+  const content: any;
+  export default content;
+}
+

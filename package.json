@@ -23,6 +23,7 @@
     "lodash": "^4.17.10",
     "ramda": "^0.25.0",
     "react": "^16.3.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.3.1",
     "react-format-text": "^1.1.1",
     "react-motion": "^0.5.2",

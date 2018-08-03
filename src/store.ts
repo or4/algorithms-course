@@ -21,10 +21,17 @@ const actionToPlainObject: Middleware =
         return next(Object.assign({}, action));
       };
 
-const enhancer = compose(
-  applyMiddleware(sagaMiddleware, middleware, actionToPlainObject),
-  (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
-);
+let enhancer;
+try {
+  enhancer = compose(
+    applyMiddleware(sagaMiddleware, middleware, actionToPlainObject),
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+  );
+} catch (error) {
+  enhancer = compose(
+    applyMiddleware(sagaMiddleware, middleware, actionToPlainObject),
+  );
+}
 
 const store = createStore<AppState>(rootReducer, appInitialState, enhancer as any);
 

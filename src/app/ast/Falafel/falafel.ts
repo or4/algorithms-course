@@ -1,6 +1,6 @@
 import esprima from 'esprima';
 import falafel from 'falafel';
-const type = esprima.Syntax;
+// const type = esprima.Syntax;
 
 class Falafel {
   options: any
@@ -29,82 +29,82 @@ class Falafel {
 
   removeDebugger(node: any) {
 
-    if (node.type === type.DebuggerStatement) {
-      node.update('');
-    }
+    // if (node.type === type.DebuggerStatement) {
+    //   node.update('');
+    // }
   }
 
   removeConsole(node: any) {
 
-    if (node.type === type.Identifier && node.source() === 'console') {
-      while (node && node.type !== type.MemberExpression) {
-        node = node.parent;
-      }
+    // if (node.type === type.Identifier && node.source() === 'console') {
+    //   while (node && node.type !== type.MemberExpression) {
+    //     node = node.parent;
+    //   }
 
-      if (node &&
-            node.parent.type === type.MemberExpression &&
-            (
-              node.parent.source().indexOf('window') !== -1 ||
-                node.parent.source().indexOf('global') !== -1
-            )
-      ) {
-        node = node.parent;
-      }
+    //   if (node &&
+    //         node.parent.type === type.MemberExpression &&
+    //         (
+    //           node.parent.source().indexOf('window') !== -1 ||
+    //             node.parent.source().indexOf('global') !== -1
+    //         )
+    //   ) {
+    //     node = node.parent;
+    //   }
 
 
-      if (node && node.parent.type === type.CallExpression) {
-        node = node.parent;
+    //   if (node && node.parent.type === type.CallExpression) {
+    //     node = node.parent;
 
-        if (node.parent.type === type.ExpressionStatement) {
-          node = node.parent;
-        }
+    //     if (node.parent.type === type.ExpressionStatement) {
+    //       node = node.parent;
+    //     }
 
-        node.update(this.options.replace);
-      }
-    }
+    //     node.update(this.options.replace);
+    //   }
+    // }
   }
 
   removePragmas(comments: any, source: any, pragmas: any) {
 
-    let pragmaMatcher = /^[<][/]*([^\s]*)[>]$/;
-    // find comments' ranges
-    const ranges = comments
-      .map(function (comment: any) {
+  //   let pragmaMatcher = /^[<][/]*([^\s]*)[>]$/;
+  //   // find comments' ranges
+  //   const ranges = comments
+  //     .map(function (comment: any) {
 
-        const matches = pragmaMatcher.exec(comment.value.trim());
-        const pragmaName = matches && matches[1];
+  //       const matches = pragmaMatcher.exec(comment.value.trim());
+  //       const pragmaName = matches && matches[1];
 
-        // if the comment
-        // * only contains a `pragma`
-        // * that pragma is not on the pragmas keep list
-        if (pragmaName && pragmas.indexOf(pragmaName) === -1) {
-          return comment.range;
-        }
-        return null;
-      })
-      .filter(function (val: any) {
-        return (val && val.length);
-      })
-      .map(function (range: any, index: number) {
-        return (index % 2 === 0) ? range[0] : range[1];
-      });
-    // remove
-    let start = 0;
-    const end = 0;
-    const match = '';
-    let finalsource = '';
+  //       // if the comment
+  //       // * only contains a `pragma`
+  //       // * that pragma is not on the pragmas keep list
+  //       if (pragmaName && pragmas.indexOf(pragmaName) === -1) {
+  //         return comment.range;
+  //       }
+  //       return null;
+  //     })
+  //     .filter(function (val: any) {
+  //       return (val && val.length);
+  //     })
+  //     .map(function (range: any, index: number) {
+  //       return (index % 2 === 0) ? range[0] : range[1];
+  //     });
+  //   // remove
+  //   let start = 0;
+  //   const end = 0;
+  //   const match = '';
+  //   let finalsource = '';
 
-    if (ranges && ranges.length) {
-      while (ranges.length) {
-        finalsource += source.slice(start, ranges.shift());
-        start = ranges.shift();
-      }
+  //   if (ranges && ranges.length) {
+  //     while (ranges.length) {
+  //       finalsource += source.slice(start, ranges.shift());
+  //       start = ranges.shift();
+  //     }
 
-      finalsource += source.slice(start, source.length);
-      return finalsource;
-    } else {
-      return source;
-    }
+  //     finalsource += source.slice(start, source.length);
+  //     return finalsource;
+  //   } else {
+  //     return source;
+  //   }
   }
 }
 
