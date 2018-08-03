@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CssSelectors } from './selectors';
+import { AnimateSimple } from './AnimateSimple';
+
 
 type Props = {
 };
@@ -15,15 +16,15 @@ const rawStyle = {
   }
 };
 
-export class Css extends React.PureComponent<Props, State> {
+export class Animate extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
         <div>
-          <Link style={rawStyle.link} to={`/css/selectors`}>Selectors</Link>
+          <Link style={rawStyle.link} to={`/animate`}>Simple rAF</Link>
         </div>
         <Switch>
-          <Route path="/css/selectors" component={CssSelectors} />
+          <Route path="/animate" component={AnimateSimple} />
         </Switch>
       </div>
     );

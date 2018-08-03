@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CssSelectors } from './selectors';
+import { PasswordRegExp } from 'regexp/PasswordRegExp';
 
 type Props = {
 };
@@ -15,15 +15,15 @@ const rawStyle = {
   }
 };
 
-export class Css extends React.PureComponent<Props, State> {
+export class Regexp extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
         <div>
-          <Link style={rawStyle.link} to={`/css/selectors`}>Selectors</Link>
+          <Link style={rawStyle.link} to={`/regexp`}>regexp with some pwd mask</Link>
         </div>
         <Switch>
-          <Route path="/css/selectors" component={CssSelectors} />
+          <Route path="/regexp" component={PasswordRegExp} />
         </Switch>
       </div>
     );

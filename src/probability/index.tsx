@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CssSelectors } from './selectors';
+import { ProbabilityTheoryBasics } from './ProbabilityTheoryBasics';
 
 type Props = {
 };
@@ -15,15 +15,15 @@ const rawStyle = {
   }
 };
 
-export class Css extends React.PureComponent<Props, State> {
+export class Probability extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
         <div>
-          <Link style={rawStyle.link} to={`/css/selectors`}>Selectors</Link>
+          <Link style={rawStyle.link} to={`/nn/and`}>Basics</Link>
         </div>
         <Switch>
-          <Route path="/css/selectors" component={CssSelectors} />
+          <Route path="/nn/and" component={ProbabilityTheoryBasics} />
         </Switch>
       </div>
     );

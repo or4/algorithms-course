@@ -7,7 +7,7 @@ type Props = {
 type State = {
 };
 
-export class RefsWithChild extends React.PureComponent<Props, State> {
+export class Refs extends React.PureComponent<Props, State> {
   refInput: any = React.createRef();
 
   selectChildInput = () => {
@@ -20,6 +20,7 @@ export class RefsWithChild extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
+        <h3>Ref with child</h3>
         <div style={{ display: 'flex', alignItems: 'center', }}>
           <Button style={{ height: '21px' }} onClick={this.selectChildInput}>Focus</Button>
           &nbsp;
