@@ -20,10 +20,10 @@ export class Probability extends React.PureComponent<Props, State> {
     return (
       <div>
         <div>
-          <Link style={rawStyle.link} to={`/nn/and`}>Basics</Link>
+          <Link style={rawStyle.link} to={`/probability/basics`}>Basics</Link>
         </div>
         <Switch>
-          <Route path="/nn/and" component={ProbabilityTheoryBasics} />
+          <Route path="/probability/basics" component={ProbabilityTheoryBasics} />
         </Switch>
       </div>
     );
