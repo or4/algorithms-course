@@ -23,6 +23,7 @@
       }
     ],
     "react/jsx-indent-props": [true, 2],
+    "react/no-unescaped-entities": 0,
     "no-useless-constructor": 0,
     "no-constant-condition": 0,
     "no-param-reassign": 0,

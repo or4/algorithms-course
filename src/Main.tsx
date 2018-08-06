@@ -15,6 +15,7 @@ import { Probability } from 'app/probability';
 import { Refs } from 'app/refs';
 import { Regexp } from 'app/regexp';
 import { RxJs } from 'app/rx';
+import { Ramda } from 'app/ramda';
 
 type Props = {
 };
@@ -32,6 +33,7 @@ const routes = {
   kentDodds: '/kent-dodds',
   nn: '/nn',
   probability: '/probability',
+  ramda: '/ramda',
   refs: '/refs',
   regexp: '/regexp',
   rxjs: '/rxjs',
@@ -63,6 +65,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link style={style.link} to={routes.kentDodds}>kent-dodds</Link>
           <Link style={style.link} to={routes.nn}>NN</Link>
           <Link style={style.link} to={routes.probability}>probability</Link>
+          <Link style={style.link} to={routes.ramda}>ramda</Link>
           <Link style={style.link} to={routes.refs}>refs</Link>
           <Link style={style.link} to={routes.regexp}>regexp</Link>
           <Link style={style.link} to={routes.rxjs}>rxjs</Link>
@@ -79,6 +82,7 @@ class Main extends React.PureComponent<Props, State> {
             <Route path={routes.kentDodds} component={KentDodds} />
             <Route path={routes.nn} component={NN} />
             <Route path={routes.probability} component={Probability} />
+            <Route path={routes.ramda} component={Ramda} />
             <Route path={routes.refs} component={Refs} />
             <Route path={routes.regexp} component={Regexp} />
             <Route path={routes.rxjs} component={RxJs} />
