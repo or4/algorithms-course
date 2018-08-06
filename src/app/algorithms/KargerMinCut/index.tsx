@@ -17,29 +17,15 @@ for (let i = 0; i < 500; i++) {
 
 console.log('output', output);
 
-// var values = { x: 1, y: 2, z: 3 };
-// let prependKeyAndDouble = (num: any, key: any, obj: any) => ({ key: num });
-let prependKeyAndDouble = (obj: any) => ({ obj });
-
-
-// R.mapObjIndexed(prependKeyAndDouble, values); //=> { x: 'x2', y: 'y4', z: 'z6' }
-
-
-
-// R.mapObjIndexed<{[key: number]: number}, number>(
-
-// const covertToArray = R.mapObjIndexed(prependKeyAndDouble, output);
-
 const covertToArray = R.pipe(
   R.toPairs,
   R.map(
     R.join('-')
-  )
+  ),
+  R.join(', '),
 );
 
-
-
-console.log(covertToArray({ a: 1, b: 2 }));
+console.log(covertToArray(output));
 
 
 type Props = {
