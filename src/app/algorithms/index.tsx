@@ -5,6 +5,7 @@ import { BubbleSort, SelectionSort, MergeSort, InsertionSort, QuickSort } from '
 import { Karatsuba } from './Karatsuba';
 import { Inversions } from './Inversions';
 import { MatrixMultiply } from './MatrixMultiply';
+import { KargerMinCut } from './KargerMinCut';
 
 type Props = {
 };
@@ -31,6 +32,7 @@ export class Algorithms extends React.PureComponent<Props, State> {
           <Link style={rawStyle.link} to={`/algorithms/karatsuba`}>Karatsuba</Link>
           <Link style={rawStyle.link} to={`/algorithms/inversions`}>Inversions</Link>
           <Link style={rawStyle.link} to={`/algorithms/matrix-multiply`}>Matrix multiply</Link>
+          <Link style={rawStyle.link} to={`/algorithms/karger`}>KargerMinCut</Link>
         </div>
         <Switch>
           <Route path="/algorithms/sorts/bubble" component={BubbleSort} />
@@ -41,6 +43,7 @@ export class Algorithms extends React.PureComponent<Props, State> {
           <Route path="/algorithms/karatsuba" component={Karatsuba} />
           <Route path="/algorithms/inversions" component={Inversions} />
           <Route path="/algorithms/matrix-multiply" component={MatrixMultiply} />
+          <Route path="/algorithms/karger" component={KargerMinCut} />
         </Switch>
       </div>
     );
