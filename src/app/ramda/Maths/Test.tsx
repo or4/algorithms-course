@@ -29,8 +29,8 @@ export class Test extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>Add</h3>
-        <h3>Result: {action1(2)(4)}</h3>
+        <h3>Result2: {action1(2)(4)}</h3>
       </div>
     );
   }
-}
+} // test
