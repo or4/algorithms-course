@@ -35,7 +35,7 @@ class TTFCP extends React.PureComponent<Props, State> {
     console.log('allTiming');
     let resourceList = window.performance.getEntries();
     for (let i = 0; i < resourceList.length; i++) {
-      console.log(resourceList[i], (resourceList[i].responseEnd - resourceList[i].startTime));
+      // console.log(resourceList[i], (resourceList[i].responseEnd - resourceList[i].startTime));
     }
     console.log('allTiming.length', resourceList.length);
   }

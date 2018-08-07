@@ -9,6 +9,7 @@ import { Inc } from './Inc';
 import { Dec } from './Dec';
 import { Negate } from './Negate';
 import { Modulo } from './Modulo';
+import { Test } from './Test';
 
 
 type Props = {
@@ -36,6 +37,7 @@ export class Maths extends React.PureComponent<Props, State> {
           <Link style={rawStyle.link} to={`/ramda/maths/dec`}>Dec</Link>
           <Link style={rawStyle.link} to={`/ramda/maths/negate`}>Negate</Link>
           <Link style={rawStyle.link} to={`/ramda/maths/modulo`}>Modulo</Link>
+          <Link style={rawStyle.link} to={`/ramda/maths/test`}>Test</Link>
         </div>
         <Switch>
           <Route path="/ramda/maths/add" component={Add} />
@@ -46,6 +48,7 @@ export class Maths extends React.PureComponent<Props, State> {
           <Route path="/ramda/maths/dec" component={Dec} />
           <Route path="/ramda/maths/negate" component={Negate} />
           <Route path="/ramda/maths/modulo" component={Modulo} />
+          <Route path="/ramda/maths/test" component={Test} />
         </Switch>
       </div>
     );
