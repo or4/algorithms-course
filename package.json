@@ -79,7 +79,7 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-typescript": "^0.12.0",
-    "typescript": "^3.0.0-rc",
+    "typescript": "^2.9.2-rc",
     "typescript-eslint-parser": "^15.0.0"
   }
 }
