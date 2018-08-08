@@ -1,21 +1,16 @@
 import { getRandomInteger } from './utils';
 
 const cut = (graph: string[][], mainVertexIndex: number, contiguousVertexIndex: number) => {
-  // const mainVertexIndex = 0;
   const mainEdges = graph[mainVertexIndex];
-  const mainVertex = mainEdges[0]; // 1
-  // const contiguousVertexIndex = 3;
+  const mainVertex = mainEdges[0];
   const contiguousEdges = graph[contiguousVertexIndex];
-  const contiguousVertex = contiguousEdges[0]; // 2
+  const contiguousVertex = contiguousEdges[0];
 
   const mergedRows = ([] as string[]);
   const newName = `${mainVertex}-${contiguousVertex}`;
   mergedRows.push(newName);
 
   for (let i = 0; i < mainEdges.length; i++) {
-    // if (mergedRows.indexOf(mainEdges[i]) !== -1) {
-    //   continue;
-    // }
     if (mainEdges[i] === mainVertex || mainEdges[i] === contiguousVertex) {
       continue;
     }
@@ -24,9 +19,6 @@ const cut = (graph: string[][], mainVertexIndex: number, contiguousVertexIndex: 
   }
 
   for (let i = 0; i < contiguousEdges.length; i++) {
-    // if (mergedRows.indexOf(contiguousEdges[i]) !== -1) {
-    //   continue;
-    // }
     if (contiguousEdges[i] === mainVertex || contiguousEdges[i] === contiguousVertex) {
       continue;
     }
@@ -44,9 +36,7 @@ const cut = (graph: string[][], mainVertexIndex: number, contiguousVertexIndex: 
       const newRow = [];
       for (let j = 0; j < graph[i].length; j++) {
         if (graph[i][j] === mainVertex || graph[i][j] === contiguousVertex) {
-          // if (newRow.indexOf(newName) === -1) {
           newRow.push(newName);
-          // }
         } else {
           newRow.push(graph[i][j]);
         }

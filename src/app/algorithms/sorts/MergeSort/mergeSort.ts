@@ -22,7 +22,10 @@ const merge = (arr1: number[], arr2: number[]): number[] => {
   return sorted;
 };
 
+let step = 0;
+
 export const mergeSort = (arr: number[]): number[] => {
+  console.log('step', ++step, 'start, arr', arr);
   if (arr.length === 1) {
     return arr;
   }
@@ -31,5 +34,7 @@ export const mergeSort = (arr: number[]): number[] => {
 
   const arrLeft = mergeSort(arr.slice(0, medium));
   const arrRight = mergeSort(arr.slice(medium));
+  const arrBeforeMerge = ([] as number[]).concat(arrLeft).concat(arrRight);
+  console.log('for exam', arrBeforeMerge, arrBeforeMerge[6]);
   return merge(arrLeft, arrRight);
 };

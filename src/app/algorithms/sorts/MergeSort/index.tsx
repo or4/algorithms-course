@@ -1,7 +1,8 @@
 import React from 'react';
 import { mergeSort } from './mergeSort';
 
-const arr = [2, 1, 4, 7, 6, 5, 3];
+// const arr = [2, 1, 4, 7, 6, 5, 3];
+const arr = [5, 3, 8, 9, 1, 7, 0, 2, 6, 4];
 
 type Props = {
 };
