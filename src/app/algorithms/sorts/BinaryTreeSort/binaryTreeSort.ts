@@ -3,35 +3,61 @@ import * as R from 'ramda';
 class BinaryTreeItem {
   left: BinaryTreeItem;
   right: BinaryTreeItem;
-  item: number;
+
+  constructor(public parent: BinaryTreeItem | null, public item: number) {}
 
   public push(value: number) {
     if (value < this.item) {
-      if (!this.left) {
-        this.left = new BinaryTreeItem();
-        this.left.item = value;
-      } else {
-        this.left.push(value);
+      if (R.isNil(this.left)) {
+        this.left = new BinaryTreeItem(this, value);
+        return;
       }
+      this.left.push(value);
+
     } else if (value > this.item) {
-      if (!this.right) {
-        this.right = new BinaryTreeItem();
-        this.right.item = value;
-      } else {
-        this.right.push(value);
+      if (R.isNil(this.right)) {
+        this.right = new BinaryTreeItem(this, value);
+        return;
       }
+      this.right.push(value);
+
+    } else {
+      // skip doubles
     }
   }
-  public toString() {
-    let output = '[';
-    if (this.left) {
-      output += 'left: ' + this.left.toString() + '; ';
+
+
+  public find(value: number): BinaryTreeItem | null {
+    if (value === this.item) {
+      return this;
     }
-    output += ' item: ' + this.item + '; ';
-    if (this.right) {
-      output += 'right: ' + this.right.toString() + ';';
+    if (value < this.item) {
+      if (R.isNil(this.left)) {
+        return null;
+      }
+      return this.left.find(value);
     }
-    output += ']';
+    if (value > this.item) {
+      if (R.isNil(this.right)) {
+        return null;
+      }
+      return this.right.find(value);
+    }
+    return null;
+  }
+
+  public getSorted() {
+    let output = [] as number[];
+
+    R.forEach(
+      (item: number) => output.push(item)
+    )(this.left && this.left.getSorted() || []);
+
+    output.push(this.item);
+
+    R.forEach(
+      (item: number) => output.push(item)
+    )(this.right && this.right.getSorted() || []);
 
     return output;
   }
@@ -41,29 +67,20 @@ class BinaryTree {
   root: BinaryTreeItem;
 
   public push(value: number) {
-    if (!this.root) {
-      this.root = new BinaryTreeItem();
-      this.root.item = value;
-    } else {
-      this.root.push(value);
+    if (R.isNil(this.root)) {
+      this.root = new BinaryTreeItem(null, value);
+      return;
     }
-    // console.log('push', value, this);
+    this.root.push(value);
   }
-  public toString() {
-    return this.root.toString();
+
+  public getSorted() {
+    return this.root.getSorted();
   }
 }
 
 export const binaryTreeSort = (arr: number[]) => {
-
   const tree = new BinaryTree();
-
-  R.pipe(
-    R.forEach((a: number) => tree.push(a))
-  )(arr);
-
-  console.log('tree done', tree);
-  console.log('tree done', tree.toString());
-
-  return arr;
+  R.pipe(R.forEach((a: number) => tree.push(a)))(arr);
+  return tree.getSorted();
 };
