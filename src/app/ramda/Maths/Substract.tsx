@@ -6,13 +6,6 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 const subtract = R.pipe(
   R.subtract
 );
