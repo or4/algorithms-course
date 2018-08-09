@@ -26,7 +26,6 @@ class BinaryTreeItem {
     }
   }
 
-
   public find(value: number): BinaryTreeItem | null {
     if (value === this.item) {
       return this;
