@@ -2,7 +2,7 @@ import React from 'react';
 import * as R from 'ramda';
 import { binarySearch } from './binarySearch';
 
-const arr = [14, 18, 26, 33, 62, 100, 1001, 1002, 1003];
+const arr = [14, 18, 26, 33, 100, 1001, 1002, 1003];
 
 type Props = {
 };

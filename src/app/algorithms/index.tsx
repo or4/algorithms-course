@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import { BubbleSort, SelectionSort, MergeSort, InsertionSort, QuickSort, BinaryTreeSort } from './sorts';
-import { BinarySearch } from './searches';
+import { BinarySearch, InterpolationSearch } from './searches';
 import { Karatsuba } from './Karatsuba';
 import { Inversions } from './Inversions';
 import { MatrixMultiply } from './MatrixMultiply';
@@ -36,6 +36,7 @@ export class Algorithms extends React.PureComponent<Props, State> {
           <Link style={rawStyle.link} to={`/algorithms/matrix-multiply`}>Matrix multiply</Link>
           <Link style={rawStyle.link} to={`/algorithms/karger`}>KargerMinCut</Link>
           <Link style={rawStyle.link} to={`/algorithms/searches/binary`}>BinarySearch</Link>
+          <Link style={rawStyle.link} to={`/algorithms/searches/interpolation`}>InterpolationSearch</Link>
         </div>
         <Switch>
           <Route path="/algorithms/sorts/bubble" component={BubbleSort} />
@@ -49,6 +50,7 @@ export class Algorithms extends React.PureComponent<Props, State> {
           <Route path="/algorithms/matrix-multiply" component={MatrixMultiply} />
           <Route path="/algorithms/karger" component={KargerMinCut} />
           <Route path="/algorithms/searches/binary" component={BinarySearch} />
+          <Route path="/algorithms/searches/interpolation" component={InterpolationSearch} />
         </Switch>
       </div>
     );
