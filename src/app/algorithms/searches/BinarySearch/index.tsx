@@ -2,7 +2,7 @@ import React from 'react';
 import * as R from 'ramda';
 import { binarySearch } from './binarySearch';
 
-const arr = [1, 2, 3, 6, 8, 100, 1001, 1002, 1003];
+const arr = [14, 18, 26, 33, 62, 100, 1001, 1002, 1003];
 
 type Props = {
 };
@@ -28,9 +28,9 @@ export class BinarySearch extends React.PureComponent<Props, State> {
         }
 
         <h3>Search</h3>
-        <div>{`Position of item 1 is ${binarySearch(arr, 1)}`}</div>
-        <div>{`Position of item 3 is ${binarySearch(arr, 3)}`}</div>
-        <div>{`Position of item 8 is ${binarySearch(arr, 8)}`}</div>
+        <div>{`Position of item 14 is ${binarySearch(arr, 14)}`}</div>
+        <div>{`Position of item 33 is ${binarySearch(arr, 33)}`}</div>
+        <div>{`Position of item 18 is ${binarySearch(arr, 18)}`}</div>
         <div>{`Position of item 1001 is ${binarySearch(arr, 1001)}`}</div>
         <div>{`Position of item 1003 is ${binarySearch(arr, 1003)}`}</div>
       </div>
