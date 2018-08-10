@@ -10,7 +10,7 @@ export class Binary extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Binary</h3>
+        <h3>R.binary</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );

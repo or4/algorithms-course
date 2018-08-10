@@ -6,6 +6,8 @@ import { Maths } from './Maths';
 import { Relation } from './Relation';
 import { Logic } from './Logic';
 import { Functions } from './Functions';
+import { Objects } from './Objects';
+import { Lists } from './Lists';
 
 
 type Props = {
@@ -29,12 +31,16 @@ export class Ramda extends React.PureComponent<Props, State> {
           <Link style={rawStyle.link} to={`/ramda/relation`}>Relation</Link>
           <Link style={rawStyle.link} to={`/ramda/logic`}>Logic</Link>
           <Link style={rawStyle.link} to={`/ramda/functions`}>Functions</Link>
+          <Link style={rawStyle.link} to={`/ramda/objects`}>Objects</Link>
+          <Link style={rawStyle.link} to={`/ramda/lists`}>Lists</Link>
         </div>
         <Switch>
           <Route path="/ramda/maths" component={Maths} />
           <Route path="/ramda/relation" component={Relation} />
           <Route path="/ramda/logic" component={Logic} />
           <Route path="/ramda/functions" component={Functions} />
+          <Route path="/ramda/objects" component={Objects} />
+          <Route path="/ramda/lists" component={Lists} />
         </Switch>
       </div>
     );

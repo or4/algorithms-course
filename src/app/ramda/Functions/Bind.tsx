@@ -10,7 +10,7 @@ export class Bind extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Bind</h3>
+        <h3>R.bind</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );
