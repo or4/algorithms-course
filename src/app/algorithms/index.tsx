@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { BubbleSort, SelectionSort, MergeSort, InsertionSort, QuickSort, BinaryTreeSort } from './sorts';
+import { BubbleSort, SelectionSort, MergeSort, InsertionSort, QuickSort, BinaryTreeSort, BinaryAvlTreeSort } from './sorts';
 import { BinarySearch, InterpolationSearch } from './searches';
 import { Karatsuba } from './Karatsuba';
 import { Inversions } from './Inversions';
@@ -31,6 +31,7 @@ export class Algorithms extends React.PureComponent<Props, State> {
           <Link style={rawStyle.link} to={`/algorithms/sorts/insertion`}>Insertion Sort</Link>
           <Link style={rawStyle.link} to={`/algorithms/sorts/quick`}>Quick Sort</Link>
           <Link style={rawStyle.link} to={`/algorithms/sorts/binary`}>Binary Tree Sort</Link>
+          <Link style={rawStyle.link} to={`/algorithms/sorts/binaryAvl`}>Binary AVL Tree Sort</Link>
           <Link style={rawStyle.link} to={`/algorithms/karatsuba`}>Karatsuba</Link>
           <Link style={rawStyle.link} to={`/algorithms/inversions`}>Inversions</Link>
           <Link style={rawStyle.link} to={`/algorithms/matrix-multiply`}>Matrix multiply</Link>
@@ -45,6 +46,7 @@ export class Algorithms extends React.PureComponent<Props, State> {
           <Route path="/algorithms/sorts/insertion" component={InsertionSort} />
           <Route path="/algorithms/sorts/quick" component={QuickSort} />
           <Route path="/algorithms/sorts/binary" component={BinaryTreeSort} />
+          <Route path="/algorithms/sorts/binaryAvl" component={BinaryAvlTreeSort} />
           <Route path="/algorithms/karatsuba" component={Karatsuba} />
           <Route path="/algorithms/inversions" component={Inversions} />
           <Route path="/algorithms/matrix-multiply" component={MatrixMultiply} />
