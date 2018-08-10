@@ -32,29 +32,29 @@ export class Logic extends React.PureComponent<Props, State> {
       <div>
         <div>
           <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>IfElse</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>Not</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>Or</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>And</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>Complement</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>Either</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>Both</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>AnyPass</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>AllPass</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>Empty</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>IsEmpty</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/not`}>Not</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/or`}>Or</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/and`}>And</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/complement`}>Complement</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/either`}>Either</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/both`}>Both</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/anypass`}>AnyPass</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/allpass`}>AllPass</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/empty`}>Empty</Link>
+          <Link style={rawStyle.link} to={`/ramda/logic/isempty`}>IsEmpty</Link>
         </div>
         <Switch>
           <Route path="/ramda/logic/ifelse" component={IfElse} />
-          <Route path="/ramda/logic/ifelse" component={Not} />
-          <Route path="/ramda/logic/ifelse" component={Or} />
-          <Route path="/ramda/logic/ifelse" component={And} />
-          <Route path="/ramda/logic/ifelse" component={Complement} />
-          <Route path="/ramda/logic/ifelse" component={Either} />
-          <Route path="/ramda/logic/ifelse" component={Both} />
-          <Route path="/ramda/logic/ifelse" component={AnyPass} />
-          <Route path="/ramda/logic/ifelse" component={AllPass} />
-          <Route path="/ramda/logic/ifelse" component={Empty} />
-          <Route path="/ramda/logic/ifelse" component={IsEmpty} />
+          <Route path="/ramda/logic/not" component={Not} />
+          <Route path="/ramda/logic/or" component={Or} />
+          <Route path="/ramda/logic/and" component={And} />
+          <Route path="/ramda/logic/complement" component={Complement} />
+          <Route path="/ramda/logic/either" component={Either} />
+          <Route path="/ramda/logic/both" component={Both} />
+          <Route path="/ramda/logic/anypass" component={AnyPass} />
+          <Route path="/ramda/logic/allpass" component={AllPass} />
+          <Route path="/ramda/logic/empty" component={Empty} />
+          <Route path="/ramda/logic/isempty" component={IsEmpty} />
         </Switch>
       </div>
     );

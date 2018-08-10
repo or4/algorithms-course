@@ -12,7 +12,11 @@ export class Empty extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>Empty</h3>
-        <div>{`R.equals(1, 1) = ${R.equals(1, 1)}`}</div>
+
+        <div>{`R.empty(R.always(42)) //=> Nothing()`}</div>
+        <div>{`R.empty([1, 2, 3]) //=> []`}</div>
+        <div>{`R.empty('unicorns') //=> ''`}</div>
+        <div>{`R.empty({ x: 1, y: 2 }) //=> {}`}</div>
       </div>
     );
   }

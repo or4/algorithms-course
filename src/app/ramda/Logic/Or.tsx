@@ -12,7 +12,10 @@ export class Or extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>Or</h3>
-        <div>{`R.equals(1, 1) = ${R.equals(1, 1)}`}</div>
+        <div>{`R.or(true, true) = ${R.or(true, true)}`}</div>
+        <div>{`R.or(true, false) = ${R.or(true, false)}`}</div>
+        <div>{`R.or(false, true) = ${R.or(false, true)}`}</div>
+        <div>{`R.or(false, false) = ${R.or(false, false)}`}</div>
       </div>
     );
   }

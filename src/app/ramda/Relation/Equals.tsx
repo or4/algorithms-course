@@ -30,6 +30,8 @@ export class Equals extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>Equals</h3>
+        <h5>Unlike R.identical, R.equals compare values by content</h5>
+        <h5>Two different objects, that has even keys and even values is equal, but not identical</h5>
         <div>{`R.equals(1, 1) = ${R.equals(1, 1)}`}</div>
         <div>{`R.equals(1, '1' as any) = ${R.equals(1, '1' as any)}`}</div>
         <div>{`R.equals([1, 2, 3], [1, 2, 3]) = ${R.equals([1, 2, 3], [1, 2, 3])}`}</div>
@@ -38,7 +40,7 @@ export class Equals extends React.PureComponent<Props, State> {
         <div>{`const b = { x: 1 };`}</div>
         <div>{`const c = { x: 2 };`}</div>
         <div>{`const d = { y: 1 };`}</div>
-        <div>{`R.equals(a, b) = ${R.equals(a, b)}`}</div>
+        <div>{`R.equals(a, b) = ${R.equals(a, b)}`/* => true */}</div>
         <div>{`R.equals(b, c) = ${R.equals(b, c)}`}</div>
         <div>{`R.equals(b, d as any) = ${R.equals(b, d as any)}`}</div>
       </div>

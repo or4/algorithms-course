@@ -12,7 +12,12 @@ export class IsEmpty extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>IsEmpty</h3>
-        <div>{`R.equals(1, 1) = ${R.equals(1, 1)}`}</div>
+        <div>R.isEmpty([1, 2, 3]); //=> false</div>
+        <div>R.isEmpty([]); //=> true</div>
+        <div>R.isEmpty(''); //=> true</div>
+        <div>R.isEmpty(null); //=> false</div>
+        <div>R.isEmpty({`{}`}); //=> true</div>
+        <div>R.isEmpty({`{length: 0}`}); //=> false</div>
       </div>
     );
   }

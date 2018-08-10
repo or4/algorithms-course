@@ -8,11 +8,14 @@ type State = {
 
 export class Either extends React.PureComponent<Props, State> {
   render() {
+    const f = R.either(x => x > 10, x => x % 2 === 0);
 
     return (
       <div>
         <h3>Either</h3>
-        <div>{`R.equals(1, 1) = ${R.equals(1, 1)}`}</div>
+        <div>{`const f = R.either(x => x > 10, x => x % 2 === 0)`}</div>
+        <div>{`f(101) = ${f(101)}`}</div>
+        <div>{`f(8) = ${f(8)}`}</div>
       </div>
     );
   }
