@@ -44,32 +44,30 @@ class BinaryAvlTreeItem {
     const rightLength = getMaxLength(this.right && this.right.node);
 
     if (leftLength < rightLength) {
+    // if (rightLength - leftLength > 1) {
       if (this.item < value) {
         const rightNode = this.right;
         const node = getLastNodeLeft(rightNode);
-        // console.log('this.parent', this.parent);
-        // console.log('rightNode', rightNode);
 
         console.log(`change right ${this.item} with ${rightNode.node.item}`);
         this.parent.node = rightNode.node;
         rightNode.node.parent = this.parent;
 
-        // rightNode.node.left.node = this;
         node.node.left = new BinaryAvlTreeNode(this.item);
         node.node.left.node.left = this.left;
       }
     } else if (leftLength > rightLength) {
+      // } else if (leftLength - rightLength > 1) {
       if (this.item > value) {
         const leftNode = this.left;
+        const node = getLastNodeRight(leftNode);
+
         console.log(`change left ${this.item} with ${leftNode.node.item}`);
         this.parent.node = leftNode.node;
         leftNode.node.parent = this.parent;
 
-        const node = getLastNodeRight(leftNode);
         node.node.right = new BinaryAvlTreeNode(this.item);
         node.node.right.node.right = this.right;
-        // leftNode.node.right = new BinaryAvlTreeNode(this.item);
-        // leftNode.node.right.node.right = this.right;
       }
     }
 
