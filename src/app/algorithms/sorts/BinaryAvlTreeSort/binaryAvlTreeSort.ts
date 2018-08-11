@@ -1,44 +1,29 @@
 import * as R from 'ramda';
 import { isNotNil } from 'app/ramda/helpers';
 
-class BinaryAvlTreeNode {
-  node: BinaryAvlTreeItem
-}
+
 class BinaryAvlTreeItem {
+  left: BinaryAvlTreeNode;
+  right: BinaryAvlTreeNode;
 
-  left: BinaryAvlTreeItem;
-  right: BinaryAvlTreeItem;
-
-  constructor(public parent: BinaryAvlTreeItem | null, public item: number) {}
+  constructor(public parent: BinaryAvlTreeNode, public item: number) {}
 
   public push(value: number) {
 
     if (R.isNil(this.left) && isNotNil(this.right)) {
       if (this.item < value) {
         const rightNode = this.right;
-        console.log(`change ${this.item} with ${rightNode.item}`);
-        if (this.parent === null) {
-          console.log(`set root.item ${rightNode.item}`);
-          tree.root = rightNode;
-        }
-        rightNode.parent = this.parent;
-        this.parent = rightNode;
-        rightNode.left = this;
-        rightNode.right = new BinaryAvlTreeItem(rightNode, value);
+        console.log(`change ${this.item} with ${rightNode.node.item}`);
+        this.parent.node = rightNode.node;
+        rightNode.node.left = new BinaryAvlTreeNode(this.item);
       }
     }
     if (R.isNil(this.right) && isNotNil(this.left)) {
       if (this.item > value) {
         const leftNode = this.left;
-        console.log(`change ${this.item} with ${leftNode.item}`);
-        if (this.parent === null) {
-          console.log(`set root.item ${leftNode.item}`);
-          tree.root = leftNode;
-        }
-        leftNode.parent = this.parent;
-        this.parent = leftNode;
-        leftNode.right = this;
-        leftNode.left = new BinaryAvlTreeItem(leftNode, value);
+        console.log(`change ${this.item} with ${leftNode.node.item}`);
+        this.parent.node = leftNode.node;
+        leftNode.node.right = new BinaryAvlTreeNode(this.item);
       }
     }
 
@@ -48,14 +33,14 @@ class BinaryAvlTreeItem {
   public pushSimple(value: number) {
     if (value < this.item) {
       if (R.isNil(this.left)) {
-        this.left = new BinaryAvlTreeItem(this, value);
+        this.left = new BinaryAvlTreeNode(value);
         return;
       }
       this.left.push(value);
 
     } else if (value > this.item) {
       if (R.isNil(this.right)) {
-        this.right = new BinaryAvlTreeItem(this, value);
+        this.right = new BinaryAvlTreeNode(value);
         return;
       }
       this.right.push(value);
@@ -64,30 +49,43 @@ class BinaryAvlTreeItem {
       // skip doubles
     }
   }
+  public toString() {
+    return this.item;
+  }
 }
 
 
+class BinaryAvlTreeNode {
+  node: BinaryAvlTreeItem;
+
+  constructor(item: number) {
+    this.node = new BinaryAvlTreeItem(this, item);
+  }
+  public push(value: number) {
+    this.node.push(value);
+  }
+}
 
 class BinaryAvlTree {
-  root: BinaryAvlTreeItem;
+  root: BinaryAvlTreeNode;
 
   public push(value: number) {
-    console.log('BinaryAvlTree push value', value);
     if (R.isNil(this.root)) {
-      this.root = new BinaryAvlTreeItem(null, value);
-      return;
+      console.log('BinaryAvlTree set root value', value);
+      this.root = new BinaryAvlTreeNode(value);
+      // this.root.node.parent = null;
+    } else {
+      console.log('BinaryAvlTree push value', value);
+      this.root.push(value);
     }
-    this.root.push(value);
   }
 }
 
 
 
-const tree = new BinaryAvlTree();
-
-
-
 export const binaryAvlTreeSort = (arr: number[]) => {
+  const tree = new BinaryAvlTree();
+
   R.pipe(R.forEach((a: number) => tree.push(a)))(arr);
   console.log('tree', tree);
 };

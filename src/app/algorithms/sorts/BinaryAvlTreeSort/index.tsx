@@ -2,7 +2,8 @@ import React from 'react';
 import { binaryAvlTreeSort } from './binaryAvlTreeSort';
 
 // const arr = [3, 2, 1, 4, 5, 7];
-const arr = [1, 2, 3, 4, 5];
+// const arr = [1, 2, 3, 4, 5];
+const arr = [1, 2, 3, 4, 5, 7, 8, 9];
 
 type Props = {
 };
@@ -11,8 +12,9 @@ type State = {
 
 export class BinaryAvlTreeSort extends React.PureComponent<Props, State> {
   render() {
-    const res = binaryAvlTreeSort(arr);
-    console.log('binaryAvlTreeSort', res);
+    binaryAvlTreeSort([1, 2]);
+    binaryAvlTreeSort(arr);
+    // console.log('binaryAvlTreeSort', res);
     return (
       <div>
         <h3>BinaryAvlTreeSort</h3>
