@@ -3582,6 +3582,10 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
+future@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/future/-/future-2.3.1.tgz#2d327e0611dd56fac7112d057c799c485ec23be9"
+
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -7578,6 +7582,66 @@ safe-regex@^1.1.0:
 safer-buffer@^2.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
+
+sanctuary-def@0.18.1:
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/sanctuary-def/-/sanctuary-def-0.18.1.tgz#580af82a3fbbd651e8dddc0ab34b11727ef63b5f"
+  dependencies:
+    sanctuary-either "1.0.x"
+    sanctuary-show "1.0.x"
+    sanctuary-type-classes "9.0.x"
+    sanctuary-type-identifiers "2.0.x"
+
+sanctuary-either@1.0.0, sanctuary-either@1.0.x:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-either/-/sanctuary-either-1.0.0.tgz#b6041e54c639700048be757ba4d6c026c2c2f67c"
+  dependencies:
+    sanctuary-show "1.0.x"
+    sanctuary-type-classes "9.0.0"
+
+sanctuary-maybe@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-maybe/-/sanctuary-maybe-1.0.0.tgz#03cd226d933ec89270e4495a965733390e843afc"
+  dependencies:
+    sanctuary-show "1.0.x"
+    sanctuary-type-classes "9.0.0"
+
+sanctuary-pair@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-pair/-/sanctuary-pair-1.0.0.tgz#eaf8121f0ba3064e5e0b09bb624bc3885209886a"
+  dependencies:
+    sanctuary-show "1.0.x"
+    sanctuary-type-classes "9.0.0"
+
+sanctuary-show@1.0.0, sanctuary-show@1.0.x:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-show/-/sanctuary-show-1.0.0.tgz#72deb4812f9decec850e03286807dca1c97a1d61"
+
+sanctuary-type-classes@9.0.0, sanctuary-type-classes@9.0.x:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-type-classes/-/sanctuary-type-classes-9.0.0.tgz#b44741ca67fa650cbd314e1ad318d730ce1309a4"
+  dependencies:
+    sanctuary-type-identifiers "1.0.x"
+
+sanctuary-type-identifiers@1.0.x:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-type-identifiers/-/sanctuary-type-identifiers-1.0.0.tgz#e8f359f006cb5e624cfb8464603fc114608bde9f"
+
+sanctuary-type-identifiers@2.0.1, sanctuary-type-identifiers@2.0.x:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/sanctuary-type-identifiers/-/sanctuary-type-identifiers-2.0.1.tgz#fc524cf6dd92cebfcbb0dd9509eff193159a20ed"
+
+sanctuary@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/sanctuary/-/sanctuary-0.15.0.tgz#a4b9bf7a43bad928dce3e7aa590fbf30681b9ebd"
+  dependencies:
+    sanctuary-def "0.18.1"
+    sanctuary-either "1.0.0"
+    sanctuary-maybe "1.0.0"
+    sanctuary-pair "1.0.0"
+    sanctuary-show "1.0.0"
+    sanctuary-type-classes "9.0.0"
+    sanctuary-type-identifiers "2.0.1"
 
 sane@^2.0.0:
   version "2.5.0"
