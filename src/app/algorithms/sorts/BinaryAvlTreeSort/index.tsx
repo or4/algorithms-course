@@ -2,7 +2,7 @@ import React from 'react';
 import { binaryAvlTreeSort } from './binaryAvlTreeSort';
 
 // const arr = [3, 2, 1, 4, 5, 7];
-const arr = [1, 2, 3, 4];
+const arr = [1, 2, 3, 4, 5];
 
 type Props = {
 };
