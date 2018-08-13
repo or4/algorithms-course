@@ -5,27 +5,19 @@ import { AnimateSimple } from './RAF';
 import { Keyframe } from './Keyframe';
 import { TransitionGroup } from './TransitionGroup';
 
-
 type Props = {
 };
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Animate extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={rawStyle.link} to={`/animate/raf`}>Simple rAF</Link>
-          <Link style={rawStyle.link} to={`/animate/keyframe`}>keyframe</Link>
-          <Link style={rawStyle.link} to={`/animate/transition-group`}>ReactCSSTransitionGroup</Link>
+          <Link to={`/animate/raf`}>Simple rAF</Link>
+          <Link to={`/animate/keyframe`}>keyframe</Link>
+          <Link to={`/animate/transition-group`}>ReactCSSTransitionGroup</Link>
         </div>
         <Switch>
           <Route path="/animate/raf" component={AnimateSimple} />

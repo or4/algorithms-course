@@ -29,7 +29,7 @@ type State = {
 export class Functions extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={`/ramda/functions/compose`}>compose / pipe</Link>
           <Link to={`/ramda/functions/curry`}>curry / uncurryN</Link>

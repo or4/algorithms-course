@@ -22,7 +22,7 @@ type State = {
 export class Logic extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={`/ramda/logic/ifelse`}>IfElse</Link>
           <Link to={`/ramda/logic/not`}>Not</Link>

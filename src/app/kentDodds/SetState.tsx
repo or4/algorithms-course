@@ -7,7 +7,7 @@ type State = {
   count: number;
   callbackCalled: number;
 };
-export class KentDoddsEx1 extends React.PureComponent<Props, State> {
+export class SetState extends React.PureComponent<Props, State> {
   state = {
     count: 0,
     callbackCalled: 0,
@@ -31,9 +31,12 @@ export class KentDoddsEx1 extends React.PureComponent<Props, State> {
   }
   render() {
     return (
-      <Button onClick={this.onClick}>
+      <div>
+        <h3>React this.setState callback</h3>
+        <Button onClick={this.onClick}>
         Button Clicked {this.state.count}, Callback called {this.state.callbackCalled}
-      </Button>
+        </Button>
+      </div>
     );
   }
 }

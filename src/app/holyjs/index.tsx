@@ -12,26 +12,15 @@ type State = {
 };
 
 export class HolyJs extends React.PureComponent<Props, State> {
-  getStyle = () => {
-    const link = {
-      display: 'inline-block',
-      padding: '10px',
-    };
-    return {
-      link,
-    };
-  }
   render() {
-    const style = this.getStyle();
-
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={style.link} to={`/holyjs/Vitaliy Freedman/CssCounter`}>CssCounter</Link>
-          <Link style={style.link} to={`/holyjs/Vitaliy Freedman/CssResponsive`}>CssResponsive</Link>
-          <Link style={style.link} to={`/holyjs/Yandex/TTFCP`}>TTFCP</Link>
-          <Link style={style.link} to={`/holyjs/Yandex/TTFMP_rAF`}>TTFMP_rAF</Link>
-          <Link style={style.link} to={`/holyjs/Yandex/TTFMP_rAF`}>TTFMP_rAF</Link>
+          <Link to={`/holyjs/Vitaliy Freedman/CssCounter`}>CssCounter</Link>
+          <Link to={`/holyjs/Vitaliy Freedman/CssResponsive`}>CssResponsive</Link>
+          <Link to={`/holyjs/Yandex/TTFCP`}>TTFCP</Link>
+          <Link to={`/holyjs/Yandex/TTFMP_rAF`}>TTFMP_rAF</Link>
+          <Link to={`/holyjs/Yandex/TTFMP_rAF`}>TTFMP_rAF</Link>
         </div>
         <Switch>
           <Route path="/holyjs/Vitaliy Freedman/CssCounter" component={CssCounter} />

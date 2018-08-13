@@ -48,13 +48,16 @@ class Toggle extends React.PureComponent<Props, State> {
 }
 
 
-export function KentDoddsEx2() {
+export function Children() {
   const f = (on: any) => console.log('toggle', on);
   return (
-    <Toggle onToggle={f} >
-      <Toggle.On someprops={'someprops'} >The button is on</Toggle.On>
-      <Toggle.Off>The button is off</Toggle.Off>
-      <Toggle.Button />
-    </Toggle>
+    <div>
+      <h3>React Children like Toggle.On</h3>
+      <Toggle onToggle={f} >
+        <Toggle.On someprops={'someprops'} >The button is on</Toggle.On>
+        <Toggle.Off>The button is off</Toggle.Off>
+        <Toggle.Button />
+      </Toggle>
+    </div>
   );
 }

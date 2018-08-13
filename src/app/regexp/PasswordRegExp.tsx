@@ -26,6 +26,8 @@ export class PasswordRegExp extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
+        <h3>Check some regular expression..</h3>
+        <h5>At least 8 symbols, at least one latin upper letter, at least one latin lower letter</h5>
         <input onChange={this.onChange} value={this.state.value} />
         <div style={{ display: 'inline-block', marginLeft: '20px' }}>
           Validation is {String(this.state.isValid)}

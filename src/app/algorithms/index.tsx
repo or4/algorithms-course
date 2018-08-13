@@ -13,31 +13,24 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Algorithms extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={rawStyle.link} to={`/algorithms/sorts/bubble`}>Bubble Sort</Link>
-          <Link style={rawStyle.link} to={`/algorithms/sorts/selection`}>Selection Sort</Link>
-          <Link style={rawStyle.link} to={`/algorithms/sorts/merge`}>Merge Sort</Link>
-          <Link style={rawStyle.link} to={`/algorithms/sorts/insertion`}>Insertion Sort</Link>
-          <Link style={rawStyle.link} to={`/algorithms/sorts/quick`}>Quick Sort</Link>
-          <Link style={rawStyle.link} to={`/algorithms/sorts/binary`}>Binary Tree Sort</Link>
-          <Link style={rawStyle.link} to={`/algorithms/sorts/binaryAvl`}>Binary AVL Tree Sort</Link>
-          <Link style={rawStyle.link} to={`/algorithms/karatsuba`}>Karatsuba</Link>
-          <Link style={rawStyle.link} to={`/algorithms/inversions`}>Inversions</Link>
-          <Link style={rawStyle.link} to={`/algorithms/matrix-multiply`}>Matrix multiply</Link>
-          <Link style={rawStyle.link} to={`/algorithms/karger`}>KargerMinCut</Link>
-          <Link style={rawStyle.link} to={`/algorithms/searches/binary`}>BinarySearch</Link>
-          <Link style={rawStyle.link} to={`/algorithms/searches/interpolation`}>InterpolationSearch</Link>
+          <Link to={`/algorithms/sorts/bubble`}>Bubble Sort</Link>
+          <Link to={`/algorithms/sorts/selection`}>Selection Sort</Link>
+          <Link to={`/algorithms/sorts/merge`}>Merge Sort</Link>
+          <Link to={`/algorithms/sorts/insertion`}>Insertion Sort</Link>
+          <Link to={`/algorithms/sorts/quick`}>Quick Sort</Link>
+          <Link to={`/algorithms/sorts/binary`}>Binary Tree Sort</Link>
+          <Link to={`/algorithms/sorts/binaryAvl`}>Binary AVL Tree Sort</Link>
+          <Link to={`/algorithms/karatsuba`}>Karatsuba</Link>
+          <Link to={`/algorithms/inversions`}>Inversions</Link>
+          <Link to={`/algorithms/matrix-multiply`}>Matrix multiply</Link>
+          <Link to={`/algorithms/karger`}>KargerMinCut</Link>
+          <Link to={`/algorithms/searches/binary`}>BinarySearch</Link>
+          <Link to={`/algorithms/searches/interpolation`}>InterpolationSearch</Link>
         </div>
         <Switch>
           <Route path="/algorithms/sorts/bubble" component={BubbleSort} />

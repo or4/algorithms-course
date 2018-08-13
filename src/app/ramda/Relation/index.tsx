@@ -16,7 +16,7 @@ type State = {
 export class Relation extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={`/ramda/relation/equals`}>Equals</Link>
           <Link to={`/ramda/relation/identical`}>Identical</Link>

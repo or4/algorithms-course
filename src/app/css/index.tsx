@@ -8,19 +8,12 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Css extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={rawStyle.link} to={`/css/selectors`}>Selectors</Link>
+          <Link to={`/css/selectors`}>Selectors</Link>
         </div>
         <Switch>
           <Route path="/css/selectors" component={CssSelectors} />

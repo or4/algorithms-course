@@ -42,7 +42,7 @@ const routes = {
 class Main extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={routes.home}>Home</Link>
           <Link to={routes.algorithms}>algorithms</Link>

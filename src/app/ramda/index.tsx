@@ -17,7 +17,7 @@ type State = {
 export class Ramda extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={`/ramda/maths`}>Maths</Link>
           <Link to={`/ramda/relation`}>Relation</Link>

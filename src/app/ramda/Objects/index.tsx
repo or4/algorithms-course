@@ -12,7 +12,7 @@ type State = {
 export class Objects extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={`/ramda/objects/map`}>MapObjIndexed</Link>
         </div>

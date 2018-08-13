@@ -8,19 +8,12 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class NN extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={rawStyle.link} to={`/nn/and`}>Conjunction</Link>
+          <Link to={`/nn/and`}>Conjunction</Link>
         </div>
         <Switch>
           <Route path="/nn/and" component={Conjunction} />

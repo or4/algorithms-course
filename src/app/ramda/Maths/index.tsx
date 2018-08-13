@@ -19,7 +19,7 @@ type State = {
 export class Maths extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={`/ramda/maths/add`}>Add</Link>
           <Link to={`/ramda/maths/subtract`}>Subtract</Link>

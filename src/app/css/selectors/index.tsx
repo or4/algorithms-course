@@ -11,22 +11,15 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class CssSelectors extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={rawStyle.link} to={`/css/selectors/gt`}>&gt; as gt</Link>
-          <Link style={rawStyle.link} to={`/css/selectors/plus`}>plus</Link>
-          <Link style={rawStyle.link} to={`/css/selectors/tilda`}>tilda</Link>
-          <Link style={rawStyle.link} to={`/css/selectors/space`}>space</Link>
+          <Link to={`/css/selectors/gt`}>&gt; as gt</Link>
+          <Link to={`/css/selectors/plus`}>plus</Link>
+          <Link to={`/css/selectors/tilda`}>tilda</Link>
+          <Link to={`/css/selectors/space`}>space</Link>
         </div>
         <Switch>
           <Route path="/css/selectors/gt" component={CssSelectorsGt} />

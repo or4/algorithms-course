@@ -12,7 +12,7 @@ type State = {
 export class Lists extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div className="menu-container-level">
+      <div className="menu-container">
         <div>
           <Link to={`/ramda/lists/chain`}>Chain</Link>
         </div>

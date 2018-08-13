@@ -10,20 +10,13 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class RxJs extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={rawStyle.link} to={`/rxjs/simple`}>Simple</Link>
-          <Link style={rawStyle.link} to={`/rxjs/ticker`}>Ticker</Link>
+          <Link to={`/rxjs/simple`}>Simple</Link>
+          <Link to={`/rxjs/ticker`}>Ticker</Link>
         </div>
         <Switch>
           <Route path="/rxjs/simple" component={RxjsSimple} />

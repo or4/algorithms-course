@@ -1,7 +1,7 @@
 import React from 'react';
 import * as R from 'ramda';
 // import { data } from './data/data';
-import { data as realdata2 } from './data/data2';
+// import { data as realdata2 } from './data/data2';
 import { data as testDataSimple } from './data/dataSimple';
 import { data as testData3x6 } from './data/dataTest3-6';
 import { data as testData4x6 } from './data/dataTest4-6';
@@ -28,7 +28,7 @@ export class KargerMinCut extends React.PureComponent<Props, State> {
   }
   componentDidMount() {
     // const result =  run(testDataSimple, 'simple') as number;
-    // const result =  run(testData3x6, '3x6') as number;
+    const result =  run(testData3x6, '3x6') as number;
     // const result = run(testData4x6, '4x6') as number;
     // const result = run(testData5x10, '5x10') as number;
     // const result = run(testData6x10, '6x10') as number;
@@ -39,7 +39,7 @@ export class KargerMinCut extends React.PureComponent<Props, State> {
     // const result = run(testData37x200, '37x200') as number;
 
     // const result = run(testData40x200, '40x200') as number;
-    const result = run(realdata2, 'realdata') as number;
+    // const result = run(realdata2, 'realdata') as number;
     this.setState({
       result,
     });

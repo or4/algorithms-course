@@ -8,19 +8,12 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Probability extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container">
         <div>
-          <Link style={rawStyle.link} to={`/probability/basics`}>Basics</Link>
+          <Link to={`/probability/basics`}>Basics</Link>
         </div>
         <Switch>
           <Route path="/probability/basics" component={ProbabilityTheoryBasics} />
