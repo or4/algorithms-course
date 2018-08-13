@@ -32,9 +32,6 @@ export class Apply extends React.PureComponent<Props, State> {
 
         <h3>Test case</h3>
         <div>{`R.unapply(R.join(' / '))(1, 2, 3) = ${R.unapply(R.join(' / '))(1, 2, 3)}`}</div>
-
-
-
       </div>
     );
   }
