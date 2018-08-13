@@ -40,56 +40,46 @@ const routes = {
 };
 
 class Main extends React.PureComponent<Props, State> {
-  getStyle = () => {
-    const link = {
-      display: 'inline-block',
-      padding: '10px',
-    };
-    return {
-      link,
-    };
-  }
   render() {
-    const style = this.getStyle();
     return (
-      <div>
+      <div className="menu-container-level">
         <div>
-          <Link style={style.link} to={routes.home}>Home</Link>
-          <Link style={style.link} to={routes.algorithms}>algorithms</Link>
-          <Link style={style.link} to={routes.animate}>animate</Link>
-          <Link style={style.link} to={routes.ast}>ast</Link>
-          <Link style={style.link} to={routes.css}>css</Link>
-          <Link style={style.link} to={routes.hoc}>hoc</Link>
-          <Link style={style.link} to={routes.holyjs}>holyjs</Link>
-          <Link style={style.link} to={routes.jss}>jss</Link>
-          <Link style={style.link} to={routes.kentDodds}>kent-dodds</Link>
-          <Link style={style.link} to={routes.nn}>NN</Link>
-          <Link style={style.link} to={routes.probability}>probability</Link>
-          <Link style={style.link} to={routes.ramda}>ramda</Link>
-          <Link style={style.link} to={routes.refs}>refs</Link>
-          <Link style={style.link} to={routes.regexp}>regexp</Link>
-          <Link style={style.link} to={routes.rxjs}>rxjs</Link>
+          <Link to={routes.home}>Home</Link>
+          <Link to={routes.algorithms}>algorithms</Link>
+          <Link to={routes.animate}>animate</Link>
+          <Link to={routes.ast}>ast</Link>
+          <Link to={routes.css}>css</Link>
+          <Link to={routes.hoc}>hoc</Link>
+          <Link to={routes.holyjs}>holyjs</Link>
+          <Link to={routes.jss}>jss</Link>
+          <Link to={routes.kentDodds}>kent-dodds</Link>
+          <Link to={routes.nn}>NN</Link>
+          <Link to={routes.probability}>probability</Link>
+          <Link to={routes.ramda}>ramda</Link>
+          <Link to={routes.refs}>refs</Link>
+          <Link to={routes.regexp}>regexp</Link>
+          <Link to={routes.rxjs}>rxjs</Link>
         </div>
-        <div style={{ padding: '10px 0 0 20px' }}>
-          <Switch>
-            <Route path={routes.algorithms} component={Algorithms} />
-            <Route path={routes.animate} component={Animate} />
-            <Route path={routes.ast} component={Ast} />
-            <Route path={routes.css} component={Css} />
-            <Route path={routes.hoc} component={Hoc} />
-            <Route path={routes.holyjs} component={HolyJs} />
-            <Route path={routes.jss} component={Jss} />
-            <Route path={routes.kentDodds} component={KentDodds} />
-            <Route path={routes.nn} component={NN} />
-            <Route path={routes.probability} component={Probability} />
-            <Route path={routes.ramda} component={Ramda} />
-            <Route path={routes.refs} component={Refs} />
-            <Route path={routes.regexp} component={Regexp} />
-            <Route path={routes.rxjs} component={RxJs} />
-          </Switch>
-        </div>
+
+        <Switch>
+          <Route path={routes.algorithms} component={Algorithms} />
+          <Route path={routes.animate} component={Animate} />
+          <Route path={routes.ast} component={Ast} />
+          <Route path={routes.css} component={Css} />
+          <Route path={routes.hoc} component={Hoc} />
+          <Route path={routes.holyjs} component={HolyJs} />
+          <Route path={routes.jss} component={Jss} />
+          <Route path={routes.kentDodds} component={KentDodds} />
+          <Route path={routes.nn} component={NN} />
+          <Route path={routes.probability} component={Probability} />
+          <Route path={routes.ramda} component={Ramda} />
+          <Route path={routes.refs} component={Refs} />
+          <Route path={routes.regexp} component={Regexp} />
+          <Route path={routes.rxjs} component={RxJs} />
+        </Switch>
       </div>
     );
   }
 }
+
 export default Main;

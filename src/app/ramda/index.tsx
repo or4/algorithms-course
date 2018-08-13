@@ -9,31 +9,24 @@ import { Functions } from './Functions';
 import { Objects } from './Objects';
 import { Lists } from './Lists';
 
-
 type Props = {
 };
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Ramda extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container-level">
         <div>
-          <Link style={rawStyle.link} to={`/ramda/maths`}>Maths</Link>
-          <Link style={rawStyle.link} to={`/ramda/relation`}>Relation</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic`}>Logic</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions`}>Functions</Link>
-          <Link style={rawStyle.link} to={`/ramda/objects`}>Objects</Link>
-          <Link style={rawStyle.link} to={`/ramda/lists`}>Lists</Link>
+          <Link to={`/ramda/maths`}>Maths</Link>
+          <Link to={`/ramda/relation`}>Relation</Link>
+          <Link to={`/ramda/logic`}>Logic</Link>
+          <Link to={`/ramda/functions`}>Functions</Link>
+          <Link to={`/ramda/objects`}>Objects</Link>
+          <Link to={`/ramda/lists`}>Lists</Link>
         </div>
+
         <Switch>
           <Route path="/ramda/maths" component={Maths} />
           <Route path="/ramda/relation" component={Relation} />

@@ -19,29 +19,22 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Logic extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container-level">
         <div>
-          <Link style={rawStyle.link} to={`/ramda/logic/ifelse`}>IfElse</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/not`}>Not</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/or`}>Or</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/and`}>And</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/complement`}>Complement</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/either`}>Either</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/both`}>Both</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/anypass`}>AnyPass</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/allpass`}>AllPass</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/empty`}>Empty</Link>
-          <Link style={rawStyle.link} to={`/ramda/logic/isempty`}>IsEmpty</Link>
+          <Link to={`/ramda/logic/ifelse`}>IfElse</Link>
+          <Link to={`/ramda/logic/not`}>Not</Link>
+          <Link to={`/ramda/logic/or`}>Or</Link>
+          <Link to={`/ramda/logic/and`}>And</Link>
+          <Link to={`/ramda/logic/complement`}>Complement</Link>
+          <Link to={`/ramda/logic/either`}>Either</Link>
+          <Link to={`/ramda/logic/both`}>Both</Link>
+          <Link to={`/ramda/logic/anypass`}>AnyPass</Link>
+          <Link to={`/ramda/logic/allpass`}>AllPass</Link>
+          <Link to={`/ramda/logic/empty`}>Empty</Link>
+          <Link to={`/ramda/logic/isempty`}>IsEmpty</Link>
         </div>
         <Switch>
           <Route path="/ramda/logic/ifelse" component={IfElse} />

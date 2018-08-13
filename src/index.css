@@ -28,7 +28,11 @@ body {
 }
 
 a {
+  color: rgb(85, 26, 139);
   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 button {
@@ -38,4 +42,17 @@ button {
 }
 input[type="text"] {
   padding: 1px 4px;
+}
+
+/* there are so strong and complex style only for small code in ts files */
+
+.menu-container-level {
+  padding: 10px 0px 0px 20px;
+}
+.menu-container-level > div:first-child {
+  border-bottom: 1px solid rgba(0,0,0,.3);
+}
+.menu-container-level a {
+  display: inline-block;
+  padding: 10px 20px 10px 0;
 }

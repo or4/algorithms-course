@@ -26,38 +26,31 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Functions extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container-level">
         <div>
-          <Link style={rawStyle.link} to={`/ramda/functions/compose`}>compose / pipe</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/curry`}>curry / uncurryN</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/partial`}>partial</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/flip`}>flip</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/apply`}>apply / unapply </Link>
+          <Link to={`/ramda/functions/compose`}>compose / pipe</Link>
+          <Link to={`/ramda/functions/curry`}>curry / uncurryN</Link>
+          <Link to={`/ramda/functions/partial`}>partial</Link>
+          <Link to={`/ramda/functions/flip`}>flip</Link>
+          <Link to={`/ramda/functions/apply`}>apply / unapply </Link>
 
-          <Link style={rawStyle.link} to={`/ramda/functions/converge`}>converge</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/useWith`}>useWith</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/juxt`}>juxt</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/unary`}>unary</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/binary`}>binary</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/nary`}>nary</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/identity`}>identity</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/invoker`}>invoker</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/once`}>once</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/tap`}>tap</Link>
+          <Link to={`/ramda/functions/converge`}>converge</Link>
+          <Link to={`/ramda/functions/useWith`}>useWith</Link>
+          <Link to={`/ramda/functions/juxt`}>juxt</Link>
+          <Link to={`/ramda/functions/unary`}>unary</Link>
+          <Link to={`/ramda/functions/binary`}>binary</Link>
+          <Link to={`/ramda/functions/nary`}>nary</Link>
+          <Link to={`/ramda/functions/identity`}>identity</Link>
+          <Link to={`/ramda/functions/invoker`}>invoker</Link>
+          <Link to={`/ramda/functions/once`}>once</Link>
+          <Link to={`/ramda/functions/tap`}>tap</Link>
 
-          <Link style={rawStyle.link} to={`/ramda/functions/bind`}>bind</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/lift`}>lift</Link>
-          <Link style={rawStyle.link} to={`/ramda/functions/memoize`}>memoize</Link>
+          <Link to={`/ramda/functions/bind`}>bind</Link>
+          <Link to={`/ramda/functions/lift`}>lift</Link>
+          <Link to={`/ramda/functions/memoize`}>memoize</Link>
 
         </div>
         <Switch>

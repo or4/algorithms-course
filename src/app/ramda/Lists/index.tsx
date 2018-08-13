@@ -9,19 +9,12 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Lists extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container-level">
         <div>
-          <Link style={rawStyle.link} to={`/ramda/lists/chain`}>Chain</Link>
+          <Link to={`/ramda/lists/chain`}>Chain</Link>
         </div>
         <Switch>
           <Route path="/ramda/lists/chain" component={Chain} />

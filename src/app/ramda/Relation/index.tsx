@@ -13,23 +13,16 @@ type Props = {
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Relation extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container-level">
         <div>
-          <Link style={rawStyle.link} to={`/ramda/relation/equals`}>Equals</Link>
-          <Link style={rawStyle.link} to={`/ramda/relation/identical`}>Identical</Link>
-          <Link style={rawStyle.link} to={`/ramda/relation/comprasions`}>Comprasions</Link>
-          <Link style={rawStyle.link} to={`/ramda/relation/min`}>Min</Link>
-          <Link style={rawStyle.link} to={`/ramda/relation/max`}>Max</Link>
+          <Link to={`/ramda/relation/equals`}>Equals</Link>
+          <Link to={`/ramda/relation/identical`}>Identical</Link>
+          <Link to={`/ramda/relation/comprasions`}>Comprasions</Link>
+          <Link to={`/ramda/relation/min`}>Min</Link>
+          <Link to={`/ramda/relation/max`}>Max</Link>
         </div>
         <Switch>
           <Route path="/ramda/relation/equals" component={Equals} />

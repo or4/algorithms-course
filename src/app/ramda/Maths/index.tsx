@@ -11,33 +11,25 @@ import { Negate } from './Negate';
 import { Modulo } from './Modulo';
 import { Test } from './Test';
 
-
 type Props = {
 };
 type State = {
 };
 
-const rawStyle = {
-  link: {
-    display: 'inline-block',
-    padding: '10px',
-  }
-};
-
 export class Maths extends React.PureComponent<Props, State> {
   render() {
     return (
-      <div>
+      <div className="menu-container-level">
         <div>
-          <Link style={rawStyle.link} to={`/ramda/maths/add`}>Add</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/subtract`}>Subtract</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/multiply`}>Multiply</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/divide`}>Divide</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/inc`}>Inc</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/dec`}>Dec</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/negate`}>Negate</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/modulo`}>Modulo</Link>
-          <Link style={rawStyle.link} to={`/ramda/maths/test`}>Test</Link>
+          <Link to={`/ramda/maths/add`}>Add</Link>
+          <Link to={`/ramda/maths/subtract`}>Subtract</Link>
+          <Link to={`/ramda/maths/multiply`}>Multiply</Link>
+          <Link to={`/ramda/maths/divide`}>Divide</Link>
+          <Link to={`/ramda/maths/inc`}>Inc</Link>
+          <Link to={`/ramda/maths/dec`}>Dec</Link>
+          <Link to={`/ramda/maths/negate`}>Negate</Link>
+          <Link to={`/ramda/maths/modulo`}>Modulo</Link>
+          <Link to={`/ramda/maths/test`}>Test</Link>
         </div>
         <Switch>
           <Route path="/ramda/maths/add" component={Add} />
