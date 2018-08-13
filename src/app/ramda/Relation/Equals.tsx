@@ -29,7 +29,7 @@ export class Equals extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>Equals</h3>
+        <h3>R.equals</h3>
         <h5>Unlike R.identical, R.equals compare values by content</h5>
         <h5>Two different objects, that has even keys and even values is equal, but not identical</h5>
         <div>{`R.equals(1, 1) = ${R.equals(1, 1)}`}</div>

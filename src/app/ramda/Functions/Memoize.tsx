@@ -10,7 +10,7 @@ export class Memoize extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Memoize</h3>
+        <h3>R.memoize</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );

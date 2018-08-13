@@ -13,7 +13,7 @@ export class Unary extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>unary</h3>
+        <h3>R.unary</h3>
         <div>{`const takesTwoArgs = function(a: number, b: number) { return [a, b] };`}</div>
         <div>{`takesTwoArgs.length = ${takesTwoArgs.length}`}</div>
         <div>{`takesTwoArgs(1, 2) = ${takesTwoArgs(1, 2)}`}</div>

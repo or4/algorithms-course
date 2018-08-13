@@ -13,7 +13,7 @@ export class Identical extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>Identical</h3>
+        <h3>R.identical</h3>
         <h5>R.identical like strong comprasion as ===</h5>
         <div>{`R.identical(o1, o1) = ${R.identical(o1, o1)}`}</div>
         <div>{`R.identical(o1, o2) = ${R.identical(o1, o2)}`}</div>

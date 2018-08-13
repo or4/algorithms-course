@@ -12,7 +12,7 @@ export class Complement extends React.PureComponent<Props, State> {
     const isNotNil = R.complement(R.isNil);
     return (
       <div>
-        <h3>Complement</h3>
+        <h3>R.complement</h3>
         <h5>Takes a function f and returns a function g such that if called with the same arguments when f returns a "truthy" value, g returns false and when f returns a "falsy" value g returns true.</h5>
         <h5>R.complement may be applied to any functor</h5>
         <div>{`const isNil = R.isNil;`}</div>

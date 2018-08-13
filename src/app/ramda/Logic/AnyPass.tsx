@@ -14,7 +14,7 @@ export class AnyPass extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>AnyPass</h3>
+        <h3>R.anyPass</h3>
         <div>{`const isClub = R.propEq('suit', '♣');`}</div>
         <div>{`const isSpade = R.propEq('suit', '♠');`}</div>
         <div>{`const isBlackCard = R.anyPass([isClub, isSpade]);`}</div>

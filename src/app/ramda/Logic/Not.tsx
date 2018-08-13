@@ -18,7 +18,7 @@ export class Not extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>Not</h3>
+        <h3>R.not</h3>
         <div>{`R.not(true) = ${R.not(true)}`}</div>
         <div>{`R.not(false) = ${R.not(false)}`}</div>
         <div>{`R.not(0) = ${R.not(0)}`}</div>

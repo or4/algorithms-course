@@ -12,7 +12,7 @@ export class Both extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>Both</h3>
+        <h3>R.both</h3>
         <div>{`const f = R.both(R.gt(R.__, 10), R.lt(R.__, 20)) // deprecated`}</div>
         <div>{`const f = R.both(R.flip(R.gt)(10), R.flip(R.lt)(20))`}</div>
 

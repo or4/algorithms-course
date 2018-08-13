@@ -14,7 +14,7 @@ export class Negate extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Negate</h3>
+        <h3>R.negate</h3>
         <h3>Result: {negate('-1' as any)}</h3>
         <h3>Result: {String(R.negate(-1))}</h3>
         <h3>Result: {String(R.negate(1))}</h3>

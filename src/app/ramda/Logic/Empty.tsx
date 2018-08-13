@@ -11,7 +11,7 @@ export class Empty extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>Empty</h3>
+        <h3>R.empty</h3>
 
         <div>{`R.empty(R.always(42)) //=> Nothing()`}</div>
         <div>{`R.empty([1, 2, 3]) //=> []`}</div>

@@ -14,7 +14,7 @@ export class Multiply extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Multiply</h3>
+        <h3>R.multiply</h3>
         <h3>Result: {multiply(10)(2)}</h3>
         <h3>Result: {multiply(10)('3' as any)}</h3>
         <h3>Result: {String(R.multiply(1, 2))}</h3>

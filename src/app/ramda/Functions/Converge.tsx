@@ -10,7 +10,7 @@ export class Converge extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Converge</h3>
+        <h3>R.converge</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );

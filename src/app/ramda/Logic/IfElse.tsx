@@ -94,7 +94,7 @@ export class IfElse extends React.PureComponent<Props, State> {
         <h5><a href="https://ramdajs.com/docs/#when">https://ramdajs.com/docs/#when</a></h5>
 
 
-        <h3>IfElse</h3>
+        <h3>R.ifElse</h3>
         <div>
 
           <div>{`const testIfElse = () => {`}</div>
@@ -126,7 +126,7 @@ export class IfElse extends React.PureComponent<Props, State> {
           <div>&nbsp;</div>
           <div>&nbsp;</div>
 
-          <h3>Cond</h3>
+          <h3>R.cond</h3>
 
           <div>{`const testCond = () => {`}</div>
           <div>{`const fn = R.cond([`}</div>
@@ -174,7 +174,7 @@ export class IfElse extends React.PureComponent<Props, State> {
           <div>&nbsp;</div>
           <div>&nbsp;</div>
 
-          <h3>When</h3>
+          <h3>R.when</h3>
           <div>{`const testWhen = () => {`}</div>
           <div>{`// truncate :: String -> String`}</div>
           <div>{`const truncate = R.when(`}</div>

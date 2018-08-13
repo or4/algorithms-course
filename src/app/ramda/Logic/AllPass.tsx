@@ -14,7 +14,7 @@ export class AllPass extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <h3>AllPass</h3>
+        <h3>R.allPass</h3>
         <h5>Unlike R.both, R.allpass can provide more than two args</h5>
         <div>const isQueen = R.propEq('rank', 'Q');</div>
         <div>const isSpade = R.propEq('suit', '♠︎');</div>

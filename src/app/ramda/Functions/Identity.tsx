@@ -10,7 +10,7 @@ export class Identity extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Identity</h3>
+        <h3>R.identity</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );

@@ -49,7 +49,7 @@ export class Test extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Add</h3>
+        <h3>Some test cases</h3>
         <h3>Result1: {action1(2)(4)}</h3>
         <h3>Result2: {action2([2, 3, 4, 5])}</h3>
         <h3>Result3: {action3([2, 3, 4, 5])}</h3>

@@ -10,7 +10,7 @@ export class Partial extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Partial</h3>
+        <h3>R.partial</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );

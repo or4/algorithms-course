@@ -10,7 +10,7 @@ export class UseWith extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>UseWith</h3>
+        <h3>R.useWith</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );

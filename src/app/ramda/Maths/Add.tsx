@@ -16,7 +16,7 @@ export class Add extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Add</h3>
+        <h3>R.add</h3>
         <h3>Result: {String(R.add(1, 2))}</h3>
         <h3>Result: {String(R.add(1)(2))}</h3>
         <h3>Result: {add(0.1, 0.2)}</h3>

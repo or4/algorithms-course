@@ -14,7 +14,7 @@ export class Dec extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Dec</h3>
+        <h3>R.dec</h3>
         <h3>Result: {dec('1' as any)}</h3>
         <h3>Result: {String(R.dec(1))}</h3>
         <h3>Result: {String(R.dec(1))}</h3>

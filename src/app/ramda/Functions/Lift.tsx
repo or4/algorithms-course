@@ -10,7 +10,7 @@ export class Lift extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Lift</h3>
+        <h3>R.lift</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
       </div>
     );

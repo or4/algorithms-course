@@ -16,12 +16,12 @@ export class Min extends React.PureComponent<Props, State> {
     const square = (n: number) => n * n;
     return (
       <div>
-        <h3>Min</h3>
+        <h3>R.min</h3>
         <div>{`R.min(789, 123) = ${R.min(789, 123)}`}</div>
         <div>{`R.min('a', 'b') = ${R.min('a', 'b')}`}</div>
         <div>{`R.reduce(R.min, Infinity, [3, -5, 4, 1, -2]) = ${R.reduce(R.min, Infinity, [3, -5, 4, 1, -2])}`}</div>
 
-        <h3>MinBy</h3>
+        <h3>R.minBy</h3>
         <div>{`const square = n => n * n;`}</div>
         <div>{`R.minBy(square, -3, 2) = ${R.minBy(square, -3, 2)}`}</div>
 

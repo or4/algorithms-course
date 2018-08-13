@@ -14,7 +14,7 @@ export class Inc extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Inc</h3>
+        <h3>R.inc</h3>
         <h3>Result: {inc('1' as any)}</h3>
         <h3>Result: {String(R.inc(1))}</h3>
         <h3>Result: {String(R.inc(1))}</h3>
