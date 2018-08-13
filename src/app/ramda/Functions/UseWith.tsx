@@ -11,7 +11,9 @@ export class UseWith extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>R.useWith</h3>
-        <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
+        <div>{`R.useWith(Math.pow, [R.identity, R.identity])(3, 4) = ${R.useWith(Math.pow, [R.identity, R.identity])(3, 4)}`}</div>
+        <div>{`R.useWith(Math.pow, [R.identity, R.identity])(3)(4) = ${R.useWith(Math.pow, [R.identity, R.identity])(3)(4)}`}</div>
+        <div>{`R.useWith(Math.pow, [R.dec, R.inc])(3, 4) = ${R.useWith(Math.pow, [R.dec, R.inc])(3, 4)}`}</div>
       </div>
     );
   }

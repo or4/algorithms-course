@@ -14,13 +14,12 @@ import { Identity } from './Identity';
 import { Invoker } from './Invoker';
 import { Lift } from './Lift';
 import { Memoize } from './Memoize';
-import { Nary } from './Nary';
+import { NAry } from './NAry';
 import { Nth } from './Nth';
 import { NthArg } from './NthArg';
 import { Once } from './Once';
 import { Partial } from './Partial';
 import { Tap } from './Tap';
-import { Unary } from './Unary';
 import { UseWith } from './UseWith';
 
 
@@ -55,7 +54,6 @@ export class Functions extends React.PureComponent<Props, State> {
             <Link to={`/ramda/functions/once`}>once</Link>
             <Link to={`/ramda/functions/partial`}>partial</Link>
             <Link to={`/ramda/functions/tap`}>tap</Link>
-            <Link to={`/ramda/functions/unary`}>unary</Link>
             <Link to={`/ramda/functions/useWith`}>useWith</Link>
           </div>
 
@@ -73,14 +71,13 @@ export class Functions extends React.PureComponent<Props, State> {
           <Route path="/ramda/functions/invoker" component={Invoker} />
           <Route path="/ramda/functions/lift" component={Lift} />
           <Route path="/ramda/functions/memoize" component={Memoize} />
-          <Route path="/ramda/functions/nary" component={Nary} />
+          <Route path="/ramda/functions/nary" component={NAry} />
           <Route path="/ramda/functions/nth" component={Nth} />
           <Route path="/ramda/functions/nthArg" component={NthArg} />
           <Route path="/ramda/functions/once" component={Once} />
           <Route path="/ramda/functions/partial" component={Partial} />
           <Route path="/ramda/functions/tap" component={Tap} />
           <Route path="/ramda/functions/useWith" component={UseWith} />
-          <Route path="/ramda/functions/unary" component={Unary} />
         </Switch>
       </div>
     );

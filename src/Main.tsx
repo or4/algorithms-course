@@ -13,6 +13,7 @@ import { KentDodds } from 'app/kentDodds';
 import { Lodash } from 'app/lodash';
 import { NN } from 'app/nn';
 import { Probability } from 'app/probability';
+import { Reflection } from 'app/reflection';
 import { Refs } from 'app/refs';
 import { Regexp } from 'app/regexp';
 import { RxJs } from 'app/rx';
@@ -36,6 +37,7 @@ const routes = {
   nn: '/nn',
   probability: '/probability',
   ramda: '/ramda',
+  reflection: '/reflection',
   refs: '/refs',
   regexp: '/regexp',
   rxjs: '/rxjs',
@@ -59,6 +61,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link to={routes.nn}>NN</Link>
           <Link to={routes.probability}>probability</Link>
           <Link to={routes.ramda}>ramda</Link>
+          <Link to={routes.reflection}>reflection</Link>
           <Link to={routes.refs}>refs</Link>
           <Link to={routes.regexp}>regexp</Link>
           <Link to={routes.rxjs}>rxjs</Link>
@@ -77,6 +80,7 @@ class Main extends React.PureComponent<Props, State> {
           <Route path={routes.nn} component={NN} />
           <Route path={routes.probability} component={Probability} />
           <Route path={routes.ramda} component={Ramda} />
+          <Route path={routes.reflection} component={Reflection} />
           <Route path={routes.refs} component={Refs} />
           <Route path={routes.regexp} component={Regexp} />
           <Route path={routes.rxjs} component={RxJs} />
