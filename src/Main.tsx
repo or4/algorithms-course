@@ -10,6 +10,7 @@ import { Hoc } from 'app/hoc';
 import { HolyJs } from 'app/holyjs';
 import { Jss } from 'app/jss';
 import { KentDodds } from 'app/kentDodds';
+import { Lodash } from 'app/lodash';
 import { NN } from 'app/nn';
 import { Probability } from 'app/probability';
 import { Refs } from 'app/refs';
@@ -31,6 +32,7 @@ const routes = {
   holyjs: '/holyjs',
   jss: '/jss',
   kentDodds: '/kent-dodds',
+  lodash: '/lodash',
   nn: '/nn',
   probability: '/probability',
   ramda: '/ramda',
@@ -53,6 +55,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link to={routes.holyjs}>holyjs</Link>
           <Link to={routes.jss}>jss</Link>
           <Link to={routes.kentDodds}>kent-dodds</Link>
+          <Link to={routes.lodash}>lodash</Link>
           <Link to={routes.nn}>NN</Link>
           <Link to={routes.probability}>probability</Link>
           <Link to={routes.ramda}>ramda</Link>
@@ -70,6 +73,7 @@ class Main extends React.PureComponent<Props, State> {
           <Route path={routes.holyjs} component={HolyJs} />
           <Route path={routes.jss} component={Jss} />
           <Route path={routes.kentDodds} component={KentDodds} />
+          <Route path={routes.lodash} component={Lodash} />
           <Route path={routes.nn} component={NN} />
           <Route path={routes.probability} component={Probability} />
           <Route path={routes.ramda} component={Ramda} />
