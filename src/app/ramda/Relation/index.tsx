@@ -18,18 +18,18 @@ export class Relation extends React.PureComponent<Props, State> {
     return (
       <div className="menu-container">
         <div>
-          <Link to={`/ramda/relation/equals`}>Equals</Link>
-          <Link to={`/ramda/relation/identical`}>Identical</Link>
-          <Link to={`/ramda/relation/comprasions`}>Comprasions</Link>
-          <Link to={`/ramda/relation/min`}>Min</Link>
-          <Link to={`/ramda/relation/max`}>Max</Link>
+          <Link to={`/ramda/relation/comprasions`}>comprasions</Link>
+          <Link to={`/ramda/relation/equals`}>equals</Link>
+          <Link to={`/ramda/relation/identical`}>identical</Link>
+          <Link to={`/ramda/relation/max`}>max</Link>
+          <Link to={`/ramda/relation/min`}>min</Link>
         </div>
         <Switch>
+          <Route path="/ramda/relation/comprasions" component={Comprasions} />
           <Route path="/ramda/relation/equals" component={Equals} />
           <Route path="/ramda/relation/identical" component={Identical} />
-          <Route path="/ramda/relation/comprasions" component={Comprasions} />
-          <Route path="/ramda/relation/min" component={Min} />
           <Route path="/ramda/relation/max" component={Max} />
+          <Route path="/ramda/relation/min" component={Min} />
         </Switch>
       </div>
     );

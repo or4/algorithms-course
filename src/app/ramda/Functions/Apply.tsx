@@ -29,6 +29,12 @@ export class Apply extends React.PureComponent<Props, State> {
         <h3>Unapply</h3>
         <div>{`R.unapply(JSON.stringify)(1, 2, 3) = ${R.unapply(JSON.stringify)(1, 2, 3, 4, 5)}`}</div>
         <div>{`R.unapply(JSON.stringify)({ a: 12, b: '12344' }) = ${R.unapply(JSON.stringify)({ a: 12, b: '12344' })}`}</div>
+
+        <h3>Test case</h3>
+        <div>{`R.unapply(R.join(' / '))(1, 2, 3) = ${R.unapply(R.join(' / '))(1, 2, 3)}`}</div>
+
+
+
       </div>
     );
   }

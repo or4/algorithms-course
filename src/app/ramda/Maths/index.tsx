@@ -21,25 +21,25 @@ export class Maths extends React.PureComponent<Props, State> {
     return (
       <div className="menu-container">
         <div>
-          <Link to={`/ramda/maths/add`}>Add</Link>
-          <Link to={`/ramda/maths/subtract`}>Subtract</Link>
-          <Link to={`/ramda/maths/multiply`}>Multiply</Link>
-          <Link to={`/ramda/maths/divide`}>Divide</Link>
-          <Link to={`/ramda/maths/inc`}>Inc</Link>
-          <Link to={`/ramda/maths/dec`}>Dec</Link>
-          <Link to={`/ramda/maths/negate`}>Negate</Link>
-          <Link to={`/ramda/maths/modulo`}>Modulo</Link>
-          <Link to={`/ramda/maths/test`}>Test</Link>
+          <Link to={`/ramda/maths/add`}>add</Link>
+          <Link to={`/ramda/maths/dec`}>dec</Link>
+          <Link to={`/ramda/maths/divide`}>divide</Link>
+          <Link to={`/ramda/maths/inc`}>inc</Link>
+          <Link to={`/ramda/maths/modulo`}>modulo</Link>
+          <Link to={`/ramda/maths/multiply`}>multiply</Link>
+          <Link to={`/ramda/maths/negate`}>negate</Link>
+          <Link to={`/ramda/maths/subtract`}>subtract</Link>
+          <Link to={`/ramda/maths/test`}>test</Link>
         </div>
         <Switch>
           <Route path="/ramda/maths/add" component={Add} />
-          <Route path="/ramda/maths/subtract" component={Subtract} />
-          <Route path="/ramda/maths/multiply" component={Multiply} />
+          <Route path="/ramda/maths/dec" component={Dec} />
           <Route path="/ramda/maths/divide" component={Divide} />
           <Route path="/ramda/maths/inc" component={Inc} />
-          <Route path="/ramda/maths/dec" component={Dec} />
-          <Route path="/ramda/maths/negate" component={Negate} />
           <Route path="/ramda/maths/modulo" component={Modulo} />
+          <Route path="/ramda/maths/multiply" component={Multiply} />
+          <Route path="/ramda/maths/negate" component={Negate} />
+          <Route path="/ramda/maths/subtract" component={Subtract} />
           <Route path="/ramda/maths/test" component={Test} />
         </Switch>
       </div>

@@ -14,7 +14,7 @@ export class Objects extends React.PureComponent<Props, State> {
     return (
       <div className="menu-container">
         <div>
-          <Link to={`/ramda/objects/map`}>MapObjIndexed</Link>
+          <Link to={`/ramda/objects/map`}>mapObjIndexed</Link>
         </div>
         <Switch>
           <Route path="/ramda/objects/map" component={MapObjIndexed} />
