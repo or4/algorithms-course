@@ -1,4 +1,6 @@
-export const data =
+import { convertToArray } from '../utils';
+
+const raw =
 `1 18
 2 3
 3 31
@@ -29,6 +31,8 @@ export const data =
 29 20
 30 6
 31 11
-32 17`.split('\n').map(row => row.split(' '));
+32 17`;
+
+export const data = convertToArray(raw);
 
 // result 14,9,6,2,0

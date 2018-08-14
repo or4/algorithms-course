@@ -1,8 +1,9 @@
 import React from 'react';
-import * as R from 'ramda';
 
-// import { data as dataSimple } from './data/data';
-import { data as testData1 } from './data/dataTest1';
+// import { data } from './data/data';
+// console.log(dataReal.length);
+// import { data } from './data/dataTest0';
+import { data } from './data/dataTest9';
 import { sccs } from './sccs';
 
 
@@ -17,7 +18,7 @@ export class Sccs extends React.PureComponent<Props, State> {
     result: '',
   }
   componentDidMount() {
-    const result = sccs(testData1);
+    const result = sccs(data);
 
     this.setState({
       result,
