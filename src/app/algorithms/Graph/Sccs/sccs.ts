@@ -1,17 +1,58 @@
 import * as R from 'ramda';
 import { GraphItem } from './utils';
 
-function getLength(graph: GraphItem[], from: number, vertice: number): number {
-  // console.log(`getLength from=${from}, vertice=${vertice}`);
+
+
+function getLengthRecursive(graph: GraphItem[], from: number, vertice: number): number {
+  // console.log(`getLengthRunner from=${from}, vertice=${vertice}`);
   graph[from].visited = true;
 
   if (from === vertice) {
     return 1;
   }
-  return R.apply(Math.max, graph[from].vertices.map(
-    item => getLength(graph, item, vertice) + 1
-  ));
+
+  const resArray = graph[from].vertices.map(
+    item => getLengthRecursive(graph, item, vertice) + 1
+  );
+
+  return R.apply(Math.max, resArray);
 }
+
+
+// function getLengthIterative(graph: GraphItem[], from: number, vertice: number): number {
+//   // console.log(`getLengthRunner from=${from}, vertice=${vertice}`);
+//   graph[from].visited = true;
+//   let index = from;
+//   let i = 0;
+//   const stack = [];
+//   stack.push(index);
+
+//   while (true) {
+
+
+//     const vertices = graph[index].vertices;
+
+//     if (from === vertices[i]) {
+//       // break;
+//       return 1;
+//     }
+
+//     stack.push(vertices[i]);
+
+//     i++;
+
+//   }
+
+
+// const resArray = graph[from].vertices.map(
+//   // item => getLengthRecursive(graph, item, vertice) + 1
+//   () => '123'
+// );
+
+// return R.apply(Math.max, resArray);
+// }
+
+
 
 export const sccs = (graph: GraphItem[]): string => {
   console.log(graph);
@@ -28,7 +69,7 @@ export const sccs = (graph: GraphItem[]): string => {
     console.log('itemFrom', itemFrom);
 
     output.push(
-      getLength(graph, itemFrom.vertices[0], itemFrom.currentVertice)
+      getLengthRecursive(graph, itemFrom.vertices[0], itemFrom.currentVertice)
     );
     index++;
   }
