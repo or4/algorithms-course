@@ -13,7 +13,7 @@ export class Probability extends React.PureComponent<Props, State> {
     return (
       <div className="menu-container">
         <div>
-          <Link to={`/probability/basics`}>Basics</Link>
+          <Link to={`/probability/basics`}>basics</Link>
         </div>
         <Switch>
           <Route path="/probability/basics" component={ProbabilityTheoryBasics} />

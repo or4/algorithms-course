@@ -58,7 +58,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link to={routes.jss}>jss</Link>
           <Link to={routes.kentDodds}>kent-dodds</Link>
           <Link to={routes.lodash}>lodash</Link>
-          <Link to={routes.nn}>NN</Link>
+          <Link to={routes.nn}>nn</Link>
           <Link to={routes.probability}>probability</Link>
           <Link to={routes.ramda}>ramda</Link>
           <Link to={routes.reflection}>reflection</Link>
