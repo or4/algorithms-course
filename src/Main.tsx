@@ -48,7 +48,7 @@ class Main extends React.PureComponent<Props, State> {
     return (
       <div className="menu-container">
         <div>
-          <Link to={routes.home}>Home</Link>
+          <Link to={routes.home}>home</Link>
           <Link to={routes.algorithms}>algorithms</Link>
           <Link to={routes.animate}>animate</Link>
           <Link to={routes.ast}>ast</Link>

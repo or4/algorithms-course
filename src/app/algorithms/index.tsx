@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { BubbleSort, SelectionSort, MergeSort, InsertionSort, QuickSort, BinaryTreeSort, BinaryAvlTreeSort } from './sorts';
-import { BinarySearch, InterpolationSearch } from './searches';
-import { Karatsuba } from './Karatsuba';
-import { Inversions } from './Inversions';
-import { MatrixMultiply } from './MatrixMultiply';
-import { KargerMinCut } from './KargerMinCut';
+
+
+import { Base } from './Base';
+import { Graph } from './Graph';
+import { Search } from './Search';
+import { Sort } from './Sort';
 
 
 type Props = {
@@ -19,34 +19,16 @@ export class Algorithms extends React.PureComponent<Props, State> {
     return (
       <div className="menu-container">
         <div>
-          <Link to={`/algorithms/sorts/bubble`}>Bubble Sort</Link>
-          <Link to={`/algorithms/sorts/selection`}>Selection Sort</Link>
-          <Link to={`/algorithms/sorts/merge`}>Merge Sort</Link>
-          <Link to={`/algorithms/sorts/insertion`}>Insertion Sort</Link>
-          <Link to={`/algorithms/sorts/quick`}>Quick Sort</Link>
-          <Link to={`/algorithms/sorts/binary`}>Binary Tree Sort</Link>
-          <Link to={`/algorithms/sorts/binaryAvl`}>Binary AVL Tree Sort</Link>
-          <Link to={`/algorithms/karatsuba`}>Karatsuba</Link>
-          <Link to={`/algorithms/inversions`}>Inversions</Link>
-          <Link to={`/algorithms/matrix-multiply`}>Matrix multiply</Link>
-          <Link to={`/algorithms/karger`}>KargerMinCut</Link>
-          <Link to={`/algorithms/searches/binary`}>BinarySearch</Link>
-          <Link to={`/algorithms/searches/interpolation`}>InterpolationSearch</Link>
+          <Link to={`/algorithms/base`}>base</Link>
+          <Link to={`/algorithms/graph`}>graph</Link>
+          <Link to={`/algorithms/search`}>search</Link>
+          <Link to={`/algorithms/sort`}>sort</Link>
         </div>
         <Switch>
-          <Route path="/algorithms/sorts/bubble" component={BubbleSort} />
-          <Route path="/algorithms/sorts/selection" component={SelectionSort} />
-          <Route path="/algorithms/sorts/merge" component={MergeSort} />
-          <Route path="/algorithms/sorts/insertion" component={InsertionSort} />
-          <Route path="/algorithms/sorts/quick" component={QuickSort} />
-          <Route path="/algorithms/sorts/binary" component={BinaryTreeSort} />
-          <Route path="/algorithms/sorts/binaryAvl" component={BinaryAvlTreeSort} />
-          <Route path="/algorithms/karatsuba" component={Karatsuba} />
-          <Route path="/algorithms/inversions" component={Inversions} />
-          <Route path="/algorithms/matrix-multiply" component={MatrixMultiply} />
-          <Route path="/algorithms/karger" component={KargerMinCut} />
-          <Route path="/algorithms/searches/binary" component={BinarySearch} />
-          <Route path="/algorithms/searches/interpolation" component={InterpolationSearch} />
+          <Route path="/algorithms/base" component={Base} />
+          <Route path="/algorithms/graph" component={Graph} />
+          <Route path="/algorithms/search" component={Search} />
+          <Route path="/algorithms/sort" component={Sort} />
         </Switch>
       </div>
     );
