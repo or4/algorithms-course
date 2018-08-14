@@ -65,7 +65,7 @@ export class Falafel extends React.Component<Props, State> {
     const { code, output } = this.state;
     return (
       <div>
-        <h3>Code cleaner by esprima & falafel, sorry doesnt work</h3>
+        <h3>Code cleaner by esprima & falafel, doesnt work after upgrade libs</h3>
         <Textarea onChange={this.onCodeChange} style={rawStyle.textarea} value={code} />
         <Button text={'Analyze'} onClick={this.onSubmit} />
         <div>
