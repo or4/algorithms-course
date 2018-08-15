@@ -1,11 +1,10 @@
 import React from 'react';
 
-// import { data } from './data/data';
-// console.log(dataReal.length);
-// import { data } from './data/dataTest0';
-import { data } from './data/dataTest9';
+// import { data as dataR } from './data/data';
+import { data } from './data/dataTest0';
+// import { data } from './data/dataTest9';
+// import { data } from './data/dataTest40';
 import { sccs } from './sccs';
-
 
 type Props = {
 };

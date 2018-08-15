@@ -43,3 +43,20 @@ export const convertToArray = (data: string) => {
 
   return output;
 };
+
+
+export const checkConsistency = (graph: GraphItem[]) => {
+  let i = 2;
+  for (; i < graph.length; i++) {
+    try {
+      if ((graph[i].currentVertice - graph[i - 1].currentVertice) !== 1) {
+        console.log('checkConsistency', i);
+        break;
+      }
+    } catch (error) {
+      console.log('checkConsistency, i', i, error);
+      throw new Error(error);
+    }
+  }
+  console.log('checkConsistency done', i);
+};
