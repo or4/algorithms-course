@@ -34,7 +34,9 @@ export class Curry extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>R.curry</h3>
-        <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
+        <a href="https://github.com/siorra/js-experiments/blob/master/src/app/ramda/Functions/Curry.tsx" target="_blank">
+          <h5>See in code</h5>
+        </a>
 
         <h3>R.uncurryN</h3>
         <div>{`const addFour = (a: number) => (b: number) => (c: number) => (d: number) => a + b + c + d;`}</div>

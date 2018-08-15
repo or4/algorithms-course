@@ -15,11 +15,11 @@ export class Negate extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>R.negate</h3>
-        <h3>Result: {negate('-1' as any)}</h3>
-        <h3>Result: {String(R.negate(-1))}</h3>
-        <h3>Result: {String(R.negate(1))}</h3>
-        <h3>Result: {negate('0.1' as any)}</h3>
-        <h3>Result: {String(R.negate(0.1))}</h3>
+        <div>{`negate('-1' as any) = ${negate('-1' as any)}`}</div>
+        <div>{`String(R.negate(-1)) = ${String(R.negate(-1))}`}</div>
+        <div>{`String(R.negate(1)) = ${String(R.negate(1))}`}</div>
+        <div>{`negate('0.1' as any) = ${negate('0.1' as any)}`}</div>
+        <div>{`String(R.negate(0.1)) = ${String(R.negate(0.1))}`}</div>
       </div>
     );
   }

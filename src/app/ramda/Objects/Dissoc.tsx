@@ -1,5 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
+import { objToString } from '../helpers';
 
 type Props = {
 };
@@ -11,10 +12,14 @@ export class Dissoc extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>R.dissoc</h3>
-        <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
-        <div>{`R.and(true, false) = ${R.and(true, false)}`}</div>
-        <div>{`R.and(false, true) = ${R.and(false, true)}`}</div>
-        <div>{`R.and(false, false) = ${R.and(false, false)}`}</div>
+        <h5>Returns a new object that does not contain a prop property.</h5>
+        <h5>there is a shallow copy of object and then doing `delete` operator</h5>
+        <div>{`R.dissocPath(['a', 'b', 'c'], {a: {b: {c: 42}}}) = ${objToString(R.dissoc('b', { a: 1, b: 2, c: 3 }))}`}</div>
+
+        <h3>R.dissocPath</h3>
+        <div>{`R.dissocPath(['a', 'b', 'c'], {a: {b: {c: 42}}}) = ${objToString(R.dissocPath(['a', 'b', 'c'], { a: { b: { c: 42 }}}))}`}</div>
+        <div>{`R.dissocPath(['a', 'b', 'c'], {a: {b: {c: 42, d: 1}}}) = ${objToString(R.dissocPath(['a', 'b', 'c'], { a: { b: { c: 42, d: 1 }}}))}`}</div>
+
       </div>
     );
   }

@@ -26,7 +26,7 @@ export class Maths extends React.PureComponent<Props, State> {
           <Link to={`/ramda/maths/dec`}>dec</Link>
           <Link to={`/ramda/maths/divide`}>divide</Link>
           <Link to={`/ramda/maths/inc`}>inc</Link>
-          <Link to={`/ramda/maths/modulo`}>modulo</Link>
+          <Link to={`/ramda/maths/modulo`}>modulo / mathMod</Link>
           <Link to={`/ramda/maths/multiply`}>multiply</Link>
           <Link to={`/ramda/maths/negate`}>negate</Link>
           <Link to={`/ramda/maths/subtract`}>subtract</Link>

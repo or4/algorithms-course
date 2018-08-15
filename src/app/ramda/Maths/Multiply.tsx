@@ -15,9 +15,9 @@ export class Multiply extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>R.multiply</h3>
-        <h3>Result: {multiply(10)(2)}</h3>
-        <h3>Result: {multiply(10)('3' as any)}</h3>
-        <h3>Result: {String(R.multiply(1, 2))}</h3>
+        <div>{`multiply(10)(2) = ${multiply(10)(2)}`}</div>
+        <div>{`multiply(10)('3' as any) = ${multiply(10)('3' as any)}`}</div>
+        <div>{`String(R.multiply(1, 2)) = ${String(R.multiply(1, 2))}`}</div>
       </div>
     );
   }

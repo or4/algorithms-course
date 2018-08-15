@@ -15,9 +15,9 @@ export class Subtract extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>R.subtract</h3>
-        <h3>Result: {subtract(10)(2)}</h3>
-        <h3>Result: {subtract('10' as any)(2)}</h3>
-        <h3>Result: {String(R.subtract(1, 2))}</h3>
+        <div>{`subtract(10)(2) = ${subtract(10)(2)}`}</div>
+        <div>{`subtract('10' as any)(2) = ${subtract('10' as any)(2)}`}</div>
+        <div>{`String(R.subtract(1, 2)) = ${String(R.subtract(1, 2))}`}</div>
       </div>
     );
   }

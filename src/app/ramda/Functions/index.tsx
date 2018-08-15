@@ -52,7 +52,7 @@ export class Functions extends React.PureComponent<Props, State> {
             <Link to={`/ramda/functions/nth`}>nth</Link>
             <Link to={`/ramda/functions/nthArg`}>nthArg</Link>
             <Link to={`/ramda/functions/once`}>once</Link>
-            <Link to={`/ramda/functions/partial`}>partial</Link>
+            <Link to={`/ramda/functions/partial`}>partial / partialRight</Link>
             <Link to={`/ramda/functions/tap`}>tap</Link>
             <Link to={`/ramda/functions/useWith`}>useWith</Link>
           </div>

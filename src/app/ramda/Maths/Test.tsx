@@ -49,13 +49,13 @@ export class Test extends React.PureComponent<Props, State> {
   render() {
     return (
       <div>
-        <h3>Some test cases</h3>
-        <h3>Result1: {action1(2)(4)}</h3>
-        <h3>Result2: {action2([2, 3, 4, 5])}</h3>
-        <h3>Result3: {action3([2, 3, 4, 5])}</h3>
-        <h3>Result4: {action4([2, 3, 4, 5])}</h3>
-        <h3>Result5: {action5([2, 3, 4, 5])}</h3>
-        <h3>Result6: {action6([2, 3, 4, 5])}</h3>
+        <h3>Test some cases</h3>
+        <div>{`action1(2)(4) = ${action1(2)(4)}`}</div>
+        <div>{`action2([2, 3, 4, 5]) = ${action2([2, 3, 4, 5])}`}</div>
+        <div>{`action3([2, 3, 4, 5]) = ${action3([2, 3, 4, 5])}`}</div>
+        <div>{`action4([2, 3, 4, 5]) = ${action4([2, 3, 4, 5])}`}</div>
+        <div>{`action5([2, 3, 4, 5]) = ${action5([2, 3, 4, 5])}`}</div>
+        <div>{`action6([2, 3, 4, 5]) = ${action6([2, 3, 4, 5])}`}</div>
       </div>
     );
   }

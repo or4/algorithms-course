@@ -15,11 +15,11 @@ export class Inc extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>R.inc</h3>
-        <h3>Result: {inc('1' as any)}</h3>
-        <h3>Result: {String(R.inc(1))}</h3>
-        <h3>Result: {String(R.inc(1))}</h3>
-        <h3>Result: {inc('0.1' as any)}</h3>
-        <h3>Result: {String(R.inc(0.1))}</h3>
+        <div>{`inc('1' as any) = ${inc('1' as any)}`}</div>
+        <div>{`String(R.inc(1)) = ${String(R.inc(1))}`}</div>
+        <div>{`String(R.inc(1)) = ${String(R.inc(1))}`}</div>
+        <div>{`inc('0.1' as any) = ${inc('0.1' as any)}`}</div>
+        <div>{`String(R.inc(0.1)) = ${String(R.inc(0.1))}`}</div>
       </div>
     );
   }
