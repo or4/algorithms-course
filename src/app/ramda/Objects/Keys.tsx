@@ -8,6 +8,7 @@ type State = {
 
 export class Keys extends React.PureComponent<Props, State> {
   render() {
+    R.keys({ a: 1, b: 2, c: 3 });
     return (
       <div>
         <h3>R.keys</h3>

@@ -18,6 +18,8 @@ import { MergeWith } from './MergeWith';
 import { ObjOf } from './ObjOf';
 import { Omit } from './Omit';
 import { Pick } from './Pick';
+import { PickAll } from './PickAll';
+import { PickBy } from './PickBy';
 import { Prop } from './Prop';
 import { PropEq } from './PropEq';
 import { PropOr } from './PropOr';
@@ -45,7 +47,7 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/dissoc`}>dissoc</Link>
           <Link to={`/ramda/objects/eqProps`}>eqProps</Link>
           <Link to={`/ramda/objects/evolve`}>evolve</Link>
-          <Link to={`/ramda/objects/filter`}>filter</Link>
+          <Link to={`/ramda/objects/filter`}>filter / pickBy</Link>
           <Link to={`/ramda/objects/has`}>has</Link>
           <Link to={`/ramda/objects/keys`}>keys</Link>
           <Link to={`/ramda/objects/lens`}>lens</Link>
@@ -56,6 +58,8 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/objOf`}>objOf</Link>
           <Link to={`/ramda/objects/omit`}>omit</Link>
           <Link to={`/ramda/objects/pick`}>pick</Link>
+          <Link to={`/ramda/objects/pickBy`}>pickBy</Link>
+          <Link to={`/ramda/objects/pickAll`}>pickAll</Link>
           <Link to={`/ramda/objects/prop`}>prop</Link>
           <Link to={`/ramda/objects/propEq`}>propEq</Link>
           <Link to={`/ramda/objects/propOr`}>propOr</Link>
@@ -85,6 +89,8 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Route path="/ramda/objects/objOf" component={ObjOf} />
           <Route path="/ramda/objects/omit" component={Omit} />
           <Route path="/ramda/objects/pick" component={Pick} />
+          <Route path="/ramda/objects/pickBy" component={PickBy} />
+          <Route path="/ramda/objects/pickAll" component={PickAll} />
           <Route path="/ramda/objects/prop" component={Prop} />
           <Route path="/ramda/objects/propEq" component={PropEq} />
           <Route path="/ramda/objects/propOr" component={PropOr} />
