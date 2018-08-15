@@ -2,11 +2,11 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 
+import { Comprasions } from './Comprasions';
 import { Equals } from './Equals';
 import { Identical } from './Identical';
-import { Comprasions } from './Comprasions';
-import { Min } from './Min';
 import { Max } from './Max';
+import { Min } from './Min';
 
 type Props = {
 };

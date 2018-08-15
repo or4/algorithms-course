@@ -2,14 +2,40 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 
+import { Assoc } from './Assoc';
+import { Clone } from './Clone';
+import { Dissoc } from './Dissoc';
+import { EqProps } from './EqProps';
+import { Evolve } from './Evolve';
+import { Filter } from './Filter';
+import { Has } from './Has';
+import { Keys } from './Keys';
+import { Lens } from './Lens';
 import { MapObjIndexed } from './MapObjIndexed';
+import { Merge } from './Merge';
+import { MergeAll } from './MergeAll';
+import { MergeWith } from './MergeWith';
+import { ObjOf } from './ObjOf';
+import { Omit } from './Omit';
+import { Pick } from './Pick';
+import { Prop } from './Prop';
+import { PropEq } from './PropEq';
+import { PropOr } from './PropOr';
+import { Props } from './Props';
+import { PropSatisfies } from './PropSatisfies';
+import { Reject } from './Reject';
+import { ToPairs } from './ToPairs';
+import { Values } from './Values';
+import { Where } from './Where';
+import { WhereEq } from './WhereEq';
+import { ZipObj } from './ZipObj';
 
-type Props = {
+type TProps = {
 };
 type State = {
 };
 
-export class Objects extends React.PureComponent<Props, State> {
+export class Objects extends React.PureComponent<TProps, State> {
   render() {
     return (
       <div className="menu-container">
@@ -43,19 +69,33 @@ export class Objects extends React.PureComponent<Props, State> {
           <Link to={`/ramda/objects/zipObj`}>zipObj</Link>
         </div>
         <Switch>
-          <Route path="/ramda/objects/assoc" component={MapObjIndexed} />
-          <Route path="/ramda/objects/clone" component={MapObjIndexed} />
-          <Route path="/ramda/objects/dissoc" component={MapObjIndexed} />
-          <Route path="/ramda/objects/eqProps" component={MapObjIndexed} />
-          <Route path="/ramda/objects/evolve" component={MapObjIndexed} />
-          <Route path="/ramda/objects/filter" component={MapObjIndexed} />
-          <Route path="/ramda/objects/has" component={MapObjIndexed} />
-          <Route path="/ramda/objects/keys" component={MapObjIndexed} />
-          <Route path="/ramda/objects/lens" component={MapObjIndexed} />
+          <Route path="/ramda/objects/assoc" component={Assoc} />
+          <Route path="/ramda/objects/clone" component={Clone} />
+          <Route path="/ramda/objects/dissoc" component={Dissoc} />
+          <Route path="/ramda/objects/eqProps" component={EqProps} />
+          <Route path="/ramda/objects/evolve" component={Evolve} />
+          <Route path="/ramda/objects/filter" component={Filter} />
+          <Route path="/ramda/objects/has" component={Has} />
+          <Route path="/ramda/objects/keys" component={Keys} />
+          <Route path="/ramda/objects/lens" component={Lens} />
           <Route path="/ramda/objects/map" component={MapObjIndexed} />
-          <Route path="/ramda/objects/map" component={MapObjIndexed} />
-          <Route path="/ramda/objects/map" component={MapObjIndexed} />
-          <Route path="/ramda/objects/map" component={MapObjIndexed} />
+          <Route path="/ramda/objects/merge" component={Merge} />
+          <Route path="/ramda/objects/mergeAll" component={MergeAll} />
+          <Route path="/ramda/objects/mergeWith" component={MergeWith} />
+          <Route path="/ramda/objects/objOf" component={ObjOf} />
+          <Route path="/ramda/objects/omit" component={Omit} />
+          <Route path="/ramda/objects/pick" component={Pick} />
+          <Route path="/ramda/objects/prop" component={Prop} />
+          <Route path="/ramda/objects/propEq" component={PropEq} />
+          <Route path="/ramda/objects/propOr" component={PropOr} />
+          <Route path="/ramda/objects/props" component={Props} />
+          <Route path="/ramda/objects/propsSatisfies" component={PropSatisfies} />
+          <Route path="/ramda/objects/reject" component={Reject} />
+          <Route path="/ramda/objects/toPairs" component={ToPairs} />
+          <Route path="/ramda/objects/values" component={Values} />
+          <Route path="/ramda/objects/where" component={Where} />
+          <Route path="/ramda/objects/whereEq" component={WhereEq} />
+          <Route path="/ramda/objects/zipObj" component={ZipObj} />
         </Switch>
       </div>
     );

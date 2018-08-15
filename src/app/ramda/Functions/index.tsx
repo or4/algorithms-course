@@ -9,9 +9,9 @@ import { Compose } from './Compose';
 import { Converge } from './Converge';
 import { Curry } from './Curry';
 import { Flip } from './Flip';
-import { Juxt } from './Juxt';
 import { Identity } from './Identity';
 import { Invoker } from './Invoker';
+import { Juxt } from './Juxt';
 import { Lift } from './Lift';
 import { Memoize } from './Memoize';
 import { NAry } from './NAry';
@@ -41,11 +41,11 @@ export class Functions extends React.PureComponent<Props, State> {
             <Link to={`/ramda/functions/converge`}>converge</Link>
             <Link to={`/ramda/functions/curry`}>curry / uncurryN</Link>
             <Link to={`/ramda/functions/flip`}>flip</Link>
-            <Link to={`/ramda/functions/juxt`}>juxt</Link>
+            <Link to={`/ramda/functions/identity`}>identity</Link>
           </div>
           <div>
-            <Link to={`/ramda/functions/identity`}>identity</Link>
             <Link to={`/ramda/functions/invoker`}>invoker</Link>
+            <Link to={`/ramda/functions/juxt`}>juxt</Link>
             <Link to={`/ramda/functions/lift`}>lift</Link>
             <Link to={`/ramda/functions/memoize`}>memoize</Link>
             <Link to={`/ramda/functions/nary`}>nary</Link>
@@ -56,7 +56,6 @@ export class Functions extends React.PureComponent<Props, State> {
             <Link to={`/ramda/functions/tap`}>tap</Link>
             <Link to={`/ramda/functions/useWith`}>useWith</Link>
           </div>
-
         </div>
         <Switch>
           <Route path="/ramda/functions/apply" component={Apply} />
@@ -66,9 +65,9 @@ export class Functions extends React.PureComponent<Props, State> {
           <Route path="/ramda/functions/converge" component={Converge} />
           <Route path="/ramda/functions/curry" component={Curry} />
           <Route path="/ramda/functions/flip" component={Flip} />
-          <Route path="/ramda/functions/juxt" component={Juxt} />
           <Route path="/ramda/functions/identity" component={Identity} />
           <Route path="/ramda/functions/invoker" component={Invoker} />
+          <Route path="/ramda/functions/juxt" component={Juxt} />
           <Route path="/ramda/functions/lift" component={Lift} />
           <Route path="/ramda/functions/memoize" component={Memoize} />
           <Route path="/ramda/functions/nary" component={NAry} />

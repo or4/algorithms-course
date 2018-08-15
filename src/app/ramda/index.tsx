@@ -19,21 +19,21 @@ export class Ramda extends React.PureComponent<Props, State> {
     return (
       <div className="menu-container">
         <div>
-          <Link to={`/ramda/maths`}>Maths</Link>
-          <Link to={`/ramda/relation`}>Relation</Link>
-          <Link to={`/ramda/logic`}>Logic</Link>
           <Link to={`/ramda/functions`}>Functions</Link>
-          <Link to={`/ramda/objects`}>Objects</Link>
           <Link to={`/ramda/lists`}>Lists</Link>
+          <Link to={`/ramda/logic`}>Logic</Link>
+          <Link to={`/ramda/maths`}>Maths</Link>
+          <Link to={`/ramda/objects`}>Objects</Link>
+          <Link to={`/ramda/relation`}>Relation</Link>
         </div>
 
         <Switch>
-          <Route path="/ramda/maths" component={Maths} />
-          <Route path="/ramda/relation" component={Relation} />
-          <Route path="/ramda/logic" component={Logic} />
           <Route path="/ramda/functions" component={Functions} />
-          <Route path="/ramda/objects" component={Objects} />
           <Route path="/ramda/lists" component={Lists} />
+          <Route path="/ramda/logic" component={Logic} />
+          <Route path="/ramda/maths" component={Maths} />
+          <Route path="/ramda/objects" component={Objects} />
+          <Route path="/ramda/relation" component={Relation} />
         </Switch>
       </div>
     );

@@ -2,17 +2,17 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import { IfElse } from './IfElse';
-import { Not } from './Not';
-import { Or } from './Or';
+import { AllPass } from './AllPass';
 import { And } from './And';
+import { AnyPass } from './AnyPass';
+import { Both } from './Both';
 import { Complement } from './Complement';
 import { Either } from './Either';
-import { Both } from './Both';
-import { AnyPass } from './AnyPass';
-import { AllPass } from './AllPass';
 import { Empty } from './Empty';
+import { IfElse } from './IfElse';
 import { IsEmpty } from './IsEmpty';
+import { Not } from './Not';
+import { Or } from './Or';
 
 type Props = {
 };

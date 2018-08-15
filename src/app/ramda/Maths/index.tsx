@@ -1,14 +1,15 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { Add } from 'app/ramda/Maths/Add';
-import { Subtract } from './Substract';
-import { Multiply } from './Multiply';
+
+import { Add } from './Add';
+import { Dec } from './Dec';
 import { Divide } from './Divide';
 import { Inc } from './Inc';
-import { Dec } from './Dec';
-import { Negate } from './Negate';
 import { Modulo } from './Modulo';
+import { Multiply } from './Multiply';
+import { Negate } from './Negate';
+import { Subtract } from './Subtract';
 import { Test } from './Test';
 
 type Props = {
