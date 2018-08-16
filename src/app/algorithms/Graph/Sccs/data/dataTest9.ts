@@ -1,6 +1,4 @@
-import { convertToArray } from '../utils';
-
-const raw =
+export const data =
 `1 18
 2 3
 3 31
@@ -32,7 +30,5 @@ const raw =
 30 6
 31 11
 32 17`;
-
-export const data = convertToArray(raw);
 
 // result 14,9,6,2,0

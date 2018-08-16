@@ -1,6 +1,4 @@
-import { convertToArray } from '../utils';
-
-const raw =
+export const data =
 `1 2768
 2 338
 3 855
@@ -4647,7 +4645,5 @@ const raw =
 3198 2783
 3199 1288
 3200 2038`;
-
-export const data = convertToArray(raw);
 
 // result 3187,4,4,3,0

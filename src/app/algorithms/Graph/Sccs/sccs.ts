@@ -1,115 +1,107 @@
 import * as R from 'ramda';
-import { GraphItem } from './utils';
+import { GraphItem, convertToArray } from './utils';
 
+const backVerticesArray = [] as any[];
 
-
-function getLengthRecursive(graph: GraphItem[], from: number, vertice: number): number {
-  // console.log(`getLengthRunner from=${from}, vertice=${vertice}`);
-  graph[from].visited = true;
-
-  if (from === vertice) {
-    return 1;
+const dfs = (graph: (GraphItem)[], start: number): void => {
+  const graphItem = graph[start];
+  if (R.isNil(graphItem) || graphItem.visited) {
+    // console.log(`end of chain, to=${start}`);
+    return;
   }
 
-  const resArray = graph[from].vertices.map(
-    item => getLengthRecursive(graph, item, vertice) + 1
-  );
+  // console.log('grapItem start', graphItem.currentVertice);
+  graphItem.visited = true;
 
-  return R.apply(Math.max, resArray);
-}
-
-type StackItem = {
-  vertice: number;
-  len: number;
-  index: number;
+  graphItem.vertices.map((item: number) => {
+    if (!R.isNil(graph[item]) && !graph[item].visited) {
+      dfs(graph, item);
+      backVerticesArray.push(item);
+    }
+    if (R.isNil(graph[item])) {
+      if (graph[item] !== null) {
+        backVerticesArray.push(item);
+      } else {
+        graph[item] = null as any;
+      }
+    }
+    return 0;
+  });
 };
 
-function getLengthIterative(graph: GraphItem[], vertice: number): number {
+export const prepareBackwards = (raw: string): void => {
+  const graph = convertToArray(raw, 'reverse');
+  // console.log('graphReversed', graph);
 
-  let index = vertice;
-  let i = 0;
-  let counter = 0;
-  const stack = [] as StackItem[];
-  // stack.push(index);
-  let maxCycle = 0;
-  let stackItem;
-
-  while (true) {
-    // console.log('start cycle');
-    const vertices = graph[index].vertices;
-    // console.log('index', index, 'vertices', vertices);
-    graph[index].visited = true;
-    counter++;
-
-    let workVertice;
-    if (!R.isNil(stackItem) && stackItem.vertice === index) {
-      workVertice = vertices[stackItem.index];
-    } else {
-      workVertice = vertices[0];
+  let index = 0;
+  while (graph[index] || index < graph.length) {
+    if (!R.isNil(graph[index]) && !graph[index].visited) {
+      dfs(graph, index);
+      backVerticesArray.push(index);
     }
-    // console.log('workVertice', workVertice);
-
-    if (vertice === workVertice) {
-      // console.log('stack', stack);
-      if (maxCycle < counter) {
-        maxCycle = counter;
-      }
-      while (true) {
-        stackItem = stack.pop();
-        counter--;
-        if (R.isNil(stackItem)) {
-          return maxCycle;
-        }
-        if (stackItem.index < stackItem.len - 1) {
-          // console.log('stackItem.index', stackItem);
-          stackItem.index++;
-          // console.log('set new index pre', index);
-          index = stackItem.vertice;
-          // console.log('set new index', index);
-          break;
-        }
-      }
-      continue;
-    }
-    // console.log(graph);
-
-    stack.push({ vertice: workVertice, len: graph[workVertice].vertices.length, index: 0 });
-    if (stack.length % 1000000 === 0) {
-      console.log(stack.length);
-    }
-    index = workVertice;
+    index++;
   }
-}
+
+  console.log('backVerticesArray', backVerticesArray);
+};
 
 
 
-export const sccs = (graph: GraphItem[]): string => {
-  // console.log(graph);
-  let output = [] as number[];
+const dfsMax = (graph: (GraphItem)[], start: number): number => {
+  const graphItem = graph[start];
+  if (R.isNil(graphItem) || graphItem.visited) {
+    // console.log(`end of chain, to=${start}`);
+    return 0;
+  }
 
-  let index = 1;
-  // while (graph[index]) {
-  //   if (graph[index].visited) {
-  //     index++;
-  //     continue;
-  //   }
+  // console.log('grapItem start', graphItem.currentVertice);
+  graphItem.visited = true;
 
-  const itemFrom = graph[index];
+  const results = graphItem.vertices.map((item: number) => {
+    // if (!R.isNil(graph[item]) && !graph[item].visited) {
+    return dfsMax(graph, item) + 1;
+    // }
+    // return 1;
+  });
 
-  output.push(getLengthIterative(graph, itemFrom.currentVertice));
-  //   index++;
-  // }
+  return R.apply(Math.max)(results);
+};
 
-  output = R.sort((a, b) => b - a, output);
 
-  const addNullIfLessThan5 = R.when<number[], number[]>(
-    R.pipe(R.length, R.partialRight(R.lt as any, [5])),
-    R.append(0)
-  );
 
-  R.times(() => {
-    output = addNullIfLessThan5(output);
-  }, 5);
+export const towards = (raw: string): number[] => {
+  const graph = convertToArray(raw);
+  // console.log('graphOrig', graph);
+  const backVerticesSorted = backVerticesArray.sort((a, b) => b - a);
+  console.log('backVerticesSorted', backVerticesSorted);
+  const output = [] as number[];
 
-  return output.join(', ');
+  let index = 0;
+  while (index < backVerticesSorted.length) {
+    for (let i = 0; i < graph.length; i++) {
+      if (R.isNil(graph[i])) {
+        continue;
+      }
+      graph[i].visited = false;
+    }
+
+    const graphIndex = backVerticesSorted[index];
+    if (!R.isNil(graph[graphIndex]) && !graph[graphIndex].visited) {
+      const graphItem = graph[graphIndex];
+      const resultDfs = dfsMax(graph, graphItem.currentVertice);
+      output.push(resultDfs);
+    }
+    index++;
+  }
+
+  console.log('graphOrig', graph);
+
+  return R.uniq(output).sort((a, b) => b - a);
+};
+
+export const sccs = (raw: string): string => {
+  prepareBackwards(raw);
+  const result = towards(raw);
+  console.log('result', result);
+  return result.join(', ');
 };

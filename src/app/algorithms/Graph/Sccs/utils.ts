@@ -18,13 +18,23 @@ export class GraphItem {
   }
 }
 
-export const convertToArray = (data: string) => {
+type GraphOrder = 'right' | 'reverse';
+
+export const convertToArray = (data: string, order: GraphOrder = 'right') => {
   const splitted = R.pipe<string, string[], number[][]>(
     R.split('\n'),
     R.map(
       R.pipe(
         R.split(' '),
-        R.map(Number)
+        R.map(Number),
+        R.when(
+          () => order !== 'right',
+          R.pipe<number[], number[]>(
+            // R.tap(console.log),
+            R.reverse,
+            // R.tap(console.log),
+          )
+        )
       )
     )
   )(data);
