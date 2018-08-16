@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import { GraphItem, convertToArray } from './utils';
+import { objToString } from '../../../ramda/helpers';
 
 const backVerticesArray = [] as any[];
 
@@ -45,13 +46,17 @@ export const prepareBackwards = (raw: string): void => {
   console.log('backVerticesArray', backVerticesArray);
 };
 
+type DfsMax = {
+  len: number;
+  path: number[];
+};
 
 
-const dfsMax = (graph: (GraphItem)[], start: number): number => {
+const dfsMax = (graph: (GraphItem)[], start: number): DfsMax => {
   const graphItem = graph[start];
   if (R.isNil(graphItem) || graphItem.visited) {
     // console.log(`end of chain, to=${start}`);
-    return 0;
+    return { len: 0, path: [] };
   }
 
   // console.log('grapItem start', graphItem.currentVertice);
@@ -59,31 +64,38 @@ const dfsMax = (graph: (GraphItem)[], start: number): number => {
 
   const results = graphItem.vertices.map((item: number) => {
     // if (!R.isNil(graph[item]) && !graph[item].visited) {
-    return dfsMax(graph, item) + 1;
+    const resDfs = dfsMax(graph, item);
+    return { len: resDfs.len + 1, path: [...resDfs.path, item] };
     // }
     // return 1;
   });
 
-  return R.apply(Math.max)(results);
+  return R.reduce((acc: DfsMax, current: DfsMax) => {
+    if (R.isNil(current) || acc.len >= current.len) {
+      return acc;
+    }
+    return current;
+  }, { len: 0, path: [] }
+  )(results);
 };
 
 
 
-export const towards = (raw: string): number[] => {
+export const towards = (raw: string): string => {
   const graph = convertToArray(raw);
   // console.log('graphOrig', graph);
   const backVerticesSorted = backVerticesArray.sort((a, b) => b - a);
   console.log('backVerticesSorted', backVerticesSorted);
-  const output = [] as number[];
+  const output = [] as DfsMax[];
 
   let index = 0;
   while (index < backVerticesSorted.length) {
-    for (let i = 0; i < graph.length; i++) {
-      if (R.isNil(graph[i])) {
-        continue;
-      }
-      graph[i].visited = false;
-    }
+    // for (let i = 0; i < graph.length; i++) {
+    //   if (R.isNil(graph[i])) {
+    //     continue;
+    //   }
+    //   graph[i].visited = false;
+    // }
 
     const graphIndex = backVerticesSorted[index];
     if (!R.isNil(graph[graphIndex]) && !graph[graphIndex].visited) {
@@ -96,12 +108,13 @@ export const towards = (raw: string): number[] => {
 
   console.log('graphOrig', graph);
 
-  return R.uniq(output).sort((a, b) => b - a);
+  console.log('output', objToString(output));
+
+  return objToString(output);
+  // return R.uniq(output).sort((a, b) => b - a);
 };
 
 export const sccs = (raw: string): string => {
   prepareBackwards(raw);
-  const result = towards(raw);
-  console.log('result', result);
-  return result.join(', ');
+  return towards(raw);
 };

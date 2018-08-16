@@ -1,9 +1,10 @@
 import React from 'react';
+import * as R from 'ramda';
 
 // import { data as dataR } from './data/data';
 // import { data } from './data/dataTest0';
 // import { data } from './data/dataTest9';
-import { data } from './data/dataTest22';
+import { data } from './data/dataTest0';
 import { sccs } from './sccs';
 
 type Props = {
@@ -28,7 +29,9 @@ export class Sccs extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>SCCs - Strongly Connected Components</h3>
-        <h3>Result is {result}</h3>
+        <h5>{R.split(/(\}, \{)|(\[\{)|(\}\])/, result).map(
+          (item: any, index: number) => <div key={index}>{item}</div>
+        )}</h5>
       </div>
     );
   }
