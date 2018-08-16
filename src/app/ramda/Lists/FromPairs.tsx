@@ -6,17 +6,13 @@ type Props = {
 type State = {
 };
 
-export class Reject extends React.PureComponent<Props, State> {
+export class FromPairs extends React.PureComponent<Props, State> {
   render() {
-    let isOdd = (n: number) => n % 2 === 1;
-
-    R.reject(isOdd, [1, 2, 3, 4]); //=> [2, 4]
-
-    R.reject(isOdd, { a: 1, b: 2, c: 3, d: 4 }); //=> {b: 2, d: 4}
-
+    R.fromPairs([['a', 1], ['b', 2], ['c', 3]]); //=> {a: 1, b: 2, c: 3}
     return (
       <div>
-        <h3>R.reject</h3>
+        <h3>R.fromPairs</h3>
+        <h5>Creates a new object from a list key-value pairs. If a key appears in multiple pairs, the rightmost pair is included in the object.</h5>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
         <div>{`R.and(true, false) = ${R.and(true, false)}`}</div>
         <div>{`R.and(false, true) = ${R.and(false, true)}`}</div>

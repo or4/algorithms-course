@@ -16,6 +16,7 @@ import { Drop } from './Drop';
 import { DropLast } from './DropLast';
 import { DropLastWhile } from './DropLastWhile';
 import { DropWhile } from './DropWhile';
+import { FromPairs } from './FromPairs';
 import { Find } from './Find';
 import { FindIndex } from './FindIndex';
 import { FindLast } from './FindLast';
@@ -37,6 +38,7 @@ import { Mean } from './Mean';
 import { Median } from './Median';
 import { None } from './None';
 import { Nth } from './Nth';
+import { Pair } from './Pair';
 import { Pluck } from './Pluck';
 import { Prepend } from './Prepend';
 import { Product } from './Product';
@@ -96,6 +98,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/findIndex`}>findIndex</Link>
           <Link to={`/ramda/lists/findLast`}>findLast</Link>
           <Link to={`/ramda/lists/findLastIndex`}>findLastIndex</Link>
+          <Link to={`/ramda/lists/fromPairs`}>fromPairs</Link>
           <Link to={`/ramda/lists/groupBy`}>groupBy</Link>
           <Link to={`/ramda/lists/head`}>head</Link>
           <Link to={`/ramda/lists/indexBy`}>indexBy</Link>
@@ -113,6 +116,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/median`}>median</Link>
           <Link to={`/ramda/lists/none`}>none</Link>
           <Link to={`/ramda/lists/nth`}>nth</Link>
+          <Link to={`/ramda/lists/pair`}>pair</Link>
           <Link to={`/ramda/lists/pluck`}>pluck</Link>
           <Link to={`/ramda/lists/prepend`}>prepend</Link>
           <Link to={`/ramda/lists/product`}>product</Link>
@@ -163,6 +167,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/findIndex" component={FindIndex} />
           <Route path="/ramda/lists/findLast" component={FindLast} />
           <Route path="/ramda/lists/findLastIndex" component={FindLastIndex} />
+          <Route path="/ramda/lists/fromPairs" component={FromPairs} />
           <Route path="/ramda/lists/groupBy" component={GroupBy} />
           <Route path="/ramda/lists/head" component={Head} />
           <Route path="/ramda/lists/indexBy" component={IndexBy} />
@@ -180,6 +185,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/median" component={Median} />
           <Route path="/ramda/lists/none" component={None} />
           <Route path="/ramda/lists/nth" component={Nth} />
+          <Route path="/ramda/lists/pair" component={Pair} />
           <Route path="/ramda/lists/pluck" component={Pluck} />
           <Route path="/ramda/lists/prepend" component={Prepend} />
           <Route path="/ramda/lists/product" component={Product} />

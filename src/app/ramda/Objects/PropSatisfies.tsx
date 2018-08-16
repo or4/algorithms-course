@@ -8,6 +8,7 @@ type State = {
 
 export class PropSatisfies extends React.PureComponent<Props, State> {
   render() {
+    R.propSatisfies(x => x > 0, 'x', { x: 1, y: 2 }); //=> true
     return (
       <div>
         <h3>R.propSatisfies</h3>

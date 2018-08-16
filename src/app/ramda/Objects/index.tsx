@@ -11,6 +11,9 @@ import { Filter } from './Filter';
 import { Has } from './Has';
 import { Keys } from './Keys';
 import { Lens } from './Lens';
+import { LensIndex } from './LensIndex';
+import { LensPath } from './LensPath';
+import { LensProp } from './LensProp';
 import { MapObjIndexed } from './MapObjIndexed';
 import { Merge } from './Merge';
 import { MergeAll } from './MergeAll';
@@ -22,6 +25,7 @@ import { PickAll } from './PickAll';
 import { PickBy } from './PickBy';
 import { Prop } from './Prop';
 import { PropEq } from './PropEq';
+import { PropIs } from './PropIs';
 import { PropOr } from './PropOr';
 import { Props } from './Props';
 import { PropSatisfies } from './PropSatisfies';
@@ -51,6 +55,9 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/has`}>has</Link>
           <Link to={`/ramda/objects/keys`}>keys</Link>
           <Link to={`/ramda/objects/lens`}>lens</Link>
+          <Link to={`/ramda/maths/lensIndex`}>lensIndex</Link>
+          <Link to={`/ramda/maths/lensPath`}>lensPath</Link>
+          <Link to={`/ramda/maths/lensProp`}>lensProp</Link>
           <Link to={`/ramda/objects/map`}>mapObjIndexed</Link>
           <Link to={`/ramda/objects/merge`}>merge</Link>
           <Link to={`/ramda/objects/mergeAll`}>mergeAll</Link>
@@ -62,15 +69,16 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/pickAll`}>pickAll</Link>
           <Link to={`/ramda/objects/prop`}>prop</Link>
           <Link to={`/ramda/objects/propEq`}>propEq</Link>
+          <Link to={`/ramda/objects/propIs`}>propIs</Link>
           <Link to={`/ramda/objects/propOr`}>propOr</Link>
           <Link to={`/ramda/objects/props`}>props</Link>
           <Link to={`/ramda/objects/propsSatisfies`}>propsSatisfies</Link>
           <Link to={`/ramda/objects/reject`}>reject</Link>
-          <Link to={`/ramda/objects/toPairs`}>toPairs</Link>
-          <Link to={`/ramda/objects/values`}>values</Link>
+          <Link to={`/ramda/objects/toPairs`}>toPairs / toPairsIn</Link>
+          <Link to={`/ramda/objects/values`}>values / valuesIn</Link>
           <Link to={`/ramda/objects/where`}>where</Link>
           <Link to={`/ramda/objects/whereEq`}>whereEq</Link>
-          <Link to={`/ramda/objects/zipObj`}>zipObj</Link>
+          <Link to={`/ramda/objects/zipObj`}>zip / zipObj / zipWith</Link>
         </div>
         <Switch>
           <Route path="/ramda/objects/assoc" component={Assoc} />
@@ -82,6 +90,9 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Route path="/ramda/objects/has" component={Has} />
           <Route path="/ramda/objects/keys" component={Keys} />
           <Route path="/ramda/objects/lens" component={Lens} />
+          <Route path="/ramda/maths/lensIndex" component={LensIndex} />
+          <Route path="/ramda/maths/lensPath" component={LensPath} />
+          <Route path="/ramda/maths/lensProp" component={LensProp} />
           <Route path="/ramda/objects/map" component={MapObjIndexed} />
           <Route path="/ramda/objects/merge" component={Merge} />
           <Route path="/ramda/objects/mergeAll" component={MergeAll} />
@@ -93,6 +104,7 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Route path="/ramda/objects/pickAll" component={PickAll} />
           <Route path="/ramda/objects/prop" component={Prop} />
           <Route path="/ramda/objects/propEq" component={PropEq} />
+          <Route path="/ramda/objects/propIs" component={PropIs} />
           <Route path="/ramda/objects/propOr" component={PropOr} />
           <Route path="/ramda/objects/props" component={Props} />
           <Route path="/ramda/objects/propsSatisfies" component={PropSatisfies} />
