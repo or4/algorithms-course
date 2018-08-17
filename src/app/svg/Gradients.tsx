@@ -1,8 +1,4 @@
 import React from 'react';
-import * as R from 'ramda';
-import Hamburger from './assets/Hamburger.svg';
-import drawing from './assets/drawing.svg';
-import copy from './assets/copy.svg';
 
 type Props = {
 };
@@ -10,13 +6,6 @@ type State = {
 };
 
 export class Gradients extends React.PureComponent<Props, State> {
-
-
-// <div>
-//   <svg width="200px" height="200px" id="complexSvg">
-//     <path d="M29 105h101S93 25 180 0v167s-76-44-103 9-77 18-77 18z" stroke="white" />
-//   </svg>
-// </div>
   render() {
     return (
       <div>
@@ -36,16 +25,22 @@ export class Gradients extends React.PureComponent<Props, State> {
 
         <div>
           <h5>linearGradient</h5>
-          <svg width="100" height="200">
+          <svg width="100" height="100">
             <circle cx="50" cy="50" r="50" fill={`url(#linear-gradient)`} />
           </svg>
 
           <h5>radialGradient</h5>
-          <svg width="100" height="200">
+          <svg width="100" height="100">
             <defs>
               <radialGradient id="radial-gradient" xlinkHref="#linear-gradient" />
             </defs>
             <circle cx="50" cy="50" r="50" fill={`url(#radial-gradient)`} />
+          </svg>
+        </div>
+        <div>
+          <h5>stroke with gradient</h5>
+          <svg width="100" height="100">
+            <rect x="0" y="0" height="100" width="100" stroke="url(#linear-gradient)" strokeWidth="10" fill="rgb(55,155,155)" />
           </svg>
         </div>
       </div>

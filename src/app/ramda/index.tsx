@@ -2,12 +2,12 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import { Maths } from './Maths';
-import { Relation } from './Relation';
-import { Logic } from './Logic';
 import { Functions } from './Functions';
-import { Objects } from './Objects';
 import { Lists } from './Lists';
+import { Logic } from './Logic';
+import { Maths } from './Maths';
+import { Objects } from './Objects';
+import { Relation } from './Relation';
 
 type Props = {
 };
