@@ -11,9 +11,6 @@ import { Filter } from './Filter';
 import { Has } from './Has';
 import { Keys } from './Keys';
 import { Lens } from './Lens';
-import { LensIndex } from './LensIndex';
-import { LensPath } from './LensPath';
-import { LensProp } from './LensProp';
 import { MapObjIndexed } from './MapObjIndexed';
 import { Merge } from './Merge';
 import { MergeAll } from './MergeAll';
@@ -54,10 +51,7 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/filter`}>filter / pickBy</Link>
           <Link to={`/ramda/objects/has`}>has</Link>
           <Link to={`/ramda/objects/keys`}>keys</Link>
-          <Link to={`/ramda/objects/lens`}>lens</Link>
-          <Link to={`/ramda/maths/lensIndex`}>lensIndex</Link>
-          <Link to={`/ramda/maths/lensPath`}>lensPath</Link>
-          <Link to={`/ramda/maths/lensProp`}>lensProp</Link>
+          <Link to={`/ramda/objects/lens`}>lens / lensIndex / lensPath / lensProp</Link>
           <Link to={`/ramda/objects/map`}>mapObjIndexed</Link>
           <Link to={`/ramda/objects/merge`}>merge</Link>
           <Link to={`/ramda/objects/mergeAll`}>mergeAll</Link>
@@ -90,9 +84,6 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Route path="/ramda/objects/has" component={Has} />
           <Route path="/ramda/objects/keys" component={Keys} />
           <Route path="/ramda/objects/lens" component={Lens} />
-          <Route path="/ramda/maths/lensIndex" component={LensIndex} />
-          <Route path="/ramda/maths/lensPath" component={LensPath} />
-          <Route path="/ramda/maths/lensProp" component={LensProp} />
           <Route path="/ramda/objects/map" component={MapObjIndexed} />
           <Route path="/ramda/objects/merge" component={Merge} />
           <Route path="/ramda/objects/mergeAll" component={MergeAll} />

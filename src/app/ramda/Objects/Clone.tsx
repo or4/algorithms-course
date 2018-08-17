@@ -18,8 +18,8 @@ export class Clone extends React.PureComponent<Props, State> {
 
         <div>{`const objects = [{}, {}, {}];`}</div>
         <div>{`const objectsClone = R.clone(objects);`}</div>
-        <div>{`objects === objectsClone = ${objects === objectsClone}`}</div>
-        <div>{`objects[0] === objectsClone[0] = ${objects[0] === objectsClone[0]}`}</div>
+        <div>{`objects === objectsClone is ${objects === objectsClone}`}</div>
+        <div>{`objects[0] === objectsClone[0] is ${objects[0] === objectsClone[0]}`}</div>
       </div>
     );
   }

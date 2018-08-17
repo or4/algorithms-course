@@ -1,5 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
+import { objToString } from '../helpers';
 
 type Props = {
 };
@@ -14,15 +15,19 @@ export class Evolve extends React.PureComponent<Props, State> {
       lastName: R.trim, // Will not get invoked.
       data: { elapsed: R.add(1), remaining: R.add(-1) }
     };
-    R.evolve(transformations, tomato); //=> {firstName: 'Tomato', data: {elapsed: 101, remaining: 1399}, id:123}
+    // R.evolve(transformations, tomato); //=> {firstName: 'Tomato', data: {elapsed: 101, remaining: 1399}, id:123}
 
     return (
       <div>
         <h3>R.evolve</h3>
-        <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
-        <div>{`R.and(true, false) = ${R.and(true, false)}`}</div>
-        <div>{`R.and(false, true) = ${R.and(false, true)}`}</div>
-        <div>{`R.and(false, false) = ${R.and(false, false)}`}</div>
+        <h5>Some likely as R.applySpec</h5>
+        <div>{`const tomato  = { firstName: '  Tomato ', data: { elapsed: 100, remaining: 1400 }, id: 123 };`}</div>
+        <div>{`const transformations = {`}</div>
+        <div>{`firstName: R.trim,`}</div>
+        <div>{`lastName: R.trim, // Will not get invoked.`}</div>
+        <div>{`data: { elapsed: R.add(1), remaining: R.add(-1) }`}</div>
+        <div>{`};`}</div>
+        <div>{`R.evolve(transformations, tomato) is ${objToString(R.evolve(transformations, tomato))}`}</div>
       </div>
     );
   }
