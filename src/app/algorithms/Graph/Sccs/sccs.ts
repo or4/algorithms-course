@@ -43,7 +43,7 @@ export const prepareBackwards = (raw: string): void => {
     index++;
   }
 
-  console.log('backVerticesArray', backVerticesArray);
+  // console.log('backVerticesArray', backVerticesArray);
 };
 
 type DfsMax = {
@@ -55,17 +55,18 @@ type DfsMax = {
 const dfsMax = (graph: (GraphItem)[], start: number): DfsMax => {
   const graphItem = graph[start];
   if (R.isNil(graphItem) || graphItem.visited) {
-    // console.log(`end of chain, to=${start}`);
+    // console.log(`888 end of chain, start=${start}, graphItem=${objToString(graphItem)}`);
     return { len: 0, path: [] };
   }
 
   // console.log('grapItem start', graphItem.currentVertice);
+  // console.log('grapItem start', graphItem.vertices);
   graphItem.visited = true;
 
   const results = graphItem.vertices.map((item: number) => {
     // if (!R.isNil(graph[item]) && !graph[item].visited) {
     const resDfs = dfsMax(graph, item);
-    return { len: resDfs.len + 1, path: [...resDfs.path, item] };
+    return { len: resDfs.len + 1, path: [item, ...resDfs.path] };
     // }
     // return 1;
   });
@@ -84,12 +85,13 @@ const dfsMax = (graph: (GraphItem)[], start: number): DfsMax => {
 export const towards = (raw: string): string => {
   const graph = convertToArray(raw);
   // console.log('graphOrig', graph);
-  const backVerticesSorted = backVerticesArray.sort((a, b) => b - a);
-  console.log('backVerticesSorted', backVerticesSorted);
+  // const backVerticesSorted = backVerticesArray.sort((a, b) => b - a);
+  const backVerticesSorted = backVerticesArray;
+  // console.log('backVerticesSorted', backVerticesSorted);
   const output = [] as DfsMax[];
 
-  let index = 0;
-  while (index < backVerticesSorted.length) {
+  let index = backVerticesSorted.length - 1;
+  while (index >= 0) {
     // for (let i = 0; i < graph.length; i++) {
     //   if (R.isNil(graph[i])) {
     //     continue;
@@ -98,20 +100,24 @@ export const towards = (raw: string): string => {
     // }
 
     const graphIndex = backVerticesSorted[index];
+    // console.log('graphIndex', graphIndex);
     if (!R.isNil(graph[graphIndex]) && !graph[graphIndex].visited) {
       const graphItem = graph[graphIndex];
       const resultDfs = dfsMax(graph, graphItem.currentVertice);
       output.push(resultDfs);
     }
-    index++;
+    if (R.isNil(graph[graphIndex])) {
+      output.push({ len: 1, path: [graphIndex] });
+      // console.log(`11 graphIndex=${graphIndex}, index=${index}`);
+    }
+    index--;
   }
 
-  console.log('graphOrig', graph);
-
-  console.log('output', objToString(output));
-
-  return objToString(output);
-  // return R.uniq(output).sort((a, b) => b - a);
+  return R.pipe<DfsMax[], number[], number[], string>(
+    R.map(item => item.len),
+    R.sort((a, b) => b - a),
+    R.join(', '),
+  )(output);
 };
 
 export const sccs = (raw: string): string => {
