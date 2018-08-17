@@ -37,7 +37,7 @@ type Props = StateProps & DispatchProps;
 type State = {
 };
 
-export class ProbabilityTheoryBasics extends React.Component<Props, State> {
+export class Basics extends React.Component<Props, State> {
   state = {
   };
 

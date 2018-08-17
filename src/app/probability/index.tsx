@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { ProbabilityTheoryBasics } from './ProbabilityTheoryBasics';
+import { Basics } from './Basics';
 
 type Props = {
 };
@@ -16,7 +16,7 @@ export class Probability extends React.PureComponent<Props, State> {
           <Link to={`/probability/basics`}>basics</Link>
         </div>
         <Switch>
-          <Route path="/probability/basics" component={ProbabilityTheoryBasics} />
+          <Route path="/probability/basics" component={Basics} />
         </Switch>
       </div>
     );
