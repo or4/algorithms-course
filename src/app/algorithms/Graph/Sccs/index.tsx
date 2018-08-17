@@ -1,9 +1,9 @@
 import React from 'react';
 import * as R from 'ramda';
 
-import { data } from './data/data';
-// import { data } from './data/dataTest0';
-// import { data } from './data/dataTest9';
+// import { data } from './data/data';
+// import { data } from './data/dataTest40';
+import { data } from './data/dataTest9';
 // import { data } from './data/dataTest22';
 import { sccs } from './sccs';
 

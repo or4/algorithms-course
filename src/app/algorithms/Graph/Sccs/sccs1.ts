@@ -27,7 +27,6 @@ type StackItem = {
 function getLengthIterative(graph: GraphItem[], vertice: number): number {
 
   let index = vertice;
-  let i = 0;
   let counter = 0;
   const stack = [] as StackItem[];
   // stack.push(index);

@@ -1,9 +1,13 @@
 export const data =
 `0 1
 1 2
+1 5
 2 3
 3 4
-4 0`;
+4 0
+5 6
+6 7
+7 8`;
 
 // export const data =
 // `1 2

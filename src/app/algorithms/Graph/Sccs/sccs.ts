@@ -4,14 +4,97 @@ import { objToString } from '../../../ramda/helpers';
 
 const backVerticesArray = [] as any[];
 
+type StackItem = {
+  vertice: number;
+  len: number;
+  index: number;
+};
+
+let counterAll = 1;
+const verticeAll = [] as number[];
+
+const dfsIterative = (graph: (GraphItem)[], start: number): void => {
+  const stack = [] as StackItem[];
+  let stackItem;
+  let item = start;
+  let i = 0;
+
+  while (true) {
+    // console.log('while true');
+
+    const graphItem = graph[item];
+    // console.log(`dfsIterative, graphItem ${counterAll} item = ${item}`);
+    counterAll++;
+    if (verticeAll.indexOf(item) === -1) {
+      verticeAll.push(item);
+    }
+
+    // if (!R.isNil(graph[item]) && !graph[item].visited) {
+    //   backVerticesArray.push(item);
+    // }
+    // if (R.isNil(graph[item])) {
+    //   if (graph[item] !== null) {
+    //     backVerticesArray.push(item);
+    //   } else {
+    //     graph[item] = null as any;
+    //   }
+    // }
+
+
+    if (R.isNil(graphItem) || !(stackItem && graphItem.currentVertice === stackItem.vertice) && graphItem.visited) {
+      // go away by stack.pop
+      // stackItem = stack.pop();
+      // item = stackItem.vertice;
+
+
+      while (true) {
+        stackItem = stack.pop();
+
+        if (R.isNil(stackItem)) {
+          // console.log('exit from dfsIterative');
+          return;
+        }
+        // console.log('dfsIterative, pop', stackItem.vertice);
+
+        if (stackItem.index < stackItem.len - 1) {
+          // console.log('stackItem.index', stackItem);
+          stackItem.index++;
+          // console.log('set new index pre', index);
+          item = stackItem.vertice;
+          // console.log('set new index', index);
+          break;
+        }
+      }
+      continue;
+    }
+
+    graphItem.visited = true;
+
+
+    let workVertice;
+    if (!R.isNil(stackItem) && stackItem.vertice === graphItem.currentVertice) {
+      workVertice = graphItem.vertices[stackItem.index];
+    } else {
+      workVertice = graphItem.vertices[0];
+    }
+
+    // console.log('workVertice', workVertice);
+
+
+
+    // console.log('pre push, workVertice', workVertice);
+    stack.push({ vertice: workVertice, len: graph[workVertice] && graph[workVertice].vertices.length || 0, index: 0 });
+    item = workVertice;
+  }
+
+};
+
+
 const dfs = (graph: (GraphItem)[], start: number): void => {
   const graphItem = graph[start];
   if (R.isNil(graphItem) || graphItem.visited) {
-    // console.log(`end of chain, to=${start}`);
     return;
   }
-
-  // console.log('grapItem start', graphItem.currentVertice);
   graphItem.visited = true;
 
   graphItem.vertices.map((item: number) => {
@@ -121,6 +204,38 @@ export const towards = (raw: string): string => {
 };
 
 export const sccs = (raw: string): string => {
-  prepareBackwards(raw);
-  return towards(raw);
+  // prepareBackwards(raw);
+  // return towards(raw);
+
+  const output1 = [] as number[];
+
+  const graph = convertToArray(raw);
+  const graphStr = objToString(graph);
+
+  let index = 1;
+  while (graph[index] || index < graph.length) {
+    if (!R.isNil(graph[index]) && !graph[index].visited) {
+      dfsIterative(graph, index);
+
+      // console.log('counterAll', counterAll);
+      // console.log('verticeAll', verticeAll);
+      // console.log('verticeAll.length', verticeAll.length);
+      output1.push(verticeAll.length);
+      verticeAll.length = 0;
+    }
+    index++;
+  }
+
+  const res =  R.pipe(
+    R.sort((a: number, b: number) => b - a),
+    R.take(5),
+    R.join(', ')
+  )(output1);
+
+  // console.log('output1', output1);
+  // console.log('res', res);
+
+  return res;
+
+  // return graphStr;
 };
