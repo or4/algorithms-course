@@ -13,11 +13,12 @@ import { KentDodds } from 'app/kentDodds';
 import { Lodash } from 'app/lodash';
 import { NN } from 'app/nn';
 import { Probability } from 'app/probability';
+import { Ramda } from 'app/ramda';
 import { Reflection } from 'app/reflection';
 import { Refs } from 'app/refs';
 import { Regexp } from 'app/regexp';
 import { RxJs } from 'app/rx';
-import { Ramda } from 'app/ramda';
+import { Svg } from 'app/svg';
 
 type Props = {
 };
@@ -40,6 +41,7 @@ const routes = {
   refs: '/refs',
   regexp: '/regexp',
   rxjs: '/rxjs',
+  svg: '/svg',
 };
 
 class Main extends React.PureComponent<Props, State> {
@@ -63,6 +65,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link to={routes.refs}>refs</Link>
           <Link to={routes.regexp}>regexp</Link>
           <Link to={routes.rxjs}>rxjs</Link>
+          <Link to={routes.svg}>svg</Link>
         </div>
 
         <Switch>
@@ -82,6 +85,7 @@ class Main extends React.PureComponent<Props, State> {
           <Route path={routes.refs} component={Refs} />
           <Route path={routes.regexp} component={Regexp} />
           <Route path={routes.rxjs} component={RxJs} />
+          <Route path={routes.svg} component={Svg} />
         </Switch>
       </div>
     );
