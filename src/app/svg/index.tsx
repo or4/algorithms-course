@@ -8,6 +8,7 @@ import { AnimateMotion } from './AnimateMotion';
 import { Filters } from './Filters';
 import { Gradients } from './Gradients';
 import { Gsap } from './Gsap';
+import { Lottie } from './Lottie';
 import { Masks } from './Masks';
 
 type Props = {
@@ -26,6 +27,7 @@ export class Svg extends React.PureComponent<Props, State> {
           <Link to={`/svg/filters`}>filters</Link>
           <Link to={`/svg/gradients`}>gradients</Link>
           <Link to={`/svg/gsap`}>gsap</Link>
+          <Link to={`/svg/lottie`}>lottie</Link>
           <Link to={`/svg/masks`}>masks</Link>
 
         </div>
@@ -37,6 +39,7 @@ export class Svg extends React.PureComponent<Props, State> {
           <Route path="/svg/filters" component={Filters} />
           <Route path="/svg/gradients" component={Gradients} />
           <Route path="/svg/gsap" component={Gsap} />
+          <Route path="/svg/lottie" component={Lottie} />
           <Route path="/svg/masks" component={Masks} />
 
         </Switch>
