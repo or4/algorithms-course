@@ -29,7 +29,6 @@ import { Init } from './Init';
 import { Insert } from './Insert';
 import { InsertAll } from './InsertAll';
 import { Intersection } from './Intersection';
-import { IntersectionWith } from './IntersectionWith';
 import { Last } from './Last';
 import { LastIndexOf } from './LastIndexOf';
 import { Length } from './Length';
@@ -107,7 +106,6 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/insert`}>insert</Link>
           <Link to={`/ramda/lists/insertAll`}>insertAll</Link>
           <Link to={`/ramda/lists/intersection`}>intersection</Link>
-          <Link to={`/ramda/lists/intersectionWith`}>intersectionWith</Link>
           <Link to={`/ramda/lists/last`}>last</Link>
           <Link to={`/ramda/lists/lastIndexOf`}>lastIndexOf</Link>
           <Link to={`/ramda/lists/length`}>length</Link>
@@ -176,7 +174,6 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/insert" component={Insert} />
           <Route path="/ramda/lists/insertAll" component={InsertAll} />
           <Route path="/ramda/lists/intersection" component={Intersection} />
-          <Route path="/ramda/lists/intersectionWith" component={IntersectionWith} />
           <Route path="/ramda/lists/last" component={Last} />
           <Route path="/ramda/lists/lastIndexOf" component={LastIndexOf} />
           <Route path="/ramda/lists/length" component={Length} />
