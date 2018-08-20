@@ -22,7 +22,12 @@ import * as R from 'ramda';
 // }
 
 export function objToString(value: any): any {
-  if (typeof value === 'number' || typeof value === 'string' || typeof value === 'undefined') {
+  if (
+    typeof value === 'number' ||
+    typeof value === 'string' ||
+    typeof value === 'undefined' ||
+    typeof value === 'boolean'
+  ) {
     return value;
   }
 

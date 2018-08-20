@@ -18,14 +18,8 @@ import { MergeWith } from './MergeWith';
 import { ObjOf } from './ObjOf';
 import { Omit } from './Omit';
 import { Pick } from './Pick';
-import { PickAll } from './PickAll';
-import { PickBy } from './PickBy';
 import { Prop } from './Prop';
-import { PropEq } from './PropEq';
-import { PropIs } from './PropIs';
-import { PropOr } from './PropOr';
 import { Props } from './Props';
-import { PropSatisfies } from './PropSatisfies';
 import { Reject } from './Reject';
 import { ToPairs } from './ToPairs';
 import { Values } from './Values';
@@ -58,15 +52,9 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/mergeWith`}>mergeWith</Link>
           <Link to={`/ramda/objects/objOf`}>objOf</Link>
           <Link to={`/ramda/objects/omit`}>omit</Link>
-          <Link to={`/ramda/objects/pick`}>pick</Link>
-          <Link to={`/ramda/objects/pickBy`}>pickBy</Link>
-          <Link to={`/ramda/objects/pickAll`}>pickAll</Link>
-          <Link to={`/ramda/objects/prop`}>prop</Link>
-          <Link to={`/ramda/objects/propEq`}>propEq</Link>
-          <Link to={`/ramda/objects/propIs`}>propIs</Link>
-          <Link to={`/ramda/objects/propOr`}>propOr</Link>
-          <Link to={`/ramda/objects/props`}>props</Link>
-          <Link to={`/ramda/objects/propsSatisfies`}>propsSatisfies</Link>
+          <Link to={`/ramda/objects/pick`}>pick / pickAll / pickBy</Link>
+          <Link to={`/ramda/objects/prop`}>prop / propEq / propIs / propOr</Link>
+          <Link to={`/ramda/objects/props`}>props / propsSatisfies</Link>
           <Link to={`/ramda/objects/reject`}>reject</Link>
           <Link to={`/ramda/objects/toPairs`}>toPairs / toPairsIn</Link>
           <Link to={`/ramda/objects/values`}>values / valuesIn</Link>
@@ -91,14 +79,8 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Route path="/ramda/objects/objOf" component={ObjOf} />
           <Route path="/ramda/objects/omit" component={Omit} />
           <Route path="/ramda/objects/pick" component={Pick} />
-          <Route path="/ramda/objects/pickBy" component={PickBy} />
-          <Route path="/ramda/objects/pickAll" component={PickAll} />
           <Route path="/ramda/objects/prop" component={Prop} />
-          <Route path="/ramda/objects/propEq" component={PropEq} />
-          <Route path="/ramda/objects/propIs" component={PropIs} />
-          <Route path="/ramda/objects/propOr" component={PropOr} />
           <Route path="/ramda/objects/props" component={Props} />
-          <Route path="/ramda/objects/propsSatisfies" component={PropSatisfies} />
           <Route path="/ramda/objects/reject" component={Reject} />
           <Route path="/ramda/objects/toPairs" component={ToPairs} />
           <Route path="/ramda/objects/values" component={Values} />
