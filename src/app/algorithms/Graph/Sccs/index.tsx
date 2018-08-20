@@ -1,11 +1,8 @@
 import React from 'react';
-import * as R from 'ramda';
+import { sccs } from './sccsIterative';
 
-// import { data } from './data/data';
 // import { data } from './data/dataTest40';
-import { data } from './data/dataTest9';
-// import { data } from './data/dataTest22';
-import { sccs } from './sccs';
+import { data } from './data/data';
 
 type Props = {
 };
