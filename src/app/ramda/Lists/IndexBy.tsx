@@ -8,6 +8,10 @@ type State = {
 
 export class IndexBy extends React.PureComponent<Props, State> {
   render() {
+    let list = [{ id: 'xyz', title: 'A' }, { id: 'abc', title: 'B' }];
+    R.indexBy(R.prop('id'), list);
+    //=> {abc: {id: 'abc', title: 'B'}, xyz: {id: 'xyz', title: 'A'}}
+
     return (
       <div>
         <h3>R.indexBy</h3>

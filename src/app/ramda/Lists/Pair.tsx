@@ -9,6 +9,8 @@ type State = {
 export class Pair extends React.PureComponent<Props, State> {
   render() {
     R.pair('foo', 'bar'); //=> ['foo', 'bar']
+
+    R.pair('foo', 'bar'); //=> ['foo', 'bar']
     return (
       <div>
         <h3>R.pair</h3>

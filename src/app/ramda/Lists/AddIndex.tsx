@@ -8,6 +8,10 @@ type State = {
 
 export class AddIndex extends React.PureComponent<Props, State> {
   render() {
+    let mapIndexed = R.addIndex(R.map);
+    mapIndexed((val, idx) => idx + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']);
+    //=> ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r']
+
     return (
       <div>
         <h3>R.addIndex</h3>

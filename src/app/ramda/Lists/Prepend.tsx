@@ -8,6 +8,8 @@ type State = {
 
 export class Prepend extends React.PureComponent<Props, State> {
   render() {
+    R.prepend('fee', ['fi', 'fo', 'fum']); //=> ['fee', 'fi', 'fo', 'fum']
+
     return (
       <div>
         <h3>R.prepend</h3>

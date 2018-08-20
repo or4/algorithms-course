@@ -8,6 +8,9 @@ type State = {
 
 export class LastIndexOf extends React.PureComponent<Props, State> {
   render() {
+    R.lastIndexOf(3, [-1, 3, 3, 0, 1, 2, 3, 4]); //=> 6
+    R.lastIndexOf(10, [1, 2, 3, 4]); //=> -1
+
     return (
       <div>
         <h3>R.lastIndexOf</h3>

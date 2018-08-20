@@ -8,7 +8,12 @@ type State = {
 
 export class Any extends React.PureComponent<Props, State> {
   render() {
+    let lessThan0 = R.flip(R.lt)(0);
+    let lessThan2 = R.flip(R.lt)(2);
+    // R.any(lessThan0)([1, 2]); //=> false
+    // R.any(lessThan2)([1, 2]); //=> true
     return (
+
       <div>
         <h3>R.any</h3>
         <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>

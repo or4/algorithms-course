@@ -8,6 +8,10 @@ type State = {
 
 export class FindLastIndex extends React.PureComponent<Props, State> {
   render() {
+    let xs = [{ a: 1, b: 0 }, { a: 1, b: 1 }];
+    R.findLastIndex(R.propEq('a', 1))(xs); //=> 1
+    R.findLastIndex(R.propEq('a', 4))(xs); //=> -1
+
     return (
       <div>
         <h3>R.findLastIndex</h3>

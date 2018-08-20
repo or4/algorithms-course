@@ -8,6 +8,12 @@ type State = {
 
 export class None extends React.PureComponent<Props, State> {
   render() {
+    let isEven = (n: number) => n % 2 === 0;
+    let isOdd = (n: number) => n % 2 === 1;
+
+    R.none(isEven, [1, 3, 5, 7, 9, 11]); //=> true
+    R.none(isOdd, [1, 3, 5, 7, 8, 11]); //=> false
+
     return (
       <div>
         <h3>R.none</h3>

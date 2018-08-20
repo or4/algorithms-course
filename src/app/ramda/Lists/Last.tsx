@@ -8,6 +8,12 @@ type State = {
 
 export class Last extends React.PureComponent<Props, State> {
   render() {
+    R.last(['fi', 'fo', 'fum']); //=> 'fum'
+    R.last([]); //=> undefined
+
+    R.last('abc'); //=> 'c'
+    R.last(''); //=> ''
+
     return (
       <div>
         <h3>R.last</h3>

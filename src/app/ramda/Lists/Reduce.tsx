@@ -8,6 +8,8 @@ type State = {
 
 export class Reduce extends React.PureComponent<Props, State> {
   render() {
+    R.reduce(R.subtract, 0, [1, 2, 3, 4]); // => ((((0 - 1) - 2) - 3) - 4) = -10
+
     return (
       <div>
         <h3>R.reduce</h3>

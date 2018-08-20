@@ -8,6 +8,12 @@ type State = {
 
 export class DropLastWhile extends React.PureComponent<Props, State> {
   render() {
+    // let lteThree = x => x <= 3;
+
+    // R.dropLastWhile(lteThree, [1, 2, 3, 4, 3, 2, 1]); //=> [1, 2, 3, 4]
+
+    // R.dropLastWhile(x => x !== 'd', 'Ramda'); //=> 'Ramd'
+
     return (
       <div>
         <h3>R.dropLastWhile</h3>

@@ -8,6 +8,10 @@ type State = {
 
 export class Pluck extends React.PureComponent<Props, State> {
   render() {
+    R.pluck('a')([{ a: 1 }, { a: 2 }]); //=> [1, 2]
+    R.pluck(0)([[1, 2], [3, 4]]);   //=> [1, 3]
+    // R.pluck('val', { a: { val: 3 }, b: { val: 5 }}); //=> {a: 3, b: 5}
+
     return (
       <div>
         <h3>R.pluck</h3>

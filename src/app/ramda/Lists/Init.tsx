@@ -8,6 +8,16 @@ type State = {
 
 export class Init extends React.PureComponent<Props, State> {
   render() {
+    R.init([1, 2, 3]);  //=> [1, 2]
+    R.init([1, 2]);     //=> [1]
+    R.init([1]);        //=> []
+    R.init([]);         //=> []
+
+    R.init('abc');  //=> 'ab'
+    R.init('ab');   //=> 'a'
+    R.init('a');    //=> ''
+    R.init('');     //=> ''
+
     return (
       <div>
         <h3>R.init</h3>

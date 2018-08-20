@@ -8,6 +8,7 @@ type State = {
 
 export class Product extends React.PureComponent<Props, State> {
   render() {
+    R.product([2, 4, 6, 8, 100, 1]); //=> 38400
     return (
       <div>
         <h3>R.product</h3>

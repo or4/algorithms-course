@@ -8,6 +8,12 @@ type State = {
 
 export class Head extends React.PureComponent<Props, State> {
   render() {
+    R.head(['fi', 'fo', 'fum']); //=> 'fi'
+    R.head([]); //=> undefined
+
+    R.head('abc'); //=> 'a'
+    R.head(''); //=> ''
+
     return (
       <div>
         <h3>R.head</h3>

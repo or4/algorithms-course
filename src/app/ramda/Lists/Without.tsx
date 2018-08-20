@@ -8,6 +8,8 @@ type State = {
 
 export class Without extends React.PureComponent<Props, State> {
   render() {
+    R.without([1, 2], [1, 2, 1, 3, 4]); //=> [3, 4]
+
     return (
       <div>
         <h3>R.without</h3>

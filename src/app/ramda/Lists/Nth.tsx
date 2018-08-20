@@ -8,6 +8,14 @@ type State = {
 
 export class Nth extends React.PureComponent<Props, State> {
   render() {
+    let list = ['foo', 'bar', 'baz', 'quux'];
+    R.nth(1, list); //=> 'bar'
+    R.nth(-1, list); //=> 'quux'
+    R.nth(-99, list); //=> undefined
+
+    // R.nth(2, 'abc'); //=> 'c'
+    // R.nth(3, 'abc'); //=> ''
+
     return (
       <div>
         <h3>R.nth</h3>

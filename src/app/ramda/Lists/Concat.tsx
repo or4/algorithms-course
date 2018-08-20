@@ -8,6 +8,10 @@ type State = {
 
 export class Concat extends React.PureComponent<Props, State> {
   render() {
+    R.concat('ABC', 'DEF'); // 'ABCDEF'
+    R.concat([4, 5, 6], [1, 2, 3]); //=> [4, 5, 6, 1, 2, 3]
+    R.concat([], []); //=> []
+
     return (
       <div>
         <h3>R.concat</h3>

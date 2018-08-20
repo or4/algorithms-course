@@ -8,6 +8,10 @@ type State = {
 
 export class FindLast extends React.PureComponent<Props, State> {
   render() {
+    let xs = [{ a: 1, b: 0 }, { a: 1, b: 1 }];
+    R.findLast(R.propEq('a', 1))(xs); //=> {a: 1, b: 1}
+    R.findLast(R.propEq('a', 4))(xs); //=> undefined
+
     return (
       <div>
         <h3>R.findLast</h3>

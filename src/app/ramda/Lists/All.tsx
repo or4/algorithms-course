@@ -8,6 +8,10 @@ type State = {
 
 export class All extends React.PureComponent<Props, State> {
   render() {
+    let equals3 = R.equals(3);
+    R.all(equals3)([3, 3, 3, 3]); //=> true
+    R.all(equals3)([3, 3, 1, 3]); //=> false
+
     return (
       <div>
         <h3>R.all</h3>

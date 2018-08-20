@@ -8,6 +8,9 @@ type State = {
 
 export class Update extends React.PureComponent<Props, State> {
   render() {
+    R.update(1, 11, [0, 1, 2]);     //=> [0, 11, 2]
+    // R.update(1)(11)([0, 1, 2]);     //=> [0, 11, 2]
+
     return (
       <div>
         <h3>R.update</h3>

@@ -8,6 +8,11 @@ type State = {
 
 export class Contains extends React.PureComponent<Props, State> {
   render() {
+    R.contains(3, [1, 2, 3]); //=> true
+    R.contains(4, [1, 2, 3]); //=> false
+    R.contains({ name: 'Fred' }, [{ name: 'Fred' }]); //=> true
+    R.contains([42], [[42]]); //=> true
+
     return (
       <div>
         <h3>R.contains</h3>

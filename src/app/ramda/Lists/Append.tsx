@@ -8,6 +8,10 @@ type State = {
 
 export class Append extends React.PureComponent<Props, State> {
   render() {
+    R.append('tests', ['write', 'more']); //=> ['write', 'more', 'tests']
+    R.append('tests', []); //=> ['tests']
+    // R.append(['tests'], ['write', 'more']); //=> ['write', 'more', ['tests']]
+
     return (
       <div>
         <h3>R.append</h3>

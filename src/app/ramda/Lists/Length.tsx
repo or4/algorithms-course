@@ -8,6 +8,10 @@ type State = {
 
 export class Length extends React.PureComponent<Props, State> {
   render() {
+    R.length([]); //=> 0
+    R.length([1, 2, 3]); //=> 3
+
+
     return (
       <div>
         <h3>R.length</h3>

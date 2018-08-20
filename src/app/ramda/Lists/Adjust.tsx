@@ -8,6 +8,8 @@ type State = {
 
 export class Adjust extends React.PureComponent<Props, State> {
   render() {
+    R.adjust(R.add(10), 1, [1, 2, 3]);     //=> [1, 12, 3]
+    // R.adjust(R.add(10))(1)([1, 2, 3]);     //=> [1, 12, 3]
     return (
       <div>
         <h3>R.adjust</h3>

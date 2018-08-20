@@ -8,6 +8,9 @@ type State = {
 
 export class Range extends React.PureComponent<Props, State> {
   render() {
+    R.range(1, 5);    //=> [1, 2, 3, 4]
+    R.range(50, 53);  //=> [50, 51, 52]
+
     return (
       <div>
         <h3>R.range</h3>

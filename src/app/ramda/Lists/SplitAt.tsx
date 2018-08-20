@@ -8,6 +8,16 @@ type State = {
 
 export class SplitAt extends React.PureComponent<Props, State> {
   render() {
+    R.splitAt(1, [1, 2, 3]);          //=> [[1], [2, 3]]
+    R.splitAt(5, 'hello world');      //=> ['hello', ' world']
+    R.splitAt(-1, 'foobar');          //=> ['fooba', 'r']
+
+
+    R.splitEvery(3, [1, 2, 3, 4, 5, 6, 7]); //=> [[1, 2, 3], [4, 5, 6], [7]]
+    R.splitEvery(3, 'foobarbaz'); //=> ['foo', 'bar', 'baz']
+
+    R.splitWhen(R.equals(2), [1, 2, 3, 1, 2, 3]);   //=> [[1], [2, 3, 1, 2, 3]]
+
     return (
       <div>
         <h3>R.splitAt</h3>

@@ -8,6 +8,12 @@ type State = {
 
 export class Drop extends React.PureComponent<Props, State> {
   render() {
+    R.drop(1, ['foo', 'bar', 'baz']); //=> ['bar', 'baz']
+    R.drop(2, ['foo', 'bar', 'baz']); //=> ['baz']
+    R.drop(3, ['foo', 'bar', 'baz']); //=> []
+    R.drop(4, ['foo', 'bar', 'baz']); //=> []
+    R.drop(3, 'ramda');               //=> 'da'
+
     return (
       <div>
         <h3>R.drop</h3>

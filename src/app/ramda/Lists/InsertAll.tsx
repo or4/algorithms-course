@@ -8,6 +8,8 @@ type State = {
 
 export class InsertAll extends React.PureComponent<Props, State> {
   render() {
+    // R.insertAll(2, ['x','y','z'], [1,2,3,4]); //=> [1,2,'x','y','z',3,4]
+
     return (
       <div>
         <h3>R.InsertAll</h3>

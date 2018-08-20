@@ -8,6 +8,8 @@ type State = {
 
 export class Sum extends React.PureComponent<Props, State> {
   render() {
+    R.sum([2, 4, 6, 8, 100, 1]); //=> 121
+
     return (
       <div>
         <h3>R.sum</h3>

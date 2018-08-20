@@ -8,6 +8,12 @@ type State = {
 
 export class Reject extends React.PureComponent<Props, State> {
   render() {
+    let isOdd = (n: number) => n % 2 === 1;
+
+    R.reject(isOdd, [1, 2, 3, 4]); //=> [2, 4]
+
+    R.reject(isOdd, { a: 1, b: 2, c: 3, d: 4 }); //=> {b: 2, d: 4}
+
     return (
       <div>
         <h3>R.reject</h3>

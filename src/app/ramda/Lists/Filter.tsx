@@ -8,6 +8,12 @@ type State = {
 
 export class Filter extends React.PureComponent<Props, State> {
   render() {
+    let isEven = (n: number) => n % 2 === 0;
+
+    R.filter(isEven, [1, 2, 3, 4]); //=> [2, 4]
+
+    R.filter(isEven, { a: 1, b: 2, c: 3, d: 4 }); //=> {b: 2, d: 4}
+
     return (
       <div>
         <h3>R.filter</h3>

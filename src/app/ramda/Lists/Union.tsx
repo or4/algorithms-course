@@ -8,6 +8,8 @@ type State = {
 
 export class Union extends React.PureComponent<Props, State> {
   render() {
+    R.union([1, 2, 3], [2, 3, 4]); //=> [1, 2, 3, 4]
+
     return (
       <div>
         <h3>R.union</h3>

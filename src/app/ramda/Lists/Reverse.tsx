@@ -8,6 +8,16 @@ type State = {
 
 export class Reverse extends React.PureComponent<Props, State> {
   render() {
+    R.reverse([1, 2, 3]);  //=> [3, 2, 1]
+    R.reverse([1, 2]);     //=> [2, 1]
+    R.reverse([1]);        //=> [1]
+    R.reverse([]);         //=> []
+
+    R.reverse('abc');      //=> 'cba'
+    R.reverse('ab');       //=> 'ba'
+    R.reverse('a');        //=> 'a'
+    R.reverse('');         //=> ''
+
     return (
       <div>
         <h3>R.reverse</h3>

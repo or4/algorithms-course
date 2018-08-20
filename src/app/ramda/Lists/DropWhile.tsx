@@ -8,6 +8,12 @@ type State = {
 
 export class DropWhile extends React.PureComponent<Props, State> {
   render() {
+    let lteTwo = (x: number) => x <= 2;
+
+    R.dropWhile(lteTwo, [1, 2, 3, 4, 3, 2, 1]); //=> [3, 4, 3, 2, 1]
+
+    // R.dropWhile(x => x !== 'd', 'Ramda'); //=> 'da'
+
     return (
       <div>
         <h3>R.dropWhile</h3>

@@ -8,6 +8,9 @@ type State = {
 
 export class IndexOf extends React.PureComponent<Props, State> {
   render() {
+    R.indexOf(3, [1, 2, 3, 4]); //=> 2
+    R.indexOf(10, [1, 2, 3, 4]); //=> -1
+
     return (
       <div>
         <h3>R.indexOf</h3>

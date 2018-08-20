@@ -8,6 +8,12 @@ type State = {
 
 export class TakeWhile extends React.PureComponent<Props, State> {
   render() {
+    // let isNotFour = x => x !== 4;
+
+    // R.takeWhile(isNotFour, [1, 2, 3, 4, 3, 2, 1]); //=> [1, 2, 3]
+
+    // R.takeWhile(x => x !== 'd', 'Ramda'); //=> 'Ram'
+
     return (
       <div>
         <h3>R.takeWhile</h3>

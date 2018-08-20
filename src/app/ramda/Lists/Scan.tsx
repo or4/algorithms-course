@@ -8,6 +8,9 @@ type State = {
 
 export class Scan extends React.PureComponent<Props, State> {
   render() {
+    let numbers = [1, 2, 3, 4];
+    let factorials = R.scan(R.multiply, 1, numbers); //=> [1, 1, 2, 6, 24]
+
     return (
       <div>
         <h3>R.scan</h3>

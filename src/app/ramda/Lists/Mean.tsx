@@ -8,6 +8,9 @@ type State = {
 
 export class Mean extends React.PureComponent<Props, State> {
   render() {
+    R.mean([2, 7, 9]); //=> 6
+    R.mean([]); //=> NaN
+
     return (
       <div>
         <h3>R.mean</h3>

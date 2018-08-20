@@ -8,6 +8,10 @@ type State = {
 
 export class Median extends React.PureComponent<Props, State> {
   render() {
+    R.median([2, 9, 7]); //=> 7
+    R.median([7, 2, 10, 9]); //=> 8
+    R.median([]); //=> NaN
+
     return (
       <div>
         <h3>R.median</h3>

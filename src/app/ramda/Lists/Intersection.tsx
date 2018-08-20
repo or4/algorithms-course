@@ -8,6 +8,8 @@ type State = {
 
 export class Intersection extends React.PureComponent<Props, State> {
   render() {
+    R.intersection([1, 2, 3, 4], [7, 6, 5, 4, 3]); //=> [4, 3]
+
     return (
       <div>
         <h3>R.intersection</h3>
