@@ -1,8 +1,6 @@
 import * as R from 'ramda';
 import { GraphItem, convertToArray } from './utils';
 
-
-
 function getLengthRecursive(graph: GraphItem[], from: number, vertice: number): number {
   // console.log(`getLengthRunner from=${from}, vertice=${vertice}`);
   graph[from].visited = true;
@@ -18,6 +16,42 @@ function getLengthRecursive(graph: GraphItem[], from: number, vertice: number): 
   return R.apply(Math.max, resArray);
 }
 
+export const sccs = (raw: string): string => {
+  const graph = convertToArray(raw);
+
+  // console.log(graph);
+  let output = [] as number[];
+
+  let index = 1;
+  // while (graph[index]) {
+  //   if (graph[index].visited) {
+  //     index++;
+  //     continue;
+  //   }
+
+  const itemFrom = graph[index];
+
+  output.push(getLengthRecursive(graph, index, itemFrom.currentVertice));
+  //   index++;
+  // }
+
+  output = R.sort((a, b) => b - a, output);
+
+  const addNullIfLessThan5 = R.when<number[], number[]>(
+    R.pipe(R.length, R.partialRight(R.lt as any, [5])),
+    R.append(0)
+  );
+
+  R.times(() => {
+    output = addNullIfLessThan5(output);
+  }, 5);
+
+  return output.join(', ');
+};
+
+
+
+/*
 type StackItem = {
   vertice: number;
   len: number;
@@ -78,40 +112,4 @@ function getLengthIterative(graph: GraphItem[], vertice: number): number {
     }
     index = workVertice;
   }
-}
-
-
-
-export const sccs = (raw: string): string => {
-
-  const graph = convertToArray(raw);
-
-  // console.log(graph);
-  let output = [] as number[];
-
-  let index = 1;
-  // while (graph[index]) {
-  //   if (graph[index].visited) {
-  //     index++;
-  //     continue;
-  //   }
-
-  const itemFrom = graph[index];
-
-  output.push(getLengthIterative(graph, itemFrom.currentVertice));
-  //   index++;
-  // }
-
-  output = R.sort((a, b) => b - a, output);
-
-  const addNullIfLessThan5 = R.when<number[], number[]>(
-    R.pipe(R.length, R.partialRight(R.lt as any, [5])),
-    R.append(0)
-  );
-
-  R.times(() => {
-    output = addNullIfLessThan5(output);
-  }, 5);
-
-  return output.join(', ');
-};
+} */
