@@ -38,6 +38,14 @@ export class Where extends React.PureComponent<Props, State> {
         <div>{`pred({ a: 'foo', b: 'bar', x: 11, y: 19 }) = ${objToString(pred({ a: 'foo', b: 'bar', x: 11, y: 19 }))}`}</div>
         <div>{`pred({ a: 'foo', b: 'xxx', x: 10, y: 19 }) = ${objToString(pred({ a: 'foo', b: 'xxx', x: 10, y: 19 }))}`}</div>
         <div>{`pred({ a: 'foo', b: 'xxx', x: 11, y: 20 }) = ${objToString(pred({ a: 'foo', b: 'xxx', x: 11, y: 20 }))}`}</div>
+
+
+        <h3>R.whereEq</h3>
+        <div>{`const pred = R.whereEq({ a: 1, b: 2 })`}</div>
+        <div>{`pred({ a: 1 }) = ${objToString(pred({ a: 1 }))}`}</div>
+        <div>{`pred({ a: 1, b: 2 }) = ${objToString(pred({ a: 1, b: 2 }))}`}</div>
+        <div>{`pred({ a: 1, b: 2, c: 3 }) = ${objToString(pred({ a: 1, b: 2, c: 3 }))}`}</div>
+        <div>{`pred({ a: 1, b: 1 }) = ${objToString(pred({ a: 1, b: 1 }))}`}</div>
       </div>
     );
   }

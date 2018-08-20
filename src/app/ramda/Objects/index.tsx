@@ -24,8 +24,7 @@ import { Reject } from './Reject';
 import { ToPairs } from './ToPairs';
 import { Values } from './Values';
 import { Where } from './Where';
-import { WhereEq } from './WhereEq';
-import { ZipObj } from './ZipObj';
+import { Zip } from './Zip';
 
 type TProps = {
 };
@@ -58,7 +57,7 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/reject`}>reject</Link>
           <Link to={`/ramda/objects/toPairs`}>toPairs / toPairsIn</Link>
           <Link to={`/ramda/objects/values`}>values / valuesIn</Link>
-          <Link to={`/ramda/objects/where`}>where</Link>
+          <Link to={`/ramda/objects/where`}>where / whereEq</Link>
           <Link to={`/ramda/objects/whereEq`}>whereEq</Link>
           <Link to={`/ramda/objects/zipObj`}>zip / zipObj / zipWith</Link>
         </div>
@@ -85,8 +84,7 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Route path="/ramda/objects/toPairs" component={ToPairs} />
           <Route path="/ramda/objects/values" component={Values} />
           <Route path="/ramda/objects/where" component={Where} />
-          <Route path="/ramda/objects/whereEq" component={WhereEq} />
-          <Route path="/ramda/objects/zipObj" component={ZipObj} />
+          <Route path="/ramda/objects/zipObj" component={Zip} />
         </Switch>
       </div>
     );
