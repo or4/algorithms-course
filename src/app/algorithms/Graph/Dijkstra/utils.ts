@@ -29,16 +29,21 @@ export const convertToArray = (data: string): GraphItem[] => {
     R.split('\n'),
 
     R.map(
+
       R.pipe(
         R.split(' '),
+        R.map(
+          R.split(',')
+        )
       )
+
     )
 
   )(data);
 
   console.log('splitted', splitted);
   const indexed = R.indexBy(R.prop('0'), splitted);
-  console.log('splitted', indexed);
+  console.log('indexed', indexed);
 
 
   // const output = [] as GraphItem[];
