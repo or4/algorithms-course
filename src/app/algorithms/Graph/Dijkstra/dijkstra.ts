@@ -1,29 +1,21 @@
 import * as R from 'ramda';
-import { convertToArray, getMinVerticeEdge, getMinVertice } from './utils';
+import { convertToArray, getMinVerticeEdge, getMinVertice, GraphItem } from './utils';
 import { objToString } from '../../../ramda/helpers';
 
 export const runDijkstra = (raw: string, vertice: number) => {
   const graph = convertToArray(raw);
-  // console.log('graph', R.pipe(R.toPairs, R.map(R.map(objToString)), R.fromPairs)(graph));
-  console.log('graph', graph);
-  let node;
-  let minEdge;
-  let weightFromCurrNode;
-  let weightFromAnotherNode;
-  let locVertice = vertice;
 
-  node = graph[locVertice];
-  node.value = 0;
+  let locVertice = vertice;
+  graph[locVertice].value = 0;
 
   while (locVertice !== -1) {
-    node = graph[locVertice];
+    const node = graph[locVertice];
     for (let i = 0; i < node.edges.length; i++) {
-      minEdge = getMinVerticeEdge(node.edges);
+      const minEdge = getMinVerticeEdge(node.edges);
       if (!graph[minEdge.vertice].done) {
-        weightFromCurrNode = node.value + minEdge.weight;
-        weightFromAnotherNode = graph[minEdge.vertice].value;
-        if (weightFromCurrNode < weightFromAnotherNode) {
-          graph[minEdge.vertice].value = weightFromCurrNode;
+        const weightFromCurrentNode = node.value + minEdge.weight;
+        if (weightFromCurrentNode < graph[minEdge.vertice].value) {
+          graph[minEdge.vertice].value = weightFromCurrentNode;
         }
       }
       minEdge.visited = true;
@@ -31,9 +23,16 @@ export const runDijkstra = (raw: string, vertice: number) => {
     node.done = true;
 
     locVertice = getMinVertice(graph, locVertice);
-    console.log('locVertice', locVertice);
+    // console.log('locVertice', locVertice);
   }
 
   console.log('graph', graph);
+  const result = R.pipe(
+    R.mapObjIndexed((value: GraphItem, key: string) => `${key},${value.value}`),
+    R.values,
+    R.join(' ')
+  )(graph);
+  console.log('result', result);
+  return result;
 };
 

@@ -6,12 +6,14 @@ type VerticeNode = {
   visited: boolean;
 };
 
+export type GraphItem = {
+  edges: VerticeNode[];
+  value: number;
+  done: boolean;
+};
+
 export type Graph = {
-  [key: number]: {
-    edges: VerticeNode[];
-    value: number;
-    done: boolean;
-  };
+  [key: number]: GraphItem;
 };
 
 export const convertToArray = (data: string): Graph => {

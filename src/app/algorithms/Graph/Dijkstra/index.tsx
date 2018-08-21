@@ -13,7 +13,8 @@ export class Dijkstra extends React.PureComponent<Props, State> {
     result: '',
   }
   componentDidMount() {
-    runDijkstra(data, 1);
+    const result = runDijkstra(data, 1);
+    this.setState({ result,  });
   }
   render() {
     const { result } = this.state;
