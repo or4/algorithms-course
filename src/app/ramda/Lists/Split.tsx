@@ -6,8 +6,13 @@ type Props = {
 type State = {
 };
 
-export class SplitAt extends React.PureComponent<Props, State> {
+export class Split extends React.PureComponent<Props, State> {
   render() {
+    let pathComponents = R.split('/');
+    R.tail(pathComponents('/usr/local/bin/node')); //=> ['usr', 'local', 'bin', 'node']
+
+    R.split('.', 'a.b.c.xyz.d'); //=> ['a', 'b', 'c', 'xyz', 'd']
+
     R.splitAt(1, [1, 2, 3]);          //=> [[1], [2, 3]]
     R.splitAt(5, 'hello world');      //=> ['hello', ' world']
     R.splitAt(-1, 'foobar');          //=> ['fooba', 'r']

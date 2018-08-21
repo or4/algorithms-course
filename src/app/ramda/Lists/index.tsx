@@ -49,10 +49,7 @@ import { Reverse } from './Reverse';
 import { Scan } from './Scan';
 import { Slice } from './Slice';
 import { Sort } from './Sort';
-import { SortBy } from './SortBy';
-import { SplitAt } from './SplitAt';
-import { SplitEvery } from './SplitEvery';
-import { SplitWhen } from './SplitWhen';
+import { Split } from './Split';
 import { Sum } from './Sum';
 import { Take } from './Take';
 import { TakeLast } from './TakeLast';
@@ -66,7 +63,6 @@ import { UniqWith } from './UniqWith';
 import { Update } from './Update';
 import { Without } from './Without';
 import { Zip } from './Zip';
-import { ZipWith } from './ZipWith';
 
 type TProps = {
 };
@@ -125,11 +121,8 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/reverse`}>reverse</Link>
           <Link to={`/ramda/lists/scan`}>scan</Link>
           <Link to={`/ramda/lists/slice`}>slice</Link>
-          <Link to={`/ramda/lists/sort`}>sort</Link>
-          <Link to={`/ramda/lists/sortBy`}>sortBy</Link>
-          <Link to={`/ramda/lists/splitAt`}>splitAt</Link>
-          <Link to={`/ramda/lists/splitEvery`}>splitEvery</Link>
-          <Link to={`/ramda/lists/splitWhen`}>splitWhen</Link>
+          <Link to={`/ramda/lists/sort`}>sort / sortBy / sortWith</Link>
+          <Link to={`/ramda/lists/split`}>split / splitAt / splitEvery / splitWhen</Link>
           <Link to={`/ramda/lists/sum`}>sum</Link>
           <Link to={`/ramda/lists/take`}>take</Link>
           <Link to={`/ramda/lists/takeLast`}>takeLast</Link>
@@ -142,8 +135,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/uniqWith`}>uniqWith</Link>
           <Link to={`/ramda/lists/update`}>update</Link>
           <Link to={`/ramda/lists/without`}>without</Link>
-          <Link to={`/ramda/lists/zip`}>zip</Link>
-          <Link to={`/ramda/lists/zipWith`}>zipWith</Link>
+          <Link to={`/ramda/lists/zip`}>zip / zipObj / zipWith</Link>
         </div>
         <Switch>
           <Route path="/ramda/lists/addIndex" component={AddIndex} />
@@ -194,10 +186,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/scan" component={Scan} />
           <Route path="/ramda/lists/slice" component={Slice} />
           <Route path="/ramda/lists/sort" component={Sort} />
-          <Route path="/ramda/lists/sortBy" component={SortBy} />
-          <Route path="/ramda/lists/splitAt" component={SplitAt} />
-          <Route path="/ramda/lists/splitEvery" component={SplitEvery} />
-          <Route path="/ramda/lists/splitWhen" component={SplitWhen} />
+          <Route path="/ramda/lists/split" component={Split} />
           <Route path="/ramda/lists/sum" component={Sum} />
           <Route path="/ramda/lists/take" component={Take} />
           <Route path="/ramda/lists/takeLast" component={TakeLast} />
@@ -211,7 +200,6 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/update" component={Update} />
           <Route path="/ramda/lists/without" component={Without} />
           <Route path="/ramda/lists/zip" component={Zip} />
-          <Route path="/ramda/lists/zipWith" component={ZipWith} />
         </Switch>
       </div>
     );
