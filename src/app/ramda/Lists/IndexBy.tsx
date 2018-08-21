@@ -1,5 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
+import { objToString } from '../helpers';
 
 type Props = {
 };
@@ -8,17 +9,13 @@ type State = {
 
 export class IndexBy extends React.PureComponent<Props, State> {
   render() {
-    let list = [{ id: 'xyz', title: 'A' }, { id: 'abc', title: 'B' }];
-    R.indexBy(R.prop('id'), list);
-    //=> {abc: {id: 'abc', title: 'B'}, xyz: {id: 'xyz', title: 'A'}}
+    const list = [{ id: 'xyz', title: 'A' }, { id: 'abc', title: 'B' }];
 
     return (
       <div>
         <h3>R.indexBy</h3>
-        <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
-        <div>{`R.and(true, false) = ${R.and(true, false)}`}</div>
-        <div>{`R.and(false, true) = ${R.and(false, true)}`}</div>
-        <div>{`R.and(false, false) = ${R.and(false, false)}`}</div>
+        <div>{`const list = [{ id: 'xyz', title: 'A' }, { id: 'abc', title: 'B' }];`}</div>
+        <div>{`R.indexBy(R.prop('id'), list) = ${objToString(R.indexBy(R.prop('id'), list))}`}</div>
       </div>
     );
   }

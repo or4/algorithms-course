@@ -21,10 +21,7 @@ import { IndexBy } from './IndexBy';
 import { IndexOf } from './IndexOf';
 import { Init } from './Init';
 import { Insert } from './Insert';
-import { InsertAll } from './InsertAll';
 import { Intersection } from './Intersection';
-import { Last } from './Last';
-import { LastIndexOf } from './LastIndexOf';
 import { Length } from './Length';
 import { MapX } from './MapX';
 import { Mean } from './Mean';
@@ -80,18 +77,15 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/filter`}>filter / reject</Link>
           <Link to={`/ramda/lists/find`}>find / findIndex / findLast / findLastIndex</Link>
           <Link to={`/ramda/lists/fromPairs`}>fromPairs / toPairs</Link>
-          <Link to={`/ramda/lists/groupBy`}>groupBy</Link>
-          <Link to={`/ramda/lists/head`}>head</Link>
+          <Link to={`/ramda/lists/groupBy`}>groupBy / groupWith</Link>
+          <Link to={`/ramda/lists/head`}>head / last</Link>
           <Link to={`/ramda/lists/indexBy`}>indexBy</Link>
-          <Link to={`/ramda/lists/indexOf`}>indexOf</Link>
-          <Link to={`/ramda/lists/init`}>init</Link>
-          <Link to={`/ramda/lists/insert`}>insert</Link>
-          <Link to={`/ramda/lists/insertAll`}>insertAll</Link>
+          <Link to={`/ramda/lists/indexOf`}>indexOf / lastIndexOf</Link>
+          <Link to={`/ramda/lists/init`}>init / tail</Link>
+          <Link to={`/ramda/lists/insert`}>insert / insertAll</Link>
           <Link to={`/ramda/lists/intersection`}>intersection</Link>
-          <Link to={`/ramda/lists/last`}>last</Link>
-          <Link to={`/ramda/lists/lastIndexOf`}>lastIndexOf</Link>
           <Link to={`/ramda/lists/length`}>length</Link>
-          <Link to={`/ramda/lists/map`}>map</Link>
+          <Link to={`/ramda/lists/mapx`}>map / mapAccum / mapAccumRight / mapObjIndexed</Link>
           <Link to={`/ramda/lists/mean`}>mean</Link>
           <Link to={`/ramda/lists/median`}>median</Link>
           <Link to={`/ramda/lists/none`}>none</Link>
@@ -142,10 +136,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/indexOf" component={IndexOf} />
           <Route path="/ramda/lists/init" component={Init} />
           <Route path="/ramda/lists/insert" component={Insert} />
-          <Route path="/ramda/lists/insertAll" component={InsertAll} />
           <Route path="/ramda/lists/intersection" component={Intersection} />
-          <Route path="/ramda/lists/last" component={Last} />
-          <Route path="/ramda/lists/lastIndexOf" component={LastIndexOf} />
           <Route path="/ramda/lists/length" component={Length} />
           <Route path="/ramda/lists/mapx" component={MapX} />
           <Route path="/ramda/lists/mean" component={Mean} />
