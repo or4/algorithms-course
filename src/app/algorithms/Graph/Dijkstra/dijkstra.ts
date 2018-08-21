@@ -33,6 +33,7 @@ export const runDijkstra = (raw: string, vertice: number) => {
   const newGraph = R.pipe(
     R.toPairs,
     // R.filter((item: any) => R.indexOf(Number(item[0]), ids) !== -1),
+    R.filter((item: any) => R.contains(Number(item[0]), ids)),
     R.fromPairs,
     // R.values,
     // R.map((item: any) => item.value),

@@ -11,11 +11,7 @@ import { Chain } from './Chain';
 import { Concat } from './Concat';
 import { Contains } from './Contains';
 import { Difference } from './Difference';
-import { DifferenceWith } from './DifferenceWith';
 import { Drop } from './Drop';
-import { DropLast } from './DropLast';
-import { DropLastWhile } from './DropLastWhile';
-import { DropWhile } from './DropWhile';
 import { FromPairs } from './FromPairs';
 import { Find } from './Find';
 import { FindIndex } from './FindIndex';
@@ -82,12 +78,8 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/chain`}>chain</Link>
           <Link to={`/ramda/lists/concat`}>concat</Link>
           <Link to={`/ramda/lists/contains`}>contains</Link>
-          <Link to={`/ramda/lists/difference`}>difference</Link>
-          <Link to={`/ramda/lists/differenceWith`}>differenceWith</Link>
-          <Link to={`/ramda/lists/drop`}>drop</Link>
-          <Link to={`/ramda/lists/dropLast`}>dropLast</Link>
-          <Link to={`/ramda/lists/dropLastWhile`}>dropLastWhile</Link>
-          <Link to={`/ramda/lists/dropWhile`}>dropWhile</Link>
+          <Link to={`/ramda/lists/difference`}>difference / differenceWith</Link>
+          <Link to={`/ramda/lists/drop`}>drop / dropLast / dropLastWhile / dropWhile</Link>
           <Link to={`/ramda/lists/filter`}>filter</Link>
           <Link to={`/ramda/lists/find`}>find</Link>
           <Link to={`/ramda/lists/findIndex`}>findIndex</Link>
@@ -147,11 +139,7 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/concat" component={Concat} />
           <Route path="/ramda/lists/contains" component={Contains} />
           <Route path="/ramda/lists/difference" component={Difference} />
-          <Route path="/ramda/lists/differenceWith" component={DifferenceWith} />
           <Route path="/ramda/lists/drop" component={Drop} />
-          <Route path="/ramda/lists/dropLast" component={DropLast} />
-          <Route path="/ramda/lists/dropLastWhile" component={DropLastWhile} />
-          <Route path="/ramda/lists/dropWhile" component={DropWhile} />
           <Route path="/ramda/lists/filter" component={Median} />
           <Route path="/ramda/lists/find" component={Find} />
           <Route path="/ramda/lists/findIndex" component={FindIndex} />

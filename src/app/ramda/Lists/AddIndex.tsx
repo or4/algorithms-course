@@ -1,5 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
+import { objToString } from '../helpers';
 
 type Props = {
 };
@@ -8,17 +9,24 @@ type State = {
 
 export class AddIndex extends React.PureComponent<Props, State> {
   render() {
-    let mapIndexed = R.addIndex(R.map);
-    mapIndexed((val, idx) => idx + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']);
-    //=> ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r']
+    const mapIndexed = R.addIndex(R.map);
+    const removeDupesFromSortedList = R.addIndex(R.filter)((it, ind, l: any) => (it !== l[ind + 1]));
+    const arr = [1, 2, 3, 4, 5];
+    const removeSecondItem = R.addIndex(R.filter)((value, index, array) => (index !== 1));
 
     return (
       <div>
         <h3>R.addIndex</h3>
-        <div>{`R.and(true, true) = ${R.and(true, true)}`}</div>
-        <div>{`R.and(true, false) = ${R.and(true, false)}`}</div>
-        <div>{`R.and(false, true) = ${R.and(false, true)}`}</div>
-        <div>{`R.and(false, false) = ${R.and(false, false)}`}</div>
+        <h5>Case 1</h5>
+        <div>{`const mapIndexed = R.addIndex(R.map);`}</div>
+        <div>{`mapIndexed((val, key) => key + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']) = ${objToString(mapIndexed((val, key) => key + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']))}`}</div>
+        <h5>Case 2</h5>
+        <div>{`const removeDupesFromSortedList = R.addIndex(R.filter)((it, ind, l: any) => (it !== l[ind + 1]));`}</div>
+        <div>{`removeDupesFromSortedList([1, 2, 2, 'a', 'a', 'b']) = ${objToString(removeDupesFromSortedList([1, 2, 2, 'a', 'a', 'b']))}`}</div>
+        <h5>Case 3</h5>
+        <div>{`const arr = [1, 2, 3, 4, 5];`}</div>
+        <div>{`const removeSecondItem = R.addIndex(R.filter)((value, index, array) => (index !== 2));`}</div>
+        <div>{`removeSecondItem(arr) = ${objToString(removeSecondItem(arr))}`}</div>
       </div>
     );
   }
