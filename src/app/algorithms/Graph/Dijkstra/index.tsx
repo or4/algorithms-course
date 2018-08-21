@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from './data/dataTest0';
-import { convertToArray } from './utils';
+import { runDijkstra } from './dijkstra';
 
 type Props = {
 };
@@ -13,8 +13,7 @@ export class Dijkstra extends React.PureComponent<Props, State> {
     result: '',
   }
   componentDidMount() {
-    const result = convertToArray(data);
-    console.log('result', result);
+    runDijkstra(data, 1);
   }
   render() {
     const { result } = this.state;

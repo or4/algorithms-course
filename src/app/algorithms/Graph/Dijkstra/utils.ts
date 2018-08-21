@@ -2,62 +2,33 @@ import * as R from 'ramda';
 
 type VerticeNode = {
   vertice: number;
-  length: number;
+  weight: number;
 };
 
-export class GraphItem {
-  visited: boolean;
-  vertice: number;
-  vertices: VerticeNode[]; // to vertices
+export type Graph = {
+  [key: number]: {
+    edges: VerticeNode[];
+    value: number;
+  };
+};
 
-  constructor(vertice: number) {
-    this.vertice = vertice;
-    this.vertices = [];
-  }
-
-  public push(node: VerticeNode) {
-    if (node.vertice === this.vertice || R.contains(node, this.vertices)) {
-      return;
-    }
-    this.vertices.push(node);
-  }
-}
-
-export const convertToArray = (data: string): GraphItem[] => {
-
+export const convertToArray = (data: string): Graph => {
   const splitted = R.pipe(
     R.split('\n'),
+    R.map(R.split(' ')), // split line to vertice and items
+    R.indexBy(R.prop('0') as any), // set vertice as key object in array
 
-    R.map(
-
+    R.mapObjIndexed(
       R.pipe(
-        R.split(' '),
-        R.map(
-          R.split(',')
-        )
-      )
+        R.drop(1), // skip first element (this is not item, this is a vertice that key object)
+        R.map<any, VerticeNode[]>( // transform item to object like { vertice: 12, weight: 17 }
+          R.pipe<string, string[], number[], VerticeNode>(R.split(','), R.map(Number), R.zipObj(['vertice', 'weight']) as any)
+        ),
+        R.objOf('edges'), // tranform to object with key edges and values VerticeNode[]
+        R.assoc('value', 0)
+      ),
+    ),
+  )(data) as any;
 
-    )
-
-  )(data);
-
-  console.log('splitted', splitted);
-  const indexed = R.indexBy(R.prop('0'), splitted);
-  console.log('indexed', indexed);
-
-
-  // const output = [] as GraphItem[];
-  // splitted.forEach((item: number[]): void => {
-  //   const vertice = item[0];
-  //   const toVertice = item[1];
-
-  //   if (R.isNil(output[vertice])) {
-  //     output[vertice] = new GraphItem(vertice);
-  //   }
-
-  //   output[vertice].push(toVertice);
-  // });
-
-  // return output;
-  return [] as any;
+  return splitted;
 };
