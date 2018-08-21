@@ -21,7 +21,7 @@ import { Pick } from './Pick';
 import { Prop } from './Prop';
 import { Props } from './Props';
 import { Reject } from './Reject';
-import { ToPairs } from './ToPairs';
+import { FromPairs } from './FromPairs';
 import { Values } from './Values';
 import { Where } from './Where';
 import { Zip } from './Zip';
@@ -55,7 +55,7 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/objects/prop`}>prop / propEq / propIs / propOr</Link>
           <Link to={`/ramda/objects/props`}>props / propsSatisfies</Link>
           <Link to={`/ramda/objects/reject`}>reject</Link>
-          <Link to={`/ramda/objects/toPairs`}>toPairs / toPairsIn</Link>
+          <Link to={`/ramda/objects/fromPairs`}>fromPairs / fromPairsIn / toPairs</Link>
           <Link to={`/ramda/objects/values`}>values / valuesIn</Link>
           <Link to={`/ramda/objects/where`}>where / whereEq</Link>
           <Link to={`/ramda/objects/whereEq`}>whereEq</Link>
@@ -81,7 +81,7 @@ export class Objects extends React.PureComponent<TProps, State> {
           <Route path="/ramda/objects/prop" component={Prop} />
           <Route path="/ramda/objects/props" component={Props} />
           <Route path="/ramda/objects/reject" component={Reject} />
-          <Route path="/ramda/objects/toPairs" component={ToPairs} />
+          <Route path="/ramda/objects/fromPairs" component={FromPairs} />
           <Route path="/ramda/objects/values" component={Values} />
           <Route path="/ramda/objects/where" component={Where} />
           <Route path="/ramda/objects/zipObj" component={Zip} />

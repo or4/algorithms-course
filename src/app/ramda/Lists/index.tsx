@@ -13,10 +13,8 @@ import { Contains } from './Contains';
 import { Difference } from './Difference';
 import { Drop } from './Drop';
 import { FromPairs } from './FromPairs';
+import { Filter } from './Filter';
 import { Find } from './Find';
-import { FindIndex } from './FindIndex';
-import { FindLast } from './FindLast';
-import { FindLastIndex } from './FindLastIndex';
 import { GroupBy } from './GroupBy';
 import { Head } from './Head';
 import { IndexBy } from './IndexBy';
@@ -39,7 +37,6 @@ import { Prepend } from './Prepend';
 import { Product } from './Product';
 import { Range } from './Range';
 import { Reduce } from './Reduce';
-import { Reject } from './Reject';
 import { Remove } from './Remove';
 import { Reverse } from './Reverse';
 import { Scan } from './Scan';
@@ -80,12 +77,9 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/contains`}>contains</Link>
           <Link to={`/ramda/lists/difference`}>difference / differenceWith</Link>
           <Link to={`/ramda/lists/drop`}>drop / dropLast / dropLastWhile / dropWhile</Link>
-          <Link to={`/ramda/lists/filter`}>filter</Link>
-          <Link to={`/ramda/lists/find`}>find</Link>
-          <Link to={`/ramda/lists/findIndex`}>findIndex</Link>
-          <Link to={`/ramda/lists/findLast`}>findLast</Link>
-          <Link to={`/ramda/lists/findLastIndex`}>findLastIndex</Link>
-          <Link to={`/ramda/lists/fromPairs`}>fromPairs</Link>
+          <Link to={`/ramda/lists/filter`}>filter / reject</Link>
+          <Link to={`/ramda/lists/find`}>find / findIndex / findLast / findLastIndex</Link>
+          <Link to={`/ramda/lists/fromPairs`}>fromPairs / toPairs</Link>
           <Link to={`/ramda/lists/groupBy`}>groupBy</Link>
           <Link to={`/ramda/lists/head`}>head</Link>
           <Link to={`/ramda/lists/indexBy`}>indexBy</Link>
@@ -108,7 +102,6 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Link to={`/ramda/lists/product`}>product</Link>
           <Link to={`/ramda/lists/range`}>range</Link>
           <Link to={`/ramda/lists/reduce`}>reduce</Link>
-          <Link to={`/ramda/lists/reject`}>reject</Link>
           <Link to={`/ramda/lists/remove`}>remove</Link>
           <Link to={`/ramda/lists/reverse`}>reverse</Link>
           <Link to={`/ramda/lists/scan`}>scan</Link>
@@ -140,11 +133,8 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/contains" component={Contains} />
           <Route path="/ramda/lists/difference" component={Difference} />
           <Route path="/ramda/lists/drop" component={Drop} />
-          <Route path="/ramda/lists/filter" component={Median} />
+          <Route path="/ramda/lists/filter" component={Filter} />
           <Route path="/ramda/lists/find" component={Find} />
-          <Route path="/ramda/lists/findIndex" component={FindIndex} />
-          <Route path="/ramda/lists/findLast" component={FindLast} />
-          <Route path="/ramda/lists/findLastIndex" component={FindLastIndex} />
           <Route path="/ramda/lists/fromPairs" component={FromPairs} />
           <Route path="/ramda/lists/groupBy" component={GroupBy} />
           <Route path="/ramda/lists/head" component={Head} />
@@ -168,7 +158,6 @@ export class Lists extends React.PureComponent<TProps, State> {
           <Route path="/ramda/lists/product" component={Product} />
           <Route path="/ramda/lists/range" component={Range} />
           <Route path="/ramda/lists/reduce" component={Reduce} />
-          <Route path="/ramda/lists/reject" component={Reject} />
           <Route path="/ramda/lists/remove" component={Remove} />
           <Route path="/ramda/lists/reverse" component={Reverse} />
           <Route path="/ramda/lists/scan" component={Scan} />
