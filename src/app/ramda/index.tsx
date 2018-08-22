@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import { Functions } from './Functions';
+import { Immutable } from './Immutable';
 import { Lists } from './Lists';
 import { Logic } from './Logic';
 import { Maths } from './Maths';
@@ -21,6 +22,7 @@ export class Ramda extends React.PureComponent<Props, State> {
       <div className="menu-container">
         <div>
           <Link to={`/ramda/functions`}>functions</Link>
+          <Link to={`/ramda/immutable`}>immutable</Link>
           <Link to={`/ramda/lists`}>lists</Link>
           <Link to={`/ramda/logic`}>logic</Link>
           <Link to={`/ramda/maths`}>maths</Link>
@@ -31,6 +33,7 @@ export class Ramda extends React.PureComponent<Props, State> {
 
         <Switch>
           <Route path="/ramda/functions" component={Functions} />
+          <Route path="/ramda/immutable" component={Immutable} />
           <Route path="/ramda/lists" component={Lists} />
           <Route path="/ramda/logic" component={Logic} />
           <Route path="/ramda/maths" component={Maths} />
