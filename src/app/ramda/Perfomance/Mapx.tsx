@@ -9,10 +9,10 @@ type State = {
 };
 
 function isOdd(num: number) {
-  return num % 2 === 1;
+  return true;// num % 2 === 1;
 }
 function square(num: number) {
-  return num * num;
+  return num * 2;
 }
 
 const getFilledArray = (pow: number) => {
@@ -25,25 +25,38 @@ const getFilledArray = (pow: number) => {
 
 const getTimeForRamda = (pow: number) => {
   let arr = getFilledArray(pow);
+  console.log(arr.length);
   const dateFrom = new Date();
   const result = R.map(square, R.filter(isOdd, arr));
   const msDone = new Date().valueOf() - dateFrom.valueOf();
+  console.log('ramda', R.take(5, result));
+  console.log('ramda', result.length.toLocaleString());
   return { arrLength: arr.length, time: msDone };
 };
 
 const getTimeForVanila = (pow: number) => {
   const arr = getFilledArray(pow);
+  console.log(arr.length);
   const dateFrom = new Date();
   const result = arr.filter(isOdd).map(square);
   const msDone = new Date().valueOf() - dateFrom.valueOf();
+  console.log('vanila', R.take(5, result));
+  console.log('vanila', result.length.toLocaleString());
   return { arrLength: arr.length, time: msDone };
 };
 
 const getTimeForLodashFp = (pow: number) => {
   let arr = getFilledArray(pow);
+  console.log(arr.length);
   const dateFrom = new Date();
-  const result = _.map(_.filter(isOdd, arr), square);
+  // const result = _.map(_.filter(isOdd, arr), square);
+  const result = _.flow(
+    _.filter(isOdd),
+    _.map(square)
+  )(arr);
   const msDone = new Date().valueOf() - dateFrom.valueOf();
+  console.log('lodash', R.take(5, result));
+  console.log('lodash', result.length.toLocaleString());
   return { arrLength: arr.length, time: msDone };
 };
 
