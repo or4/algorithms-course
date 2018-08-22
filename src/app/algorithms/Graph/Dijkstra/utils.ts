@@ -51,6 +51,7 @@ export const getMinVerticeEdge = (nodes: VerticeNode[]): VerticeNode => {
 
 
 export const getMinVertice = (graph: Graph, vertice: number): number => {
+  console.log(`getMinVertice start, vertice=${vertice}`);
 
   const verticeNode = graph[vertice];
   const edges = R.sortWith([
