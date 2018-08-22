@@ -1,6 +1,6 @@
 import React from 'react';
-import { data } from './data/data';
-// import { data } from './data/dataTest1';
+// import { data } from './data/data';
+import { data } from './data/dataTest1';
 // import { data } from './data/dataCoursera1';
 import { runDijkstra } from './dijkstra';
 

@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import { isNotNil, objToString } from '../../../ramda/helpers';
 import _ from 'lodash';
+import { List } from 'immutable';
 
 type VerticeNode = {
   vertice: number;
@@ -51,10 +52,11 @@ export const getMinVerticeEdge = (nodes: VerticeNode[]): VerticeNode => {
   )(nodes) as VerticeNode;
 };
 
+let iCounter = Math.pow(10, 6);
 
 export const getMinVertice = (graph: Graph, startVertice: number = 1): number => {
-  const stack: number[] = [];
-  const verticesCounter: number[] = [];
+  let stack: List<number> = List([]);
+  // const verticesCounter: number[] = [];
   let locVertice: number = startVertice;
 
   const maxLen = R.pipe(R.toPairs, R.reject((item: any) => R.isNil(item[1])), R.fromPairs, R.values, R.length)(graph);
@@ -62,10 +64,10 @@ export const getMinVertice = (graph: Graph, startVertice: number = 1): number =>
   // while (!R.isNil(locVertice) && i < 100) {
   do {
     const verticeNode = graph[locVertice];
-    if (!R.contains(locVertice, verticesCounter)) {
-      verticesCounter.push(locVertice);
-      // console.log('pushed', locVertice, verticesCounter);
-    }
+    // if (!R.contains(locVertice, verticesCounter)) {
+    //   verticesCounter.push(locVertice);
+    //   // console.log('pushed', locVertice, verticesCounter);
+    // }
     // console.log(`locVertice=${locVertice}, node=${objToString(verticeNode)}, stack=${objToString(stack)}`);
 
     const sortedEdges = R.sortWith([R.ascend(R.prop('weight'))])(verticeNode.edges) as VerticeNode[];
@@ -73,17 +75,32 @@ export const getMinVertice = (graph: Graph, startVertice: number = 1): number =>
     for (let i = 0; i < sortedEdges.length; i++) {
       const vertice = sortedEdges[i].vertice;
       stack.push(vertice);
+      console.log(`stack pushed vertice=${vertice}`);
 
       if (!graph[vertice].done) { return vertice }
     }
 
     // console.log(`locVertice=${locVertice},stack=${objToString(stack)}`);
-    locVertice = stack.shift() as number;
+    locVertice = stack.first();
+    stack = stack.shift();
+
+    console.log('locVertice', locVertice);
+
+    if (R.isNil(locVertice)) {
+      return -1;
+    }
 
     // console.log(`locVertice=${locVertice},stack=${objToString(stack)}`);
 
     // console.log(`i=${i}, maxLen=${maxLen}, verticesCounter.length=${verticesCounter.length}`, verticesCounter);
-  } while (verticesCounter.length < maxLen && stack.length < Math.pow(10, 4));
+    if (iCounter % Math.pow(10, 5) === 0) {
+      console.log(`i=${iCounter}, sortedEdges=${sortedEdges.length}`);
+    }
+    iCounter--;
+  // } while (verticesCounter.length < maxLen && i > 0);
+  } while (iCounter > 0);
+
+  // console.log('stack', stack.length);
 
 
   return -1;
