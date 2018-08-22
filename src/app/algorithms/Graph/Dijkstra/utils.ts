@@ -1,4 +1,6 @@
 import * as R from 'ramda';
+import { isNotNil, objToString } from '../../../ramda/helpers';
+import _ from 'lodash';
 
 type VerticeNode = {
   vertice: number;
@@ -29,7 +31,7 @@ export const convertToArray = (data: string): Graph => {
           R.pipe<string, string[], number[], any, any>(R.split(','), R.map(Number), R.zipObj(['vertice', 'weight']) as any, R.assoc('visited', false) as any)
         ),
         R.objOf('edges'), // tranform to object with key edges and values VerticeNode[]
-        R.assoc('value', Infinity),
+        R.assoc('value', 1000000),
         R.assoc('done', false),
       ),
     ),
@@ -50,8 +52,46 @@ export const getMinVerticeEdge = (nodes: VerticeNode[]): VerticeNode => {
 };
 
 
-export const getMinVertice = (graph: Graph, vertice: number): number => {
-  console.log(`getMinVertice start, vertice=${vertice}`);
+export const getMinVertice = (graph: Graph, startVertice: number = 1): number => {
+  const stack: number[] = [];
+  const verticesCounter: number[] = [];
+  let locVertice: number = startVertice;
+
+  const maxLen = R.pipe(R.toPairs, R.reject((item: any) => R.isNil(item[1])), R.fromPairs, R.values, R.length)(graph);
+
+  // while (!R.isNil(locVertice) && i < 100) {
+  do {
+    const verticeNode = graph[locVertice];
+    if (!R.contains(locVertice, verticesCounter)) {
+      verticesCounter.push(locVertice);
+      // console.log('pushed', locVertice, verticesCounter);
+    }
+    // console.log(`locVertice=${locVertice}, node=${objToString(verticeNode)}, stack=${objToString(stack)}`);
+
+    const sortedEdges = R.sortWith([R.ascend(R.prop('weight'))])(verticeNode.edges) as VerticeNode[];
+
+    for (let i = 0; i < sortedEdges.length; i++) {
+      const vertice = sortedEdges[i].vertice;
+      stack.push(vertice);
+
+      if (!graph[vertice].done) { return vertice }
+    }
+
+    // console.log(`locVertice=${locVertice},stack=${objToString(stack)}`);
+    locVertice = stack.shift() as number;
+
+    // console.log(`locVertice=${locVertice},stack=${objToString(stack)}`);
+
+    // console.log(`i=${i}, maxLen=${maxLen}, verticesCounter.length=${verticesCounter.length}`, verticesCounter);
+  } while (verticesCounter.length < maxLen && stack.length < Math.pow(10, 4));
+
+
+  return -1;
+};
+
+/*
+export const getMinVerticeOld = (graph: Graph, vertice: number): number => {
+  // console.log(`getMinVertice start, vertice=${vertice}`);
 
   const verticeNode = graph[vertice];
   const edges = R.sortWith([
@@ -67,3 +107,4 @@ export const getMinVertice = (graph: Graph, vertice: number): number => {
 
   return -1;
 };
+ */
