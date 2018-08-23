@@ -1,7 +1,7 @@
 import React from 'react';
 // import { data } from './data/data';
-// import { data } from './data/dataTest1';
-import { data } from './data/dataCoursera3';
+import { data } from './data/dataTest3';
+// import { data } from './data/dataCoursera3';
 import { runDijkstra } from './dijkstra';
 
 type Props = {
