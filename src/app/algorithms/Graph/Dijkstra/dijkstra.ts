@@ -7,11 +7,13 @@ const ids = [7, 37, 59, 82, 99, 115, 133, 165, 188, 197];
 
 
 
-export const runDijkstra = (raw: string) => {
+/* export const runDijkstra = (raw: string) => {
   const graph = convertToArray(raw);
 
   let locVertice = 1;
   graph[locVertice].value = 0;
+  graph[locVertice].done = true;
+  console.log(`locVertice=${locVertice}`);
 
   let i = 0;
   const output = [];
@@ -19,6 +21,7 @@ export const runDijkstra = (raw: string) => {
     console.log('.');
     console.log('.');
     console.log('.');
+    console.log('get next');
     locVertice = getMinVerticeDFS(graph).vertice;
     console.log(`locVertice=${locVertice}`);
     if (locVertice === -1) {
@@ -32,10 +35,10 @@ export const runDijkstra = (raw: string) => {
       return output.join(' ');
     }
   }
-};
+}; */
 
 
-export const runDijkstraTmp = (raw: string) => {
+export const runDijkstra = (raw: string) => {
   const graph = convertToArray(raw);
 
   let locVertice = 1;

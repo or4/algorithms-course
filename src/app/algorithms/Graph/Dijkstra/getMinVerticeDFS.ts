@@ -17,8 +17,14 @@ const resetSearchVerticeVisited = R.pipe(
 const sort = R.pipe<VerticeNode[], VerticeNode[]>(R.sortWith([
   R.ascend(R.prop('weight'))
 ]));
-
+let i = 0;
 const getMinVertice = (graph: Graph, vertice: number): ItemResult => {
+  console.log('start, vertice', vertice);
+  i++;
+  if (i > 20) {
+    console.log('Exit by STACKOVERFLOW');
+    return { vertice: -1, length: Infinity };
+  }
   // if (graph[vertice].svVisited) {
   //   return -1;
   // }
@@ -41,7 +47,7 @@ const getMinVertice = (graph: Graph, vertice: number): ItemResult => {
     R.head
   )(items);
 
-
+  console.log('RETURN item', item);
   return item as any as ItemResult;
   // return { vertice: -1, length: Infinity };
 };
