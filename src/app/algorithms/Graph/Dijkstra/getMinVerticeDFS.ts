@@ -24,20 +24,26 @@ const getMinVertice = (graph: Graph, vertice: number): ItemResult => {
   // }
   // graph[vertice].svVisited = true;
 
-  // if (!graph[vertice].done) {
-  //   return vertice;
-  // }
+  if (R.isNil(graph[vertice])) {
+    return { vertice: -1, length: Infinity };
+  }
 
-  // const edges = sort(graph[vertice].edges);
+  if (!graph[vertice].done) {
+    return { vertice, length: graph[vertice].value };
+  }
 
-  // for (let i = 0; i < edges.length; i++) {
-  //   const res = getMinVertice(graph, edges[i].vertice);
-  //   if (res >= 0) {
-  //     return res;
-  //   }
-  // }
+  const edges = sort(graph[vertice].edges);
 
-  return { vertice: -1, length: -1 };
+  const items = edges.map((item: VerticeNode) => getMinVertice(graph, item.vertice));
+
+  const item = R.pipe(
+    R.sortWith([R.descend(R.prop('length'))]),
+    R.head
+  )(items);
+
+
+  return item as any as ItemResult;
+  // return { vertice: -1, length: Infinity };
 };
 
 
