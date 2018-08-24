@@ -1,7 +1,7 @@
 import React from 'react';
-import { sccs } from './sccsIterative';
+import { sccs } from './sccsRecursive';
 
-import { data } from './data/dataTest0';
+import { data } from './data/dataTest30';
 // import { data } from './data/data';
 
 type Props = {
