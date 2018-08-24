@@ -1,24 +1,5 @@
 import * as R from 'ramda';
-import { isNotNil, objToString } from '../../../ramda/helpers';
-import _ from 'lodash';
-import { List } from 'immutable';
-
-export type VerticeNode = {
-  vertice: number;
-  weight: number;
-  visited: boolean;
-};
-
-export type GraphItem = {
-  edges: VerticeNode[];
-  value: number;
-  done: boolean;
-  svVisited?: boolean;
-};
-
-export type Graph = {
-  [key: number]: GraphItem;
-};
+import { Graph, MAX_VALUE, EdgeTo } from './types';
 
 export const convertToArray = (data: string): Graph => {
   const splitted = R.pipe(
@@ -32,8 +13,8 @@ export const convertToArray = (data: string): Graph => {
         R.map<any, any[]>( // transform item to object like { vertice: 12, weight: 17 }
           R.pipe<string, string[], number[], any, any>(R.split(','), R.map(Number), R.zipObj(['vertice', 'weight']) as any, R.assoc('visited', false) as any)
         ),
-        R.objOf('edges'), // tranform to object with key edges and values VerticeNode[]
-        R.assoc('value', 1000000),
+        R.objOf('edges'), // tranform to object with key edges and values EdgeTo[]
+        R.assoc('value', MAX_VALUE),
         R.assoc('done', false),
       ),
     ),
@@ -42,14 +23,13 @@ export const convertToArray = (data: string): Graph => {
   return splitted;
 };
 
-
-export const getMinVerticeEdge = (nodes: VerticeNode[]): VerticeNode => {
-  return R.pipe<VerticeNode[], VerticeNode[], VerticeNode>(
+export const getMinVerticeEdge = (nodes: EdgeTo[]): EdgeTo => {
+  return R.pipe<EdgeTo[], EdgeTo[], EdgeTo>(
     R.sortWith([
       R.ascend(R.prop('visited')),
       R.ascend(R.prop('weight'))
     ]),
     R.head
-  )(nodes) as VerticeNode;
+  )(nodes) as EdgeTo;
 };
 

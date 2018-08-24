@@ -1,6 +1,7 @@
 import React from 'react';
-import { data } from './data/data';
-// import { data } from './data/dataTest3';
+import * as R from 'ramda';
+// import { data } from './data/data';
+import { data } from './data/dataTest3';
 // import { data } from './data/dataCoursera28';
 import { runDijkstra } from './dijkstra';
 
@@ -23,7 +24,12 @@ export class Dijkstra extends React.PureComponent<Props, State> {
     return (
       <div>
         <h3>Dijkstra</h3>
-        <h5>{result.split(' ').map((item: any) => <div key={item}>{item}</div>)}</h5>
+        <h5>
+          {R.pipe(
+            R.split(' '),
+            R.map((item: string) => <div key={item}>{item}</div>)
+          )(result)}
+        </h5>
       </div>
     );
   }
