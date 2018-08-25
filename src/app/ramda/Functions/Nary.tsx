@@ -6,7 +6,7 @@ type Props = {
 type State = {
 };
 
-export class NAry extends React.PureComponent<Props, State> {
+export class Nary extends React.PureComponent<Props, State> {
   render() {
     const takesTwoArgsU = function(a: number, b: number) { return [a, b] };
     const takesOneArgU = R.unary(takesTwoArgsU);

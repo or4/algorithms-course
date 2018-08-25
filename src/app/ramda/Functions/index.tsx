@@ -14,7 +14,7 @@ import { Invoker } from './Invoker';
 import { Juxt } from './Juxt';
 import { Lift } from './Lift';
 import { Memoize } from './Memoize';
-import { NAry } from './NAry';
+import { Nary } from './Nary';
 import { Nth } from './Nth';
 import { NthArg } from './NthArg';
 import { Once } from './Once';
@@ -70,7 +70,7 @@ export class Functions extends React.PureComponent<Props, State> {
           <Route path="/ramda/functions/juxt" component={Juxt} />
           <Route path="/ramda/functions/lift" component={Lift} />
           <Route path="/ramda/functions/memoize" component={Memoize} />
-          <Route path="/ramda/functions/nary" component={NAry} />
+          <Route path="/ramda/functions/nary" component={Nary} />
           <Route path="/ramda/functions/nth" component={Nth} />
           <Route path="/ramda/functions/nthArg" component={NthArg} />
           <Route path="/ramda/functions/once" component={Once} />
