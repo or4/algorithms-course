@@ -19,6 +19,7 @@ import { Reflection } from 'app/reflection';
 import { Refs } from 'app/refs';
 import { Regexp } from 'app/regexp';
 import { RxJs } from 'app/rx';
+import { Sanctuary } from 'app/sanctuary';
 import { Svg } from 'app/svg';
 
 type Props = {
@@ -43,6 +44,7 @@ const routes = {
   refs: '/refs',
   regexp: '/regexp',
   rxjs: '/rxjs',
+  sanctuary: '/sanctuary',
   svg: '/svg',
 };
 
@@ -68,6 +70,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link to={routes.refs}>refs</Link>
           <Link to={routes.regexp}>regexp</Link>
           <Link to={routes.rxjs}>rxjs</Link>
+          <Link to={routes.sanctuary}>sanctuary</Link>
           <Link to={routes.svg}>svg</Link>
         </div>
 
@@ -89,6 +92,7 @@ class Main extends React.PureComponent<Props, State> {
           <Route path={routes.refs} component={Refs} />
           <Route path={routes.regexp} component={Regexp} />
           <Route path={routes.rxjs} component={RxJs} />
+          <Route path={routes.sanctuary} component={Sanctuary} />
           <Route path={routes.svg} component={Svg} />
         </Switch>
       </div>

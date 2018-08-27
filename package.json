@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@types/immutable": "^3.8.7",
+    "@types/sanctuary": "^0.14.2",
     "apisauce": "^0.14.3",
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "color": "^3.0.0",
     "crypto-js": "^3.1.9-1",
