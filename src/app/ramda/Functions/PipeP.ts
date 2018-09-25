@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 
 // return Promise.all(
 //   R.map(
@@ -16,18 +17,21 @@
 // //   R.fromPairs
 // // )(worklogs);
 
+const timeout = async () => new Promise<number>((resolve) => {
+  setTimeout(() => {
+    resolve(10);
+  }, 1000);
+});
 
-// export async function addProjectInfo(worklogs: DataType): Promise<DataType> {
-//   const result = R.pipeP(
-//     async w => R.toPairs(w),
-//     async w => Promise.all(R.map(async ([key, value]) => [key, value * await timeout()], w)),
-//     async w => R.fromPairs(w),
-//   )({ a: 123, b: 444, c: 555 });
+export async function addProjectInfo(): Promise<*> {
+  const result = R.pipeP(
+    async w => R.toPairs(w),
+    async w => Promise.all(R.map(async ([key, value]) => [key, value * await timeout()], w)),
+    async w => R.fromPairs(w),
+  )({ a: 123, b: 444, c: 555 });
 
-//   console.log('result', await result);
-
-//   return worklogs;
-// }
+  console.log('result', await result);
+}
 
   // return Promise.all(
   //   R.map(
