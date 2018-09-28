@@ -6,6 +6,7 @@ import { Column31 } from './css/Column31';
 import { Column32 } from './css/Column32';
 import { TextOverflowEllipsis } from './css/TextOverflowEllipsis';
 import { OverflowWrap } from './css/OverflowWrap';
+import { BorderGradient } from './css/BorderGradient';
 
 
 type Props = {
@@ -20,8 +21,9 @@ export class Interview extends React.PureComponent<Props, State> {
         <div>
           <Link to={`/interview/css/column31`}>Column31</Link>
           <Link to={`/interview/css/column32`}>Column32</Link>
-          <Link to={`/interview/css/textOverflowEllipsis`}>TextOverflowEllipsis</Link>
-          <Link to={`/interview/css/overflowWrap`}>OverflowWrap</Link>
+          <Link to={`/interview/css/textOverflowEllipsis`}>text-overflow: ellipsis</Link>
+          <Link to={`/interview/css/overflowWrap`}>overflow-wrap: break-word</Link>
+          <Link to={`/interview/css/borderGradient`}>repeating-linear-gradient</Link>
         </div>
 
         <Switch>
@@ -29,6 +31,7 @@ export class Interview extends React.PureComponent<Props, State> {
           <Route path="/interview/css/column32" component={Column32} />
           <Route path="/interview/css/textOverflowEllipsis" component={TextOverflowEllipsis} />
           <Route path="/interview/css/overflowWrap" component={OverflowWrap} />
+          <Route path="/interview/css/borderGradient" component={BorderGradient} />
         </Switch>
       </div>
     );
