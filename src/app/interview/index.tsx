@@ -8,6 +8,7 @@ import { TextOverflowEllipsis } from './css/TextOverflowEllipsis';
 import { OverflowWrap } from './css/OverflowWrap';
 import { BorderGradient } from './css/BorderGradient';
 import { FlexFooter } from './css/FlexFooter';
+import { FlexGrid } from './css/FlexGrid';
 
 
 type Props = {
@@ -26,6 +27,7 @@ export class Interview extends React.PureComponent<Props, State> {
           <Link to={`/interview/css/overflowWrap`}>overflow-wrap: break-word</Link>
           <Link to={`/interview/css/borderGradient`}>repeating-linear-gradient</Link>
           <Link to={`/interview/css/flexFooter`}>FlexFooter</Link>
+          <Link to={`/interview/css/flexGrid`}>FlexGrid</Link>
         </div>
 
         <Switch>
@@ -35,6 +37,7 @@ export class Interview extends React.PureComponent<Props, State> {
           <Route path="/interview/css/overflowWrap" component={OverflowWrap} />
           <Route path="/interview/css/borderGradient" component={BorderGradient} />
           <Route path="/interview/css/flexFooter" component={FlexFooter} />
+          <Route path="/interview/css/flexGrid" component={FlexGrid} />
         </Switch>
       </div>
     );
