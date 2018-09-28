@@ -9,6 +9,7 @@ import { Css } from 'app/css';
 import { Hoc } from 'app/hoc';
 import { HolyJs } from 'app/holyjs';
 import { Immutable } from 'app/immutable';
+import { Interview } from 'app/interview';
 import { Jss } from 'app/jss';
 import { KentDodds } from 'app/kentDodds';
 import { Lodash } from 'app/lodash';
@@ -34,6 +35,7 @@ const routes = {
   hoc: '/hoc',
   holyjs: '/holyjs',
   immutable: '/immutable',
+  interview: '/interview',
   jss: '/jss',
   kentDodds: '/kent-dodds',
   lodash: '/lodash',
@@ -60,6 +62,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link to={routes.hoc}>hoc</Link>
           <Link to={routes.holyjs}>holyjs</Link>
           <Link to={routes.immutable}>immutable</Link>
+          <Link to={routes.interview}>interview</Link>
           <Link to={routes.jss}>jss</Link>
           <Link to={routes.kentDodds}>kent-dodds</Link>
           <Link to={routes.lodash}>lodash</Link>
@@ -82,6 +85,7 @@ class Main extends React.PureComponent<Props, State> {
           <Route path={routes.hoc} component={Hoc} />
           <Route path={routes.holyjs} component={HolyJs} />
           <Route path={routes.immutable} component={Immutable} />
+          <Route path={routes.interview} component={Interview} />
           <Route path={routes.jss} component={Jss} />
           <Route path={routes.kentDodds} component={KentDodds} />
           <Route path={routes.lodash} component={Lodash} />
