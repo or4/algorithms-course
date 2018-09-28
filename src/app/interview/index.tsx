@@ -7,6 +7,7 @@ import { Column32 } from './css/Column32';
 import { TextOverflowEllipsis } from './css/TextOverflowEllipsis';
 import { OverflowWrap } from './css/OverflowWrap';
 import { BorderGradient } from './css/BorderGradient';
+import { FlexFooter } from './css/FlexFooter';
 
 
 type Props = {
@@ -24,6 +25,7 @@ export class Interview extends React.PureComponent<Props, State> {
           <Link to={`/interview/css/textOverflowEllipsis`}>text-overflow: ellipsis</Link>
           <Link to={`/interview/css/overflowWrap`}>overflow-wrap: break-word</Link>
           <Link to={`/interview/css/borderGradient`}>repeating-linear-gradient</Link>
+          <Link to={`/interview/css/flexFooter`}>FlexFooter</Link>
         </div>
 
         <Switch>
@@ -32,6 +34,7 @@ export class Interview extends React.PureComponent<Props, State> {
           <Route path="/interview/css/textOverflowEllipsis" component={TextOverflowEllipsis} />
           <Route path="/interview/css/overflowWrap" component={OverflowWrap} />
           <Route path="/interview/css/borderGradient" component={BorderGradient} />
+          <Route path="/interview/css/flexFooter" component={FlexFooter} />
         </Switch>
       </div>
     );
