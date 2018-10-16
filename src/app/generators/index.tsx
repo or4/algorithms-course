@@ -15,7 +15,7 @@ mapLimit([
   'http3',
   'http4',
   'http5'
-], 10, () => {}).then((res) => {
+], 3, () => {}).then((res) => {
   console.log('maplimit: ', res);
 });
 
