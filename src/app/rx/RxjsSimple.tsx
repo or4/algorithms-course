@@ -17,7 +17,7 @@ type State = {
 
 export class RxjsSimple extends React.Component<Props, State> {
   state = {
-    data: [],
+    data: [] as number[],
     resultTest2: ''
   };
 

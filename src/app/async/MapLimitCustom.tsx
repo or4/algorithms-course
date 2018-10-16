@@ -6,7 +6,7 @@ type State = {
 };
 
 
-export class MapLimit extends React.Component<Props, State> {
+export class MapLimitCustom extends React.Component<Props, State> {
   render() {
     const urls = [
       'http1',
@@ -26,7 +26,7 @@ export class MapLimit extends React.Component<Props, State> {
 
     return (
       <div>
-        <h3>MapLimit</h3>
+        <h3>MapLimit - custom implementation, do all tasks, do next if previous done</h3>
       </div>
     );
   }

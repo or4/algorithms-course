@@ -1,32 +1,37 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { MapLimit } from './MapLimitC';
+import { Description } from './Description';
+import { MapLimitCustom } from './MapLimitCustom';
+import { MapLimitLib } from './MapLimitLib';
+import { ParallelLib } from './ParallelLib';
+import { ParallelLimitLib } from './ParallelLimitLib';
 
 type Props = {
 };
 type State = {
 };
 
-
+// https://api.coinmarketcap.com/v2/ticker
+// https://api.github.com/users/octocat
 
 export class Async extends React.PureComponent<Props, State> {
   render() {
     return (
       <div className="menu-container">
         <div>
-          <Link to={`/async/mapLimit`}>mapLimit</Link>
-        </div>
-        <div>
-          <h3>1. Await can only be used inside an async function.</h3>
-          <h3>2. Functions with the async keyword will always return a promise.</h3>
-          <h3>3. Multiple awaits will always run in sequential order under a same function.</h3>
-          <h3>4. If a promise resolves normally, then await promise returns the result. But in case of a rejection it throws the error, just if there were a throw statement at that line.</h3>
-          <h3>5. Async function cannot wait for multiple promises at the same time.</h3>
-          <h3>6. Performance issues can occur if using await after await as many times one statement doesn’t depend on the previous one.</h3>
+          <Link to={`/async/description`}>description</Link>
+          <Link to={`/async/custom_mapLimit`}>custom mapLimit</Link>
+          <Link to={`/async/mapLimitLib`}>mapLimitLib</Link>
+          <Link to={`/async/parallelLib`}>parallelLib</Link>
+          <Link to={`/async/parallelLimitLib`}>parallelLimitLib</Link>
         </div>
         <Switch>
-          <Route path="/async/mapLimit" component={MapLimit} />
+          <Route path="/async/description" component={Description} />
+          <Route path="/async/custom_mapLimit" component={MapLimitCustom} />
+          <Route path="/async/mapLimitLib" component={MapLimitLib} />
+          <Route path="/async/parallelLib" component={ParallelLib} />
+          <Route path="/async/parallelLimitLib" component={ParallelLimitLib} />
         </Switch>
       </div>
     );
