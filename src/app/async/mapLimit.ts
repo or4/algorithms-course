@@ -1,9 +1,13 @@
+const memoization = {};
+
 const fetchUrl = (url: string) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(url + ', complete!');
-    }, 1000);
-  });
+  const cache = memoization[url];
+  if (cache) {
+    return cache;
+  }
+  const promise = new Promise(resolve => setTimeout(() => resolve(url + ', complete!'), 1000));
+  memoization[url] = promise;
+  return promise;
 };
 
 /**
@@ -40,6 +44,7 @@ export async function mapLimitPackage(urls: string[], limit: number) {
  * do 3 promises than await, when one of them done, then another promise do and etc
  * when all 7 will be done, after all return result
  */
+
 export async function mapLimit(urls: string[], limit: number): Promise<any[]> {
   const promises: any[] = [];
   const urlsLoc = [...urls];

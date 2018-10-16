@@ -8,16 +8,21 @@ type State = {
 
 export class MapLimit extends React.Component<Props, State> {
   render() {
-
-    mapLimit([
+    const urls = [
       'http1',
       'http2',
       'http3',
       'http4',
       'http5'
-    ], 3).then((res) => {
+    ];
+    mapLimit(urls, 3).then((res) => {
       console.log('maplimit: ', res);
+
+      mapLimit(urls, 3).then((res) => {
+        console.log('second maplimit: ', res);
+      });
     });
+
 
     return (
       <div>
