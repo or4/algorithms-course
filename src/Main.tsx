@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Algorithms } from 'app/algorithms';
 import { Animate } from 'app/animate';
 import { Ast } from 'app/ast';
+import { Async } from 'app/async';
 import { Css } from 'app/css';
 import { Generators } from 'app/generators';
 import { Hoc } from 'app/hoc';
@@ -33,6 +34,7 @@ const routes = {
   algorithms: '/algorithms',
   animate: '/animate',
   ast: '/ast',
+  async: '/async',
   css: '/css',
   generators: '/generators',
   hoc: '/hoc',
@@ -62,6 +64,7 @@ class Main extends React.PureComponent<Props, State> {
           <Link to={routes.algorithms}>algorithms</Link>
           <Link to={routes.animate}>animate</Link>
           <Link to={routes.ast}>ast</Link>
+          <Link to={routes.async}>async</Link>
           <Link to={routes.css}>css</Link>
           <Link to={routes.generators}>generators</Link>
           <Link to={routes.hoc}>hoc</Link>
@@ -87,6 +90,7 @@ class Main extends React.PureComponent<Props, State> {
           <Route path={routes.algorithms} component={Algorithms} />
           <Route path={routes.animate} component={Animate} />
           <Route path={routes.ast} component={Ast} />
+          <Route path={routes.async} component={Async} />
           <Route path={routes.css} component={Css} />
           <Route path={routes.generators} component={Generators} />
           <Route path={routes.hoc} component={Hoc} />
