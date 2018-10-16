@@ -4,13 +4,14 @@
     "allowUnreachableCode": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
+    "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
     "experimentalDecorators": true,
     "lib": [
-      "es6",
+      "es2017",
       "dom"
     ],
     "sourceMap": true,
