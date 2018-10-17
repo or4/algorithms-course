@@ -16,9 +16,7 @@ const add = function(arg1: number) {
 };
 
 export class Add extends React.PureComponent<Props, State> {
-
   render() {
-
     return (
       <div>
         <h3>Add</h3>
