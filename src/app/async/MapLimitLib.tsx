@@ -29,9 +29,9 @@ async function test() {
   ); // return undefined
 }
 
-test().then(() => {
-  console.log('test done1');
-});
+// test().then(() => {
+//   console.log('test done1');
+// });
 
 export class MapLimitLib extends React.Component<Props, State> {
   render() {
