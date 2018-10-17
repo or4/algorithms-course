@@ -10,6 +10,8 @@ const isAnagram = (str1: string, str2: string) => str1.split('').sort().join('')
 export class Anagram extends React.PureComponent<Props, State> {
 
   render() {
+    // есть доп задание преобразовать входные данные ['animal', 'malani', 'alanim', 'tree', 'eetr']
+    // к виду  { 'animal': ['malani', 'alanim'], 'tree': ['eetr'] }
 
     return (
       <div>
