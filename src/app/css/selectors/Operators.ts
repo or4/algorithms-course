@@ -24,4 +24,19 @@
     <li class="b">4th</li>
     <li class="b">5th</li>
   </ul>
+
+
+  Attribute Selector
+  img[title] {
+  }
+  a[href="http://ya.ru"] {
+  }
+  a[href^="http://"] {
+  }
+  a[href$=".pdf"] {
+  }
+  a[href*="photo"] {
+  }
+
+
 */

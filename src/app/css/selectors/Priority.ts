@@ -7,6 +7,7 @@ inline - 1000
 pseudo-element - 1 (:first-child)
 pseudo-class - 10 (:hover, :link)
 
+если два приоритета одинаковы по значению, то побеждает последний
 
 
 Example:
@@ -23,5 +24,7 @@ body div img {
 }
 
 will be applied .image, because 10 > 3
+
+
 
 */
