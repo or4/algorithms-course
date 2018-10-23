@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import { CssSelectorsGt } from './CssSelectorsGt';
-import { CssSelectorsPlus } from './CssSelectorsPlus';
-import { CssSelectorsTilda } from './CssSelectorsTilda';
-import { CssSelectorsSpace } from './CssSelectorsSpace';
-import { FirstLetter } from './FirstLetter';
-import { Before } from './Before';
-import { Selection } from './Selection';
+import { CssSelectorsGt } from './Components/CssSelectorsGt';
+import { CssSelectorsPlus } from './Components/CssSelectorsPlus';
+import { CssSelectorsTilda } from './Components/CssSelectorsTilda';
+import { CssSelectorsSpace } from './Components/CssSelectorsSpace';
+import { FirstLetter } from './Components/FirstLetter';
+import { Before } from './Components/Before';
+import { Selection } from './Components/Selection';
 
 
 type Props = {
