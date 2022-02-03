@@ -1,47 +1,26 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowUnreachableCode": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
-    "downlevelIteration": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "build/dist",
-    "module": "esnext",
     "target": "es5",
-    "experimentalDecorators": true,
     "lib": [
-      "es2017",
-      "dom"
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "sourceMap": true,
-    "jsx": "react",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
     "moduleResolution": "node",
-    "types": [],
-    "typeRoots": [
-      "src/types"
-    ],
-    "rootDir": "src",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": false,
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin"
-      }
-    ]
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "exclude": [
-    "node_modules/electron/node_modules/@types",
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
+  "include": [
+    "src"
   ]
 }

@@ -1,23 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route } from 'react-router';
-import { ConnectedRouter } from 'react-router-redux';
-import Main from 'Main';
 import './index.css';
+import App from './App';
 
-import { Provider } from 'react-redux';
-
-import store, { history } from 'store';
-
-const App = () => (
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Route path="/" component={Main} />
-    </ConnectedRouter>
-  </Provider>
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.querySelector('#root'),
 );
-
-const rootElement = document.getElementById('root');
-if (rootElement != null) {
-  ReactDOM.render(<App />, rootElement);
-}
